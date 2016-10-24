@@ -78,7 +78,6 @@ public class GraphicPanel extends JPanel implements MouseListener, MouseMotionLi
     }
 
 
-    @Override
     public void receiveLine(Line line) {
         objectType = "Line";
         drawList.clear();
@@ -87,7 +86,7 @@ public class GraphicPanel extends JPanel implements MouseListener, MouseMotionLi
         repaint();
     }
 
-    @Override
+
     public void receiveRectangle(Rectangle rectangle) {
         objectType = "Rectangle";
         drawList.clear();
@@ -96,7 +95,7 @@ public class GraphicPanel extends JPanel implements MouseListener, MouseMotionLi
         repaint();
     }
 
-    @Override
+
     public void receivePolyLine(PolyLine polyLine) {
         objectType = "PolyLine";
         drawList.clear();

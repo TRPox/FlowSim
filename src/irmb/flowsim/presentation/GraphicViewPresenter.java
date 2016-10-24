@@ -15,10 +15,7 @@ import java.util.List;
  */
 public class GraphicViewPresenter {
     private GraphicView graphicView;
-    private String objectType = "";
     private int timesClicked;
-    private Point lastPoint;
-    private List<Point> pointList;
     private ShapeBuilder shapeBuilder;
 
     public void handleLeftClick(int x, int y) {
@@ -36,7 +33,6 @@ public class GraphicViewPresenter {
     }
 
     public void setObjectType(String objectType) {
-        this.objectType = objectType;
         ShapeBuilderFactory factory = new ShapeBuilderFactoryImpl();
         shapeBuilder = factory.makeShapeBuilder(objectType);
     }
