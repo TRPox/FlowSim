@@ -19,21 +19,22 @@ public class GraphicViewSpy implements GraphicView {
     private boolean hasReceivedRectangle;
     private boolean hasReceivedPolyLine;
     private List<Point> receivedPolyLinePointList;
+    private boolean wasNotified;
 
-    public void receiveLine(Line line) {
+    private void receiveLine(Line line) {
         timesReceivedLineCalled++;
         hasReceivedLine = true;
         this.first = line.getStart();
         this.second = line.getEnd();
     }
 
-    public void receiveRectangle(Rectangle rectangle) {
+    private void receiveRectangle(Rectangle rectangle) {
         hasReceivedRectangle = true;
         this.first = rectangle.getFirst();
         this.second = rectangle.getSecond();
     }
 
-    public void receivePolyLine(PolyLine polyLine) {
+    private void receivePolyLine(PolyLine polyLine) {
         hasReceivedPolyLine = true;
         receivedPolyLinePointList = polyLine.getPointList();
     }
@@ -46,6 +47,11 @@ public class GraphicViewSpy implements GraphicView {
             receiveRectangle((Rectangle) shape);
         else if (shape instanceof PolyLine)
             receivePolyLine((PolyLine) shape);
+    }
+
+    @Override
+    public void update() {
+        wasNotified = true;
     }
 
     public Point getFirst() {
@@ -74,5 +80,9 @@ public class GraphicViewSpy implements GraphicView {
 
     public List<Point> getReceivedPolyLinePointList() {
         return receivedPolyLinePointList;
+    }
+
+    public boolean wasNotified() {
+        return wasNotified;
     }
 }

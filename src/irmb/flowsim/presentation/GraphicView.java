@@ -7,4 +7,6 @@ import irmb.flowsim.model.geometry.Shape;
  */
 public interface GraphicView {
     void receiveShape(Shape shape);
+
+    void update();
 }

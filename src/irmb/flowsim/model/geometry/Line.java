@@ -1,5 +1,7 @@
 package irmb.flowsim.model.geometry;
 
+import irmb.flowsim.presentation.GraphicView;
+
 import java.awt.*;
 
 /**
@@ -8,6 +10,7 @@ import java.awt.*;
 public class Line implements Shape {
     private Point start;
     private Point end;
+    private GraphicView view;
 
     public Point getStart() {
         return start;
@@ -15,6 +18,11 @@ public class Line implements Shape {
 
     public void setStart(Point start) {
         this.start = start;
+        notifyView();
+    }
+
+    private void notifyView() {
+        if (view != null) view.update();
     }
 
     public Point getEnd() {
@@ -23,6 +31,11 @@ public class Line implements Shape {
 
     public void setEnd(Point end) {
         this.end = end;
+        notifyView();
+    }
+
+    public void addGraphicView(GraphicView view) {
+        this.view = view;
     }
 
     @Override

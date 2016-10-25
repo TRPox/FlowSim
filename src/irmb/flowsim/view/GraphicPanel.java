@@ -109,6 +109,11 @@ public class GraphicPanel extends JPanel implements MouseListener, MouseMotionLi
     }
 
     @Override
+    public void update() {
+
+    }
+
+    @Override
     public void paintComponent(Graphics graphics) {
         super.paintComponent(graphics);
         if (objectType.equals("Line")) {

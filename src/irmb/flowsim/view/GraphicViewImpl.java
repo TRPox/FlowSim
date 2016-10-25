@@ -13,6 +13,7 @@ import java.awt.*;
  * Created by Sven on 24.10.2016.
  */
 public class GraphicViewImpl extends JPanel implements GraphicView {
+
     private Shape shape;
 
     @Override
@@ -22,8 +23,12 @@ public class GraphicViewImpl extends JPanel implements GraphicView {
     }
 
     @Override
+    public void update() {
+
+    }
+
+    @Override
     public void paintComponent(Graphics graphics) {
-        System.out.println("HERE");
         super.paintComponent(graphics);
         shape.paint(graphics);
     }

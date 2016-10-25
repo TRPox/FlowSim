@@ -19,7 +19,7 @@ public class PolyLineBuilder extends ShapeBuilder {
 
     @Override
     public void addPoint(Point point) {
-        polyLine.getPointList().add(point);
+        polyLine.addPoint(point);
     }
 
     @Override

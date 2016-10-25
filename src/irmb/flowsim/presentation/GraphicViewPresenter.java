@@ -1,14 +1,9 @@
 package irmb.flowsim.presentation;
 
-import irmb.flowsim.model.geometry.Line;
 import irmb.flowsim.model.geometry.Point;
-import irmb.flowsim.model.geometry.PolyLine;
-import irmb.flowsim.model.geometry.Rectangle;
 import irmb.flowsim.presentation.builders.ShapeBuilder;
 import irmb.flowsim.presentation.factories.ShapeBuilderFactory;
 import irmb.flowsim.presentation.factories.ShapeBuilderFactoryImpl;
-
-import java.util.List;
 
 /**
  * Created by Sven on 19.10.2016.
