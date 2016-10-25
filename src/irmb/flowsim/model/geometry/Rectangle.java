@@ -7,10 +7,9 @@ import java.awt.*;
 /**
  * Created by Sven on 20.10.2016.
  */
-public class Rectangle implements Shape {
+public class Rectangle extends Shape {
     private Point first;
     private Point second;
-    private GraphicView view;
 
     public Point getFirst() {
         return first;
@@ -19,10 +18,6 @@ public class Rectangle implements Shape {
     public void setFirst(Point first) {
         this.first = first;
         notifyView();
-    }
-
-    private void notifyView() {
-        if (view != null) view.update();
     }
 
     public Point getSecond() {
@@ -37,9 +32,5 @@ public class Rectangle implements Shape {
     @Override
     public void paint(Graphics graphics) {
 
-    }
-
-    public void addGraphicView(GraphicView view) {
-        this.view = view;
     }
 }

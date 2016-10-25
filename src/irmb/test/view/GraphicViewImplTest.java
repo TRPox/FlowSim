@@ -1,10 +1,12 @@
 package irmb.test.view;
 
+import de.bechte.junit.runners.context.HierarchicalContextRunner;
 import irmb.flowsim.model.geometry.Point;
 import irmb.flowsim.view.GraphicViewImpl;
 import irmb.test.model.geometry.LineSpy;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
 import javax.swing.*;
 
@@ -14,6 +16,7 @@ import static org.junit.Assert.assertEquals;
 /**
  * Created by Sven on 24.10.2016.
  */
+@RunWith(HierarchicalContextRunner.class)
 public class GraphicViewImplTest {
 
     private JFrame frame;
@@ -46,22 +49,44 @@ public class GraphicViewImplTest {
         assertTrue(first.wasPainted());
     }
 
-    @Test
-    public void whenReceivingMultipleLines_shouldPaintAllShapes() {
-        LineSpy second = new LineSpy();
-        view.receiveShape(first);
-        view.receiveShape(second);
-        assertTrue(first.wasPainted());
-        assertTrue(second.wasPainted());
-    }
 
     @Test
     public void whenLineChanges_shouldRepaint() {
         view.receiveShape(first);
         assertTrue(first.wasPainted());
-
-        Point point = new Point(1,1);
+        Point point = new Point(1, 1);
         first.setStart(point);
         assertEquals(2, first.getTimesPainted());
+    }
+
+    public class OneLineAddedContext {
+        private LineSpy second;
+
+        @Before
+        public void setUp() {
+            view.receiveShape(first);
+            second = new LineSpy();
+        }
+
+        @Test
+        public void whenReceivingNextLine_shouldPaintAllShapes() {
+            view.receiveShape(second);
+            assertTrue(first.wasPainted());
+            assertTrue(second.wasPainted());
+        }
+
+
+        public class TwoLinesAddedContext {
+            @Before
+            public void setUp() {
+                view.receiveShape(second);
+            }
+
+            @Test
+            public void whenChangingFirstLine_shouldPaintAllShapes() {
+                first.setStart(new Point(1, 1));
+                assertEquals(3, first.getTimesPainted());
+            }
+        }
     }
 }

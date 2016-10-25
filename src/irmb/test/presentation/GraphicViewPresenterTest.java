@@ -72,8 +72,7 @@ public class GraphicViewPresenterTest {
 
         @Test
         public void whenLeftClickingTwice_spyShouldReceiveLine() {
-            sut.handleLeftClick(0, 0);
-            sut.handleLeftClick(0, 0);
+            transmitTwoPointsToPresenter(first, second);
             assertTrue(graphicViewSpy.hasReceivedLine());
         }
 
@@ -91,6 +90,7 @@ public class GraphicViewPresenterTest {
 
             assertEquals(1, graphicViewSpy.getTimesReceivedLineCalled());
         }
+
     }
 
     public class BuildRectangleContext {
