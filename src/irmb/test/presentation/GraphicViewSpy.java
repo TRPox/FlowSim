@@ -20,7 +20,6 @@ public class GraphicViewSpy implements GraphicView {
     private boolean hasReceivedPolyLine;
     private List<Point> receivedPolyLinePointList;
 
-    @Override
     public void receiveLine(Line line) {
         timesReceivedLineCalled++;
         hasReceivedLine = true;
@@ -28,14 +27,12 @@ public class GraphicViewSpy implements GraphicView {
         this.second = line.getEnd();
     }
 
-    @Override
     public void receiveRectangle(Rectangle rectangle) {
         hasReceivedRectangle = true;
         this.first = rectangle.getFirst();
         this.second = rectangle.getSecond();
     }
 
-    @Override
     public void receivePolyLine(PolyLine polyLine) {
         hasReceivedPolyLine = true;
         receivedPolyLinePointList = polyLine.getPointList();

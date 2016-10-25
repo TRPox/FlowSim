@@ -7,13 +7,24 @@ import irmb.flowsim.model.geometry.Shape;
 import irmb.flowsim.presentation.GraphicView;
 
 import javax.swing.*;
+import java.awt.*;
 
 /**
  * Created by Sven on 24.10.2016.
  */
 public class GraphicViewImpl extends JPanel implements GraphicView {
+    private Shape shape;
+
     @Override
     public void receiveShape(Shape shape) {
+        this.shape = shape;
+        paintComponent(getGraphics());
+    }
 
+    @Override
+    public void paintComponent(Graphics graphics) {
+        System.out.println("HERE");
+        super.paintComponent(graphics);
+        shape.paint(graphics);
     }
 }

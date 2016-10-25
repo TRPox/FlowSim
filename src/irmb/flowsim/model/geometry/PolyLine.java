@@ -1,5 +1,6 @@
 package irmb.flowsim.model.geometry;
 
+import java.awt.*;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -15,5 +16,10 @@ public class PolyLine implements Shape {
 
     public void setPointList(List<Point> pointList) {
         this.pointList = pointList;
+    }
+
+    @Override
+    public void paint(Graphics graphics) {
+
     }
 }
