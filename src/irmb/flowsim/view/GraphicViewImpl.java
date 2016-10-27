@@ -1,6 +1,7 @@
 package irmb.flowsim.view;
 
 import irmb.flowsim.presentation.GraphicView;
+import irmb.flowsim.presentation.GraphicViewPresenter;
 import irmb.util.Observer;
 
 import javax.swing.*;
@@ -13,13 +14,18 @@ import java.util.List;
  */
 public class GraphicViewImpl extends JPanel implements GraphicView, Observer {
 
-    private List<GraphicShape> graphicShapeList = new LinkedList<>();
+    protected GraphicViewPresenter presenter;
+    protected List<GraphicShape> graphicShapeList = new LinkedList<>();
 
     @Override
     public void receiveShape(GraphicShape graphicShape) {
         graphicShapeList.add(graphicShape);
         graphicShape.addObserver(this);
         paintComponent(getGraphics());
+    }
+
+    public void setPresenter(GraphicViewPresenter presenter) {
+        this.presenter = presenter;
     }
 
     @Override

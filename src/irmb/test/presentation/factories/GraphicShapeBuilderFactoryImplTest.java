@@ -19,21 +19,21 @@ public class GraphicShapeBuilderFactoryImplTest {
     @Test
     public void testMakeLineBuilder() {
         ShapeBuilderFactory factory = new ShapeBuilderFactoryImpl();
-        ShapeBuilder builder = factory.makeShapeBuilder("GraphicLine");
+        ShapeBuilder builder = factory.makeShapeBuilder("Line");
         assertThat(builder, is(instanceOf(LineBuilder.class)));
     }
 
     @Test
     public void testMakeRectangleBuilder() {
         ShapeBuilderFactory factory = new ShapeBuilderFactoryImpl();
-        ShapeBuilder builder = factory.makeShapeBuilder("GraphicRectangle");
+        ShapeBuilder builder = factory.makeShapeBuilder("Rectangle");
         assertThat(builder, is(instanceOf(RectangleBuilder.class)));
     }
 
     @Test
     public void testMakePolyLineBuilder() {
         ShapeBuilderFactory factory = new ShapeBuilderFactoryImpl();
-        ShapeBuilder builder = factory.makeShapeBuilder("GraphicPolyLine");
+        ShapeBuilder builder = factory.makeShapeBuilder("PolyLine");
         assertThat(builder, is(instanceOf(PolyLineBuilder.class)));
     }
 

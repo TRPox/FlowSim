@@ -26,7 +26,10 @@ public class GraphicRectangle extends GraphicShape {
 
     @Override
     public void paint(Graphics graphics) {
-
+        Rectangle rectangle = (Rectangle) shape;
+        Point first = rectangle.getFirst();
+        Point second = rectangle.getSecond();
+        graphics.drawRect(first.getX(), first.getY(), second.getX(), second.getY());
     }
 
     @Override

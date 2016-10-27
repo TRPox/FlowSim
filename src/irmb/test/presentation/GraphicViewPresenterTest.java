@@ -53,7 +53,7 @@ public class GraphicViewPresenterTest {
     public class BuildLineContext {
         @Before
         public void setUp() {
-            sut.setObjectType("GraphicLine");
+            sut.setObjectType("Line");
         }
 
         @Test
@@ -96,7 +96,7 @@ public class GraphicViewPresenterTest {
     public class BuildRectangleContext {
         @Test
         public void buildRectangleAcceptanceTest() {
-            sut.setObjectType("GraphicRectangle");
+            sut.setObjectType("Rectangle");
 
             transmitTwoPointsToPresenter(first, second);
 
@@ -112,7 +112,7 @@ public class GraphicViewPresenterTest {
 
         @Before
         public void setUp() {
-            sut.setObjectType("GraphicPolyLine");
+            sut.setObjectType("PolyLine");
         }
 
         @Test

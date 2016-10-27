@@ -1,5 +1,6 @@
 package irmb.util;
 
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -7,7 +8,7 @@ import java.util.List;
  */
 public abstract class Subject {
 
-    protected List<Observer> observers;
+    protected List<Observer> observers = new LinkedList<>();
 
     public void addObserver(Observer observer) {
         observers.add(observer);

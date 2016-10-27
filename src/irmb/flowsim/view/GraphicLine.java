@@ -26,7 +26,10 @@ public class GraphicLine extends GraphicShape {
 
     @Override
     public void paint(Graphics graphics) {
-
+        Line line = (Line) shape;
+        Point start = line.getStart();
+        Point end = line.getEnd();
+        graphics.drawLine(start.getX(), start.getY(), end.getX(), end.getY());
     }
 
     @Override
