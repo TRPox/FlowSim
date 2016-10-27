@@ -1,11 +1,7 @@
 package irmb.flowsim.model.geometry;
 
-import irmb.flowsim.presentation.GraphicView;
-
-import java.awt.*;
-
 /**
- * Created by Sven on 20.10.2016.
+ * Created by Sven on 25.10.2016.
  */
 public class Line extends Shape {
     private Point start;
@@ -17,7 +13,7 @@ public class Line extends Shape {
 
     public void setStart(Point start) {
         this.start = start;
-        notifyView();
+        notifyObserver();
     }
 
     public Point getEnd() {
@@ -26,11 +22,6 @@ public class Line extends Shape {
 
     public void setEnd(Point end) {
         this.end = end;
-        notifyView();
-    }
-
-    @Override
-    public void paint(Graphics graphics) {
-
+        notifyObserver();
     }
 }

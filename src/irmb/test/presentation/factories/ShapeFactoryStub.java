@@ -3,6 +3,7 @@ package irmb.test.presentation.factories;
 import irmb.flowsim.model.geometry.Line;
 import irmb.flowsim.model.geometry.Shape;
 import irmb.flowsim.presentation.factories.ShapeFactory;
+import irmb.flowsim.view.GraphicLine;
 
 /**
  * Created by Sven on 20.10.2016.

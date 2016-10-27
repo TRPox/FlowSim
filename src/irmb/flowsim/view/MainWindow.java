@@ -26,9 +26,9 @@ public class MainWindow extends JFrame {
     }
 
     private void setButtonActions() {
-        lineButton.addActionListener(e -> presenter.setObjectType("Line"));
-        polyLineButton.addActionListener(e -> presenter.setObjectType("PolyLine"));
-        rectangleButton.addActionListener(e -> presenter.setObjectType("Rectangle"));
+        lineButton.addActionListener(e -> presenter.setObjectType("GraphicLine"));
+        polyLineButton.addActionListener(e -> presenter.setObjectType("GraphicPolyLine"));
+        rectangleButton.addActionListener(e -> presenter.setObjectType("GraphicRectangle"));
         circleButton.addActionListener(e -> presenter.setObjectType("Circle"));
     }
 

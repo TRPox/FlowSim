@@ -1,8 +1,9 @@
 package irmb.flowsim.presentation.builders;
 
-import irmb.flowsim.model.geometry.Point;
 import irmb.flowsim.model.geometry.Rectangle;
-import irmb.flowsim.model.geometry.Shape;
+import irmb.flowsim.view.GraphicRectangle;
+import irmb.flowsim.model.geometry.Point;
+import irmb.flowsim.view.GraphicShape;
 import irmb.flowsim.presentation.factories.ShapeFactory;
 
 /**
@@ -10,12 +11,14 @@ import irmb.flowsim.presentation.factories.ShapeFactory;
  */
 public class RectangleBuilder extends ShapeBuilder {
 
+    private GraphicRectangle graphicRectangle;
     private Rectangle rectangle;
     private int pointsAdded;
 
     public RectangleBuilder(ShapeFactory shapeFactory) {
         super(shapeFactory);
         rectangle = (Rectangle) shapeFactory.makeShape("Rectangle");
+        graphicRectangle = new GraphicRectangle(rectangle);
     }
 
     @Override
@@ -28,7 +31,7 @@ public class RectangleBuilder extends ShapeBuilder {
     }
 
     @Override
-    public Shape getShape() {
-        return rectangle;
+    public GraphicShape getShape() {
+        return graphicRectangle;
     }
 }

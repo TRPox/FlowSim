@@ -1,6 +1,5 @@
 package irmb.test.presentation.factories;
 
-import irmb.flowsim.model.geometry.Rectangle;
 import irmb.flowsim.presentation.builders.LineBuilder;
 import irmb.flowsim.presentation.builders.PolyLineBuilder;
 import irmb.flowsim.presentation.builders.RectangleBuilder;
@@ -16,25 +15,25 @@ import static org.junit.Assert.*;
 /**
  * Created by Sven on 20.10.2016.
  */
-public class ShapeBuilderFactoryImplTest {
+public class GraphicShapeBuilderFactoryImplTest {
     @Test
     public void testMakeLineBuilder() {
         ShapeBuilderFactory factory = new ShapeBuilderFactoryImpl();
-        ShapeBuilder builder = factory.makeShapeBuilder("Line");
+        ShapeBuilder builder = factory.makeShapeBuilder("GraphicLine");
         assertThat(builder, is(instanceOf(LineBuilder.class)));
     }
 
     @Test
     public void testMakeRectangleBuilder() {
         ShapeBuilderFactory factory = new ShapeBuilderFactoryImpl();
-        ShapeBuilder builder = factory.makeShapeBuilder("Rectangle");
+        ShapeBuilder builder = factory.makeShapeBuilder("GraphicRectangle");
         assertThat(builder, is(instanceOf(RectangleBuilder.class)));
     }
 
     @Test
     public void testMakePolyLineBuilder() {
         ShapeBuilderFactory factory = new ShapeBuilderFactoryImpl();
-        ShapeBuilder builder = factory.makeShapeBuilder("PolyLine");
+        ShapeBuilder builder = factory.makeShapeBuilder("GraphicPolyLine");
         assertThat(builder, is(instanceOf(PolyLineBuilder.class)));
     }
 

@@ -3,6 +3,7 @@ package irmb.test.model.geometry;
 import de.bechte.junit.runners.context.HierarchicalContextRunner;
 import irmb.flowsim.model.geometry.Point;
 import irmb.flowsim.model.geometry.Rectangle;
+import irmb.flowsim.view.GraphicRectangle;
 import irmb.test.presentation.GraphicViewSpy;
 import org.junit.Before;
 import org.junit.Test;
@@ -15,27 +16,29 @@ import static org.junit.Assert.assertFalse;
  * Created by Sven on 25.10.2016.
  */
 @RunWith(HierarchicalContextRunner.class)
-public class RectangleTest {
+public class GraphicRectangleTest {
 
     private GraphicViewSpy graphicViewSpy;
     private Rectangle rectangle;
+    private GraphicRectangle graphicRectangle;
 
     @Before
     public void setUp() throws Exception {
         graphicViewSpy = new GraphicViewSpy();
         rectangle = new Rectangle();
+        graphicRectangle = new GraphicRectangle(rectangle);
     }
 
     @Test
     public void whenAddingGraphicView_shouldNotNotifyGraphicView() {
-        rectangle.addGraphicView(graphicViewSpy);
+        graphicRectangle.addObserver(graphicViewSpy);
         assertFalse(graphicViewSpy.wasNotified());
     }
 
     public class GraphicViewAddedContext {
         @Before
         public void setUp() {
-            rectangle.addGraphicView(graphicViewSpy);
+            graphicRectangle.addObserver(graphicViewSpy);
         }
 
         @Test

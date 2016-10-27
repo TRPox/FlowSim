@@ -3,40 +3,42 @@ package irmb.test.model.geometry;
 import de.bechte.junit.runners.context.HierarchicalContextRunner;
 import irmb.flowsim.model.geometry.Line;
 import irmb.flowsim.model.geometry.Point;
-import irmb.flowsim.presentation.Observer;
+import irmb.flowsim.view.GraphicLine;
 import irmb.test.presentation.GraphicViewSpy;
-import irmb.test.presentation.ObserverSpy;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Created by Sven on 25.10.2016.
  */
 @RunWith(HierarchicalContextRunner.class)
-public class LineTest {
+public class GraphicLineTest {
 
     private Line line;
+    private GraphicLine graphicLine;
     private GraphicViewSpy graphicViewSpy;
 
     @Before
     public void setUp() throws Exception {
         line = new Line();
+        graphicLine = new GraphicLine(line);
         graphicViewSpy = new GraphicViewSpy();
     }
 
     @Test
     public void whenAddingGraphicView_shouldNotNotifyGraphicView() {
-        line.addGraphicView(graphicViewSpy);
+        graphicLine.addObserver(graphicViewSpy);
         assertFalse(graphicViewSpy.wasNotified());
     }
 
     public class GraphicViewAddedContext {
         @Before
         public void setUp() {
-            line.addGraphicView(graphicViewSpy);
+            graphicLine.addObserver(graphicViewSpy);
         }
 
         @Test

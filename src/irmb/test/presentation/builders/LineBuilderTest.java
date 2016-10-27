@@ -2,6 +2,7 @@ package irmb.test.presentation.builders;
 
 import de.bechte.junit.runners.context.HierarchicalContextRunner;
 import irmb.flowsim.model.geometry.Line;
+import irmb.flowsim.view.GraphicLine;
 import irmb.flowsim.model.geometry.Point;
 import irmb.flowsim.presentation.builders.LineBuilder;
 import irmb.flowsim.presentation.factories.ShapeFactory;
@@ -33,7 +34,7 @@ public class LineBuilderTest extends Line {
     public void whenAddingOnePoint_lineStartShouldEqualPoint() {
         builder.addPoint(start);
 
-        Line line = (Line) builder.getShape();
+        GraphicLine line = (GraphicLine) builder.getShape();
         assertEquals(line.getStart(), start);
     }
 
@@ -47,7 +48,7 @@ public class LineBuilderTest extends Line {
 //    public void whenSettingLastPointBeforeAddingPoint_shouldDoNothing() {
 //        builder.setLastPoint(start);
 //
-//        Line line = (Line) builder.getShape();
+//        GraphicLine line = (GraphicLine) builder.getShape();
 //        assertNull(line.getStart());
 //    }
 
@@ -61,7 +62,7 @@ public class LineBuilderTest extends Line {
         public void whenAddingSecondPoint_lineStartShouldEqualFirstLineEndShouldEqualSecond() {
             builder.addPoint(end);
 
-            Line line = (Line) builder.getShape();
+            GraphicLine line = (GraphicLine) builder.getShape();
             assertEquals(line.getStart(), start);
             assertEquals(line.getEnd(), end);
         }
@@ -77,7 +78,7 @@ public class LineBuilderTest extends Line {
 //        public void whenSettingLastPoint_shouldAdjustPoint() {
 //            builder.setLastPoint(end);
 //
-//            Line line = (Line) builder.getShape();
+//            GraphicLine line = (GraphicLine) builder.getShape();
 //            assertEquals(end, line.getStart());
 //        }
 
@@ -95,7 +96,7 @@ public class LineBuilderTest extends Line {
 
                 builder.addPoint(unused);
 
-                Line line = (Line) builder.getShape();
+                GraphicLine line = (GraphicLine) builder.getShape();
                 assertEquals(line.getStart(), start);
                 assertEquals(line.getEnd(), end);
             }
@@ -105,7 +106,7 @@ public class LineBuilderTest extends Line {
 //
 //                builder.setLastPoint(third);
 //
-//                Line line = (Line) builder.getShape();
+//                GraphicLine line = (GraphicLine) builder.getShape();
 //                assertEquals(third, line.getEnd());
 //            }
 //
@@ -116,7 +117,7 @@ public class LineBuilderTest extends Line {
 //                builder.addPoint(third);
 //                builder.setLastPoint(point);
 //
-//                Line line = (Line) builder.getShape();
+//                GraphicLine line = (GraphicLine) builder.getShape();
 //                assertEquals(point, line.getEnd());
 //            }
         }

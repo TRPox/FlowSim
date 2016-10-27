@@ -1,8 +1,8 @@
 package irmb.test.presentation.builders;
 
 import de.bechte.junit.runners.context.HierarchicalContextRunner;
+import irmb.flowsim.view.GraphicPolyLine;
 import irmb.flowsim.model.geometry.Point;
-import irmb.flowsim.model.geometry.PolyLine;
 import irmb.flowsim.presentation.builders.PolyLineBuilder;
 import irmb.flowsim.presentation.builders.ShapeBuilder;
 import irmb.flowsim.presentation.factories.ShapeFactory;
@@ -31,7 +31,7 @@ public class PolyLineBuilderTest {
     public void whenAddingOnePoint_shouldHaveCorrectPoint() {
         builder.addPoint(first);
 
-        PolyLine polyLine = (PolyLine) builder.getShape();
+        GraphicPolyLine polyLine = (GraphicPolyLine) builder.getShape();
         assertEquals(first, polyLine.getPointList().get(0));
     }
 

@@ -1,8 +1,8 @@
 package irmb.test.presentation.builders;
 
 import de.bechte.junit.runners.context.HierarchicalContextRunner;
+import irmb.flowsim.view.GraphicRectangle;
 import irmb.flowsim.model.geometry.Point;
-import irmb.flowsim.model.geometry.Rectangle;
 import irmb.flowsim.presentation.builders.RectangleBuilder;
 import irmb.flowsim.presentation.factories.ShapeFactory;
 import irmb.flowsim.presentation.factories.ShapeFactoryImpl;
@@ -33,7 +33,7 @@ public class RectangleBuilderTest {
     public void whenAddingOnePoint_firstShouldEqualPoint() {
         rectangleBuilder.addPoint(first);
 
-        Rectangle rectangle = (Rectangle) rectangleBuilder.getShape();
+        GraphicRectangle rectangle = (GraphicRectangle) rectangleBuilder.getShape();
         assertEquals(first, rectangle.getFirst());
     }
 
@@ -47,7 +47,7 @@ public class RectangleBuilderTest {
 //    public void whenSettingLastPoint_shouldDoNothing() {
 //        rectangleBuilder.setLastPoint(first);
 //
-//        Rectangle rectangle = (Rectangle) rectangleBuilder.getShape();
+//        GraphicRectangle rectangle = (GraphicRectangle) rectangleBuilder.getShape();
 //        assertNull(rectangle.getFirst());
 //    }
 
@@ -61,7 +61,7 @@ public class RectangleBuilderTest {
         public void whenAddingSecondPoint_rectangleShouldHaveCorrectCoordinates() {
             rectangleBuilder.addPoint(second);
 
-            Rectangle rectangle = (Rectangle) rectangleBuilder.getShape();
+            GraphicRectangle rectangle = (GraphicRectangle) rectangleBuilder.getShape();
             assertEquals(first, rectangle.getFirst());
             assertEquals(second, rectangle.getSecond());
         }
@@ -76,7 +76,7 @@ public class RectangleBuilderTest {
 //        public void whenSettingLastPoint_shouldAdjustFirst() {
 //            rectangleBuilder.setLastPoint(second);
 //
-//            Rectangle rectangle = (Rectangle) rectangleBuilder.getShape();
+//            GraphicRectangle rectangle = (GraphicRectangle) rectangleBuilder.getShape();
 //            assertEquals(second, rectangle.getFirst());
 //        }
 
@@ -95,7 +95,7 @@ public class RectangleBuilderTest {
 
                 rectangleBuilder.addPoint(unused);
 
-                Rectangle rectangle = (Rectangle) rectangleBuilder.getShape();
+                GraphicRectangle rectangle = (GraphicRectangle) rectangleBuilder.getShape();
                 assertEquals(first, rectangle.getFirst());
                 assertEquals(second, rectangle.getSecond());
             }
@@ -104,7 +104,7 @@ public class RectangleBuilderTest {
 //            public void whenSettingLastPoint_shouldAdjustSecond() {
 //                rectangleBuilder.setLastPoint(third);
 //
-//                Rectangle rectangle = (Rectangle) rectangleBuilder.getShape();
+//                GraphicRectangle rectangle = (GraphicRectangle) rectangleBuilder.getShape();
 //                assertEquals(third, rectangle.getSecond());
 //            }
 
@@ -115,7 +115,7 @@ public class RectangleBuilderTest {
 //                rectangleBuilder.addPoint(third);
 //                rectangleBuilder.setLastPoint(point);
 //
-//                Rectangle rectangle = (Rectangle) rectangleBuilder.getShape();
+//                GraphicRectangle rectangle = (GraphicRectangle) rectangleBuilder.getShape();
 //                assertEquals(point, rectangle.getSecond());
 //            }
         }

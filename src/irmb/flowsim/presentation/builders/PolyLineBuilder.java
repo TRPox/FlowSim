@@ -1,8 +1,9 @@
 package irmb.flowsim.presentation.builders;
 
-import irmb.flowsim.model.geometry.Point;
 import irmb.flowsim.model.geometry.PolyLine;
-import irmb.flowsim.model.geometry.Shape;
+import irmb.flowsim.view.GraphicPolyLine;
+import irmb.flowsim.model.geometry.Point;
+import irmb.flowsim.view.GraphicShape;
 import irmb.flowsim.presentation.factories.ShapeFactory;
 
 /**
@@ -10,11 +11,13 @@ import irmb.flowsim.presentation.factories.ShapeFactory;
  */
 public class PolyLineBuilder extends ShapeBuilder {
 
+    private GraphicPolyLine graphicPolyLine;
     private PolyLine polyLine;
 
     public PolyLineBuilder(ShapeFactory shapeFactory) {
         super(shapeFactory);
         polyLine = (PolyLine) shapeFactory.makeShape("PolyLine");
+        graphicPolyLine = new GraphicPolyLine(polyLine);
     }
 
     @Override
@@ -23,7 +26,7 @@ public class PolyLineBuilder extends ShapeBuilder {
     }
 
     @Override
-    public Shape getShape() {
-        return polyLine;
+    public GraphicShape getShape() {
+        return graphicPolyLine;
     }
 }

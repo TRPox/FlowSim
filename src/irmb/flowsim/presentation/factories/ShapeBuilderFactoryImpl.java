@@ -15,11 +15,11 @@ public class ShapeBuilderFactoryImpl implements ShapeBuilderFactory {
     @Override
     public ShapeBuilder makeShapeBuilder(String type) {
         switch (type) {
-            case "Line":
+            case "GraphicLine":
                 return new LineBuilder(factory);
-            case "Rectangle":
+            case "GraphicRectangle":
                 return new RectangleBuilder(factory);
-            case "PolyLine":
+            case "GraphicPolyLine":
                 return new PolyLineBuilder(factory);
             default:
                 return null;
