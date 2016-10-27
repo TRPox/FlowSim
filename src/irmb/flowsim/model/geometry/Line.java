@@ -13,7 +13,7 @@ public class Line extends Shape {
 
     public void setStart(Point start) {
         this.start = start;
-        notifyObserver();
+        notifyObservers();
     }
 
     public Point getEnd() {
@@ -22,6 +22,6 @@ public class Line extends Shape {
 
     public void setEnd(Point end) {
         this.end = end;
-        notifyObserver();
+        notifyObservers();
     }
 }

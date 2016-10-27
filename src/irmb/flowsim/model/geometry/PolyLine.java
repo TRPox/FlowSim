@@ -12,7 +12,7 @@ public class PolyLine extends Shape {
 
     public void addPoint(Point point) {
         pointList.add(point);
-        notifyObserver();
+        notifyObservers();
     }
 
     public List<Point> getPointList() {

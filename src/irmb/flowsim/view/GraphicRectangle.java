@@ -31,6 +31,6 @@ public class GraphicRectangle extends GraphicShape {
 
     @Override
     public void update() {
-        notifyObserver();
+        notifyObservers();
     }
 }

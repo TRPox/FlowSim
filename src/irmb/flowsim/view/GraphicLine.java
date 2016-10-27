@@ -31,6 +31,6 @@ public class GraphicLine extends GraphicShape {
 
     @Override
     public void update() {
-        notifyObserver();
+        notifyObservers();
     }
 }

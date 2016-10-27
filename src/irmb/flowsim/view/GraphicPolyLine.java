@@ -28,6 +28,6 @@ public class GraphicPolyLine extends GraphicShape {
 
     @Override
     public void update() {
-        notifyObserver();
+        notifyObservers();
     }
 }

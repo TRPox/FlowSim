@@ -10,7 +10,7 @@ public class Rectangle extends Shape {
 
     public void setFirst(Point first) {
         this.first = first;
-        notifyObserver();
+        notifyObservers();
     }
 
     public Point getFirst() {
@@ -23,6 +23,6 @@ public class Rectangle extends Shape {
 
     public void setSecond(Point second) {
         this.second = second;
-        notifyObserver();
+        notifyObservers();
     }
 }
