@@ -3,7 +3,7 @@ package irmb.test.presentation.builders;
 import de.bechte.junit.runners.context.HierarchicalContextRunner;
 import irmb.flowsim.view.GraphicRectangle;
 import irmb.flowsim.model.geometry.Point;
-import irmb.flowsim.presentation.builders.RectangleBuilder;
+import irmb.flowsim.presentation.builders.GraphicRectangleBuilder;
 import irmb.flowsim.presentation.factories.ShapeFactory;
 import irmb.flowsim.presentation.factories.ShapeFactoryImpl;
 import org.junit.Before;
@@ -16,15 +16,15 @@ import static org.junit.Assert.*;
  * Created by Sven on 20.10.2016.
  */
 @RunWith(HierarchicalContextRunner.class)
-public class RectangleBuilderTest {
-    private RectangleBuilder rectangleBuilder;
+public class GraphicRectangleBuilderTest {
+    private GraphicRectangleBuilder rectangleBuilder;
     private Point first;
     private Point second;
 
     @Before
     public void setUp() throws Exception {
         ShapeFactory factory = new ShapeFactoryImpl();
-        rectangleBuilder = new RectangleBuilder(factory);
+        rectangleBuilder = new GraphicRectangleBuilder(factory);
         first = new Point(5, 3);
         second = new Point(7, 8);
     }

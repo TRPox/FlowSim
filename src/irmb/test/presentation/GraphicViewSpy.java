@@ -19,12 +19,16 @@ public class GraphicViewSpy implements GraphicView, Observer {
     private Point first;
     private Point second;
 
+    private boolean hasReceivedShape;
     private boolean hasReceivedLine;
     private int timesReceivedLineCalled;
     private boolean hasReceivedRectangle;
     private boolean hasReceivedPolyLine;
     private List<Point> receivedPolyLinePointList;
     private boolean wasNotified;
+
+    private GraphicShape receivedShape;
+
 
     private void receiveLine(GraphicLine line) {
         timesReceivedLineCalled++;
@@ -41,11 +45,13 @@ public class GraphicViewSpy implements GraphicView, Observer {
 
     private void receivePolyLine(GraphicPolyLine polyLine) {
         hasReceivedPolyLine = true;
+        receivedShape = polyLine;
         receivedPolyLinePointList = polyLine.getPointList();
     }
 
     @Override
     public void receiveShape(GraphicShape graphicShape) {
+        hasReceivedShape = true;
         if (graphicShape instanceof GraphicLine)
             receiveLine((GraphicLine) graphicShape);
         else if (graphicShape instanceof GraphicRectangle)
@@ -83,8 +89,12 @@ public class GraphicViewSpy implements GraphicView, Observer {
         return hasReceivedPolyLine;
     }
 
+    public boolean hasReceivedShape() {
+        return hasReceivedShape;
+    }
+
     public List<Point> getReceivedPolyLinePointList() {
-        return receivedPolyLinePointList;
+        return ((GraphicPolyLine) receivedShape).getPointList();
     }
 
     public boolean wasNotified() {

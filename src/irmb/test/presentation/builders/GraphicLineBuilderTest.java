@@ -4,7 +4,7 @@ import de.bechte.junit.runners.context.HierarchicalContextRunner;
 import irmb.flowsim.model.geometry.Line;
 import irmb.flowsim.view.GraphicLine;
 import irmb.flowsim.model.geometry.Point;
-import irmb.flowsim.presentation.builders.LineBuilder;
+import irmb.flowsim.presentation.builders.GraphicLineBuilder;
 import irmb.flowsim.presentation.factories.ShapeFactory;
 import irmb.flowsim.presentation.factories.ShapeFactoryImpl;
 import org.junit.Before;
@@ -17,15 +17,15 @@ import static org.junit.Assert.assertEquals;
  * Created by Sven on 20.10.2016.
  */
 @RunWith(HierarchicalContextRunner.class)
-public class LineBuilderTest extends Line {
-    private LineBuilder builder;
+public class GraphicLineBuilderTest extends Line {
+    private GraphicLineBuilder builder;
     private Point start;
     private Point end;
 
     @Before
     public void setUp() throws Exception {
         ShapeFactory factory = new ShapeFactoryImpl();
-        builder = new LineBuilder(factory);
+        builder = new GraphicLineBuilder(factory);
         start = new Point(5, 3);
         end = new Point(7, 8);
     }

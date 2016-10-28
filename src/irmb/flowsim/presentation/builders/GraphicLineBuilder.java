@@ -9,13 +9,13 @@ import irmb.flowsim.presentation.factories.ShapeFactory;
 /**
  * Created by Sven on 20.10.2016.
  */
-public class LineBuilder extends ShapeBuilder {
+public class GraphicLineBuilder extends GraphicShapeBuilder {
 
     private GraphicLine graphicLine;
     private Line line;
     private int pointsAdded;
 
-    public LineBuilder(ShapeFactory shapeFactory) {
+    public GraphicLineBuilder(ShapeFactory shapeFactory) {
         super(shapeFactory);
         line = (Line) shapeFactory.makeShape("Line");
         graphicLine = new GraphicLine(line);

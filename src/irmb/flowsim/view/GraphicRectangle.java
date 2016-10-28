@@ -29,7 +29,11 @@ public class GraphicRectangle extends GraphicShape {
         Rectangle rectangle = (Rectangle) shape;
         Point first = rectangle.getFirst();
         Point second = rectangle.getSecond();
-        graphics.drawRect(first.getX(), first.getY(), second.getX(), second.getY());
+        int minX = first.getX() < second.getX() ? first.getX() : second.getX();
+        int minY = first.getY() < second.getY() ? first.getY() : second.getY();
+        int width = Math.abs(first.getX() - second.getX());
+        int height = Math.abs(first.getY() - second.getY());
+        graphics.drawRect(minX, minY, width, height);
     }
 
     @Override

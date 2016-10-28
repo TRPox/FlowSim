@@ -9,12 +9,12 @@ import irmb.flowsim.presentation.factories.ShapeFactory;
 /**
  * Created by Sven on 20.10.2016.
  */
-public class PolyLineBuilder extends ShapeBuilder {
+public class GraphicPolyLineBuilder extends GraphicShapeBuilder {
 
     private GraphicPolyLine graphicPolyLine;
     private PolyLine polyLine;
 
-    public PolyLineBuilder(ShapeFactory shapeFactory) {
+    public GraphicPolyLineBuilder(ShapeFactory shapeFactory) {
         super(shapeFactory);
         polyLine = (PolyLine) shapeFactory.makeShape("PolyLine");
         graphicPolyLine = new GraphicPolyLine(polyLine);

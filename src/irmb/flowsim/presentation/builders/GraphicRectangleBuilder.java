@@ -9,13 +9,13 @@ import irmb.flowsim.presentation.factories.ShapeFactory;
 /**
  * Created by Sven on 20.10.2016.
  */
-public class RectangleBuilder extends ShapeBuilder {
+public class GraphicRectangleBuilder extends GraphicShapeBuilder {
 
     private GraphicRectangle graphicRectangle;
     private Rectangle rectangle;
     private int pointsAdded;
 
-    public RectangleBuilder(ShapeFactory shapeFactory) {
+    public GraphicRectangleBuilder(ShapeFactory shapeFactory) {
         super(shapeFactory);
         rectangle = (Rectangle) shapeFactory.makeShape("Rectangle");
         graphicRectangle = new GraphicRectangle(rectangle);

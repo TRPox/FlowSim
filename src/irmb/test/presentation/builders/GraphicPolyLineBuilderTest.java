@@ -3,8 +3,8 @@ package irmb.test.presentation.builders;
 import de.bechte.junit.runners.context.HierarchicalContextRunner;
 import irmb.flowsim.view.GraphicPolyLine;
 import irmb.flowsim.model.geometry.Point;
-import irmb.flowsim.presentation.builders.PolyLineBuilder;
-import irmb.flowsim.presentation.builders.ShapeBuilder;
+import irmb.flowsim.presentation.builders.GraphicPolyLineBuilder;
+import irmb.flowsim.presentation.builders.GraphicShapeBuilder;
 import irmb.flowsim.presentation.factories.ShapeFactory;
 import irmb.flowsim.presentation.factories.ShapeFactoryImpl;
 import org.junit.Before;
@@ -17,14 +17,14 @@ import static org.junit.Assert.assertEquals;
  * Created by Sven on 20.10.2016.
  */
 @RunWith(HierarchicalContextRunner.class)
-public class PolyLineBuilderTest {
-    private ShapeBuilder builder;
+public class GraphicPolyLineBuilderTest {
+    private GraphicShapeBuilder builder;
     private final Point first = new Point(5, 3);
 
     @Before
     public void setUp() {
         ShapeFactory factory = new ShapeFactoryImpl();
-        builder = new PolyLineBuilder(factory);
+        builder = new GraphicPolyLineBuilder(factory);
     }
 
     @Test
@@ -48,7 +48,7 @@ public class PolyLineBuilderTest {
 //        public void whenSettingLastPoint_shouldAdjustFirstPoint() {
 //            builder.setLastPoint(second);
 //
-//            PolyLineBuilderTest polyLine = (PolyLineBuilderTest) builder.getShape();
+//            GraphicPolyLineBuilderTest polyLine = (GraphicPolyLineBuilderTest) builder.getShape();
 //            List<Point> pointList = polyLine.getPointList();
 //            assertEquals(1, pointList.size());
 //            assertEquals(second, pointList.get(0));
@@ -66,7 +66,7 @@ public class PolyLineBuilderTest {
 //
 //                builder.setLastPoint(third);
 //
-//                PolyLineBuilderTest polyLine = (PolyLineBuilderTest) builder.getShape();
+//                GraphicPolyLineBuilderTest polyLine = (GraphicPolyLineBuilderTest) builder.getShape();
 //                List<Point> pointList = polyLine.getPointList();
 //                assertEquals(2, pointList.size());
 //                assertEquals(first, pointList.get(0));

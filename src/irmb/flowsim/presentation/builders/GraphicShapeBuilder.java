@@ -7,11 +7,11 @@ import irmb.flowsim.presentation.factories.ShapeFactory;
 /**
  * Created by Sven on 20.10.2016.
  */
-public abstract class ShapeBuilder {
+public abstract class GraphicShapeBuilder {
 
     protected ShapeFactory shapeFactory;
 
-    public ShapeBuilder(ShapeFactory shapeFactory) {
+    public GraphicShapeBuilder(ShapeFactory shapeFactory) {
         this.shapeFactory = shapeFactory;
     }
 

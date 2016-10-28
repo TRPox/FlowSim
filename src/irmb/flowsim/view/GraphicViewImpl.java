@@ -21,7 +21,8 @@ public class GraphicViewImpl extends JPanel implements GraphicView, Observer {
     public void receiveShape(GraphicShape graphicShape) {
         graphicShapeList.add(graphicShape);
         graphicShape.addObserver(this);
-        paintComponent(getGraphics());
+//        paintComponent(getGraphics());
+        repaint();
     }
 
     public void setPresenter(GraphicViewPresenter presenter) {
@@ -30,7 +31,8 @@ public class GraphicViewImpl extends JPanel implements GraphicView, Observer {
 
     @Override
     public void update() {
-        paintComponent(getGraphics());
+//        paintComponent(getGraphics());
+        repaint();
     }
 
     @Override
