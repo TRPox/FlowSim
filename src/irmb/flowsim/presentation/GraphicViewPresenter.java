@@ -4,6 +4,7 @@ import irmb.flowsim.model.geometry.Point;
 import irmb.flowsim.presentation.builders.GraphicShapeBuilder;
 import irmb.flowsim.presentation.factories.ShapeBuilderFactory;
 import irmb.flowsim.presentation.factories.ShapeBuilderFactoryImpl;
+import irmb.flowsim.view.GraphicLine;
 
 /**
  * Created by Sven on 19.10.2016.
@@ -35,5 +36,10 @@ public class GraphicViewPresenter {
 
     public void handleRightClick(int x, int y) {
         shapeBuilder = null;
+    }
+
+    public void handleMouseMove(int x, int y) {
+        if (timesClicked >= 1)
+            graphicView.receiveShape(shapeBuilder.getShape());
     }
 }

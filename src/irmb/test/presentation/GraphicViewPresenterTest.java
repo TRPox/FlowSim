@@ -92,6 +92,50 @@ public class GraphicViewPresenterTest {
             assertEquals(1, graphicViewSpy.getTimesReceivedLineCalled());
         }
 
+        public class LivePaintingLineContext {
+            @Test
+            public void livePaintingLineAcceptanceTest() {
+                sut.handleLeftClick(first.getX(), first.getY());
+                sut.handleMouseMove(second.getX(), second.getY());
+                assertTrue(graphicViewSpy.hasReceivedLine());
+                assertExpectedPointEqualsActual(first, graphicViewSpy.getFirst());
+                assertExpectedPointEqualsActual(second, graphicViewSpy.getSecond());
+
+                sut.handleMouseMove(third.getX(), third.getY());
+                assertExpectedPointEqualsActual(first, graphicViewSpy.getFirst());
+                assertExpectedPointEqualsActual(third, graphicViewSpy.getSecond());
+            }
+
+            @Test
+            public void whenMovingMouseBeforeLeftClicking_graphicSpyShouldNotReceiveLine() {
+                sut.handleMouseMove(first.getX(), first.getY());
+                assertFalse(graphicViewSpy.hasReceivedLine());
+            }
+
+            public class LeftClickedOnceContext {
+                @Before
+                public void setUp() {
+                    sut.handleLeftClick(first.getX(), first.getY());
+                }
+
+                @Test
+                public void whenMovingMouse_graphicSpyShouldReceiveLine() {
+                    sut.handleMouseMove(second.getX(), second.getY());
+                    assertTrue(graphicViewSpy.hasReceivedLine());
+                }
+
+                @Test
+                public void whenMovingMouse_graphicSpyShouldReceiveLineWithCorrectCoordinates() {
+                    sut.handleMouseMove(second.getX(), second.getY());
+
+                    assertExpectedPointEqualsActual(first, graphicViewSpy.getFirst());
+                    assertExpectedPointEqualsActual(second, graphicViewSpy.getSecond());
+                }
+            }
+
+
+        }
+
     }
 
     public class BuildRectangleContext {
