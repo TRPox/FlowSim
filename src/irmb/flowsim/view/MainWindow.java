@@ -1,5 +1,6 @@
 package irmb.flowsim.view;
 
+import irmb.flowsim.presentation.GraphicView;
 import irmb.flowsim.presentation.GraphicViewPresenter;
 
 import javax.swing.*;
@@ -34,11 +35,11 @@ public class MainWindow extends JFrame {
 
     public void setPresenter(GraphicViewPresenter presenter) {
         this.presenter = presenter;
-        ((GraphicPanel) drawPanel).setPresenter(presenter);
+        ((GraphicViewImpl) drawPanel).setPresenter(presenter);
     }
 
-    public GraphicPanel getGraphicPanel() {
-        return (GraphicPanel) drawPanel;
+    public GraphicView getGraphicPanel() {
+        return (GraphicView) drawPanel;
     }
 
     public void setGraphicPanel(GraphicPanel panel) {
@@ -47,7 +48,7 @@ public class MainWindow extends JFrame {
     }
 
     private void createUIComponents() {
-        drawPanel = new GraphicPanel();
-        ((GraphicPanel) drawPanel).setPresenter(presenter);
+        drawPanel = new TestingGraphicViewImpl();
+        ((GraphicViewImpl) drawPanel).setPresenter(presenter);
     }
 }

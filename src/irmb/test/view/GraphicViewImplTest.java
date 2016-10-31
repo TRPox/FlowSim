@@ -1,9 +1,10 @@
 package irmb.test.view;
 
 import de.bechte.junit.runners.context.HierarchicalContextRunner;
+import irmb.flowsim.model.geometry.Line;
 import irmb.flowsim.model.geometry.Point;
 import irmb.flowsim.view.GraphicViewImpl;
-import irmb.test.model.geometry.LineSpy;
+import irmb.test.model.geometry.GraphicLineSpy;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -21,7 +22,8 @@ public class GraphicViewImplTest {
 
     private JFrame frame;
     private GraphicViewImpl view;
-    private LineSpy first;
+    private GraphicLineSpy first;
+    private Line line;
 
     @Before
     public void setUp() throws Exception {
@@ -29,7 +31,8 @@ public class GraphicViewImplTest {
         view = new GraphicViewImpl();
         frame.add(view);
         frame.setVisible(true);
-        first = new LineSpy();
+        line = new Line();
+        first = new GraphicLineSpy(line);
     }
 
     @Test
@@ -39,7 +42,7 @@ public class GraphicViewImplTest {
 //                    new Runnable() {
 //                        @Override
 //                        public void run() {
-//                            view.receiveShape(first);
+//                            observer.receiveShape(first);
 //                        }
 //                    });
 //        } catch (Exception e) {
@@ -55,17 +58,17 @@ public class GraphicViewImplTest {
         view.receiveShape(first);
         assertTrue(first.wasPainted());
         Point point = new Point(1, 1);
-        first.setStart(point);
+        line.setStart(point);
         assertEquals(2, first.getTimesPainted());
     }
 
     public class OneLineAddedContext {
-        private LineSpy second;
+        private GraphicLineSpy second;
 
         @Before
         public void setUp() {
             view.receiveShape(first);
-            second = new LineSpy();
+            second = new GraphicLineSpy(new Line());
         }
 
         @Test
@@ -84,7 +87,7 @@ public class GraphicViewImplTest {
 
             @Test
             public void whenChangingFirstLine_shouldPaintAllShapes() {
-                first.setStart(new Point(1, 1));
+                line.setStart(new Point(1, 1));
                 assertEquals(3, first.getTimesPainted());
             }
         }

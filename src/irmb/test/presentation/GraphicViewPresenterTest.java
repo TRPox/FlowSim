@@ -23,6 +23,7 @@ public class GraphicViewPresenterTest {
     private GraphicViewSpy graphicViewSpy;
     private final Point first = new Point(1, 2);
     private final Point second = new Point(3, 4);
+    private final Point third = new Point(5, 6);
 
     @Before
     public void setUp() throws Exception {
@@ -91,6 +92,50 @@ public class GraphicViewPresenterTest {
             assertEquals(1, graphicViewSpy.getTimesReceivedLineCalled());
         }
 
+        public class LivePaintingLineContext {
+            @Test
+            public void livePaintingLineAcceptanceTest() {
+                sut.handleLeftClick(first.getX(), first.getY());
+                sut.handleMouseMove(second.getX(), second.getY());
+                assertTrue(graphicViewSpy.hasReceivedLine());
+                assertExpectedPointEqualsActual(first, graphicViewSpy.getFirst());
+                assertExpectedPointEqualsActual(second, graphicViewSpy.getSecond());
+
+                sut.handleMouseMove(third.getX(), third.getY());
+                assertExpectedPointEqualsActual(first, graphicViewSpy.getFirst());
+                assertExpectedPointEqualsActual(third, graphicViewSpy.getSecond());
+            }
+
+            @Test
+            public void whenMovingMouseBeforeLeftClicking_graphicSpyShouldNotReceiveLine() {
+                sut.handleMouseMove(first.getX(), first.getY());
+                assertFalse(graphicViewSpy.hasReceivedLine());
+            }
+
+            public class LeftClickedOnceContext {
+                @Before
+                public void setUp() {
+                    sut.handleLeftClick(first.getX(), first.getY());
+                }
+
+                @Test
+                public void whenMovingMouse_graphicSpyShouldReceiveLine() {
+                    sut.handleMouseMove(second.getX(), second.getY());
+                    assertTrue(graphicViewSpy.hasReceivedLine());
+                }
+
+                @Test
+                public void whenMovingMouse_graphicSpyShouldReceiveLineWithCorrectCoordinates() {
+                    sut.handleMouseMove(second.getX(), second.getY());
+
+                    assertExpectedPointEqualsActual(first, graphicViewSpy.getFirst());
+                    assertExpectedPointEqualsActual(second, graphicViewSpy.getSecond());
+                }
+            }
+
+
+        }
+
     }
 
     public class BuildRectangleContext {
@@ -108,7 +153,6 @@ public class GraphicViewPresenterTest {
 
     public class BuildPolyLineContext {
         private List<Point> pointList;
-        private final Point third = new Point(5, 6);
 
         @Before
         public void setUp() {
@@ -124,6 +168,7 @@ public class GraphicViewPresenterTest {
             assertExpectedPointEqualsActual(second, pointList.get(1));
 
             sut.handleLeftClick(third.getX(), third.getY());
+            pointList = graphicViewSpy.getReceivedPolyLinePointList();
             assertExpectedPointEqualsActual(first, pointList.get(0));
             assertExpectedPointEqualsActual(second, pointList.get(1));
             assertExpectedPointEqualsActual(third, pointList.get(2));
@@ -166,5 +211,64 @@ public class GraphicViewPresenterTest {
         }
     }
 
+    public class CancelPaintingContext {
+
+        public class CancelLineContext {
+
+            @Before
+            public void setUp() {
+                sut.setObjectType("Line");
+                sut.handleLeftClick(first.getX(), first.getY());
+
+            }
+
+            @Test
+            public void whenRightClickingThenLeftClicking_shouldNotTransmitShapeToView() {
+                sut.handleRightClick(first.getX(), first.getY());
+                sut.handleLeftClick(second.getX(), second.getY());
+
+                assertFalse(graphicViewSpy.hasReceivedShape());
+            }
+        }
+
+//        public class CancelPolyLineContext {
+//            @Before
+//            public void setUp() {
+//                sut.setObjectType("PolyLine");
+//                sut.handleLeftClick(first.getX(), first.getY());
+//                sut.handleLeftClick(second.getX(), second.getY());
+//
+//            }
+//
+//            @Test
+//            public void whenRightClickingThenLeftClicking_shouldNotAddPoint() {
+//                sut.handleRightClick(second.getX(), second.getY());
+//                sut.handleLeftClick(third.getX(), third.getY());
+//
+//                List<Point> pointList = graphicViewSpy.getReceivedPolyLinePointList();
+//                assertEquals(2, pointList.size());
+//                assertExpectedPointEqualsActual(first, pointList.get(0));
+//                assertExpectedPointEqualsActual(second, pointList.get(1));
+//            }
+//        }
+
+    }
+
+    public class ChangeObjectTypeContext {
+
+        @Before
+        public void setUp() {
+            sut.setObjectType("Line");
+        }
+
+        @Test
+        public void whenLeftClickingThenChangingObjectTypeThenLeftClicking_shouldNotTransmitShape() {
+            sut.handleLeftClick(first.getX(), first.getY());
+            sut.setObjectType("Rectangle");
+            sut.handleLeftClick(second.getX(), second.getY());
+
+            assertFalse(graphicViewSpy.hasReceivedShape());
+        }
+    }
 
 }

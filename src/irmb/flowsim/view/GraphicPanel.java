@@ -1,9 +1,6 @@
 package irmb.flowsim.view;
 
-import irmb.flowsim.model.geometry.*;
 import irmb.flowsim.model.geometry.Point;
-import irmb.flowsim.model.geometry.Rectangle;
-import irmb.flowsim.model.geometry.Shape;
 import irmb.flowsim.presentation.GraphicView;
 import irmb.flowsim.presentation.GraphicViewPresenter;
 
@@ -78,8 +75,8 @@ public class GraphicPanel extends JPanel implements MouseListener, MouseMotionLi
     }
 
 
-    public void receiveLine(Line line) {
-        objectType = "Line";
+    public void receiveLine(GraphicLine line) {
+        objectType = "GraphicLine";
         drawList.clear();
 //        drawList.add(line.getStart());
 //        drawList.add(line.getEnd());
@@ -87,8 +84,8 @@ public class GraphicPanel extends JPanel implements MouseListener, MouseMotionLi
     }
 
 
-    public void receiveRectangle(Rectangle rectangle) {
-        objectType = "Rectangle";
+    public void receiveRectangle(GraphicRectangle rectangle) {
+        objectType = "GraphicRectangle";
         drawList.clear();
         drawList.add(rectangle.getFirst());
         drawList.add(rectangle.getSecond());
@@ -96,15 +93,15 @@ public class GraphicPanel extends JPanel implements MouseListener, MouseMotionLi
     }
 
 
-    public void receivePolyLine(PolyLine polyLine) {
-        objectType = "PolyLine";
+    public void receivePolyLine(GraphicPolyLine polyLine) {
+        objectType = "GraphicPolyLine";
         drawList.clear();
         drawList.addAll(polyLine.getPointList());
         repaint();
     }
 
     @Override
-    public void receiveShape(Shape shape) {
+    public void receiveShape(GraphicShape graphicShape) {
 
     }
 
@@ -116,7 +113,7 @@ public class GraphicPanel extends JPanel implements MouseListener, MouseMotionLi
     @Override
     public void paintComponent(Graphics graphics) {
         super.paintComponent(graphics);
-        if (objectType.equals("Line")) {
+        if (objectType.equals("GraphicLine")) {
             Point first = drawList.get(0);
             Point second = drawList.get(1);
             graphics.drawLine(first.getX(), first.getY(), second.getX(), second.getY());

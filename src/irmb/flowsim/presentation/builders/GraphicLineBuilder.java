@@ -1,21 +1,24 @@
 package irmb.flowsim.presentation.builders;
 
 import irmb.flowsim.model.geometry.Line;
+import irmb.flowsim.view.GraphicLine;
 import irmb.flowsim.model.geometry.Point;
-import irmb.flowsim.model.geometry.Shape;
+import irmb.flowsim.view.GraphicShape;
 import irmb.flowsim.presentation.factories.ShapeFactory;
 
 /**
  * Created by Sven on 20.10.2016.
  */
-public class LineBuilder extends ShapeBuilder {
+public class GraphicLineBuilder extends GraphicShapeBuilder {
 
+    private GraphicLine graphicLine;
     private Line line;
     private int pointsAdded;
 
-    public LineBuilder(ShapeFactory shapeFactory) {
+    public GraphicLineBuilder(ShapeFactory shapeFactory) {
         super(shapeFactory);
         line = (Line) shapeFactory.makeShape("Line");
+        graphicLine = new GraphicLine(line);
     }
 
     @Override
@@ -28,7 +31,7 @@ public class LineBuilder extends ShapeBuilder {
     }
 
     @Override
-    public Shape getShape() {
-        return line;
+    public GraphicShape getShape() {
+        return graphicLine;
     }
 }

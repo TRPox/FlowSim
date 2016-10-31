@@ -11,7 +11,8 @@ import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertThat;
 
 /**
  * Created by Sven on 20.10.2016.
@@ -27,30 +28,30 @@ public class ShapeFactoryImplTest {
 
     @Test
     public void testMakeLine() {
-        Shape shape = shapeFactory.makeShape("Line");
+        Shape graphicShape = shapeFactory.makeShape("Line");
 
-        assertThat(shape, is(instanceOf(Line.class)));
+        assertThat(graphicShape, is(instanceOf(Line.class)));
     }
 
     @Test
     public void testMakeRectangle() {
-        Shape shape = shapeFactory.makeShape("Rectangle");
+        Shape graphicShape = shapeFactory.makeShape("Rectangle");
 
-        assertThat(shape, is(instanceOf(Rectangle.class)));
+        assertThat(graphicShape, is(instanceOf(Rectangle.class)));
     }
 
     @Test
     public void testMakePolyLine() {
-        Shape shape = shapeFactory.makeShape("PolyLine");
+        Shape graphicShape = shapeFactory.makeShape("PolyLine");
 
-        assertThat(shape, is(instanceOf(PolyLine.class)));
+        assertThat(graphicShape, is(instanceOf(PolyLine.class)));
     }
 
     @Test
     public void givenInvalidString_shouldReturnNull() {
-        Shape shape = shapeFactory.makeShape("Invalid");
+        Shape graphicShape = shapeFactory.makeShape("Invalid");
 
-        assertNull(shape);
+        assertNull(graphicShape);
     }
 
 }
