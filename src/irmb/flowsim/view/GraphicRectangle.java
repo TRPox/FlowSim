@@ -16,13 +16,7 @@ public class GraphicRectangle extends GraphicShape {
         shape.addObserver(this);
     }
 
-    public Point getFirst() {
-        return ((Rectangle) shape).getFirst();
-    }
 
-    public Point getSecond() {
-        return ((Rectangle) shape).getSecond();
-    }
 
     @Override
     public void paint(Graphics graphics) {

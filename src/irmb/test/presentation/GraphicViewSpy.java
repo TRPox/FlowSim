@@ -6,6 +6,9 @@ import irmb.flowsim.view.GraphicLine;
 import irmb.flowsim.view.GraphicPolyLine;
 import irmb.flowsim.view.GraphicRectangle;
 import irmb.flowsim.view.GraphicShape;
+import irmb.test.model.geometry.GraphicLineSpy;
+import irmb.test.model.geometry.GraphicPolyLineSpy;
+import irmb.test.model.geometry.GraphicRectangleSpy;
 import irmb.util.Observer;
 
 import java.util.List;
@@ -24,29 +27,25 @@ public class GraphicViewSpy implements GraphicView, Observer {
     private int timesReceivedLineCalled;
     private boolean hasReceivedRectangle;
     private boolean hasReceivedPolyLine;
-    private List<Point> receivedPolyLinePointList;
     private boolean wasNotified;
 
-    private GraphicShape receivedShape;
+    protected GraphicShape receivedShape;
 
 
     private void receiveLine(GraphicLine line) {
         timesReceivedLineCalled++;
         hasReceivedLine = true;
-        this.first = line.getStart();
-        this.second = line.getEnd();
+        receivedShape = line;
     }
 
     private void receiveRectangle(GraphicRectangle rectangle) {
         hasReceivedRectangle = true;
-        this.first = rectangle.getFirst();
-        this.second = rectangle.getSecond();
+        receivedShape = rectangle;
     }
 
     private void receivePolyLine(GraphicPolyLine polyLine) {
         hasReceivedPolyLine = true;
         receivedShape = polyLine;
-        receivedPolyLinePointList = polyLine.getPointList();
     }
 
     @Override
@@ -63,14 +62,6 @@ public class GraphicViewSpy implements GraphicView, Observer {
     @Override
     public void update() {
         wasNotified = true;
-    }
-
-    public Point getFirst() {
-        return first;
-    }
-
-    public Point getSecond() {
-        return second;
     }
 
     public boolean hasReceivedLine() {
@@ -91,10 +82,6 @@ public class GraphicViewSpy implements GraphicView, Observer {
 
     public boolean hasReceivedShape() {
         return hasReceivedShape;
-    }
-
-    public List<Point> getReceivedPolyLinePointList() {
-        return ((GraphicPolyLine) receivedShape).getPointList();
     }
 
     public boolean wasNotified() {

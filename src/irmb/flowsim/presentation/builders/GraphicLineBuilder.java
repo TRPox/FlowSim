@@ -4,7 +4,7 @@ import irmb.flowsim.model.geometry.Line;
 import irmb.flowsim.view.GraphicLine;
 import irmb.flowsim.model.geometry.Point;
 import irmb.flowsim.view.GraphicShape;
-import irmb.flowsim.presentation.factories.ShapeFactory;
+import irmb.flowsim.presentation.factories.GraphicShapeFactory;
 
 /**
  * Created by Sven on 20.10.2016.
@@ -15,10 +15,10 @@ public class GraphicLineBuilder extends GraphicShapeBuilder {
     private Line line;
     private int pointsAdded;
 
-    public GraphicLineBuilder(ShapeFactory shapeFactory) {
+    public GraphicLineBuilder(GraphicShapeFactory shapeFactory) {
         super(shapeFactory);
-        line = (Line) shapeFactory.makeShape("Line");
-        graphicLine = new GraphicLine(line);
+        line = new Line();
+        graphicLine = (GraphicLine) shapeFactory.makeShape(line);
     }
 
     @Override
@@ -33,5 +33,13 @@ public class GraphicLineBuilder extends GraphicShapeBuilder {
     @Override
     public GraphicShape getShape() {
         return graphicLine;
+    }
+
+    @Override
+    public void setLastPoint(Point point) {
+        if (pointsAdded == 1)
+            line.setStart(point);
+        else if (pointsAdded >= 2)
+            line.setEnd(point);
     }
 }

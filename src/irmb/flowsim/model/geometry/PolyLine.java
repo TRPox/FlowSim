@@ -19,4 +19,8 @@ public class PolyLine extends Shape {
     public List<Point> getPointList() {
         return new ArrayList<>(pointList);
     }
+
+    public void setLastPoint(Point point) {
+        pointList.set(pointList.size() - 1, point);
+    }
 }

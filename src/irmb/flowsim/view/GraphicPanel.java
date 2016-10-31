@@ -87,8 +87,8 @@ public class GraphicPanel extends JPanel implements MouseListener, MouseMotionLi
     public void receiveRectangle(GraphicRectangle rectangle) {
         objectType = "GraphicRectangle";
         drawList.clear();
-        drawList.add(rectangle.getFirst());
-        drawList.add(rectangle.getSecond());
+//        drawList.add(rectangle.getFirst());
+//        drawList.add(rectangle.getSecond());
         repaint();
     }
 
@@ -96,7 +96,7 @@ public class GraphicPanel extends JPanel implements MouseListener, MouseMotionLi
     public void receivePolyLine(GraphicPolyLine polyLine) {
         objectType = "GraphicPolyLine";
         drawList.clear();
-        drawList.addAll(polyLine.getPointList());
+//        drawList.addAll(polyLine.getPointList());
         repaint();
     }
 

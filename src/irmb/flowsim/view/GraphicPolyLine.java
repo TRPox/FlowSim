@@ -17,9 +17,7 @@ public class GraphicPolyLine extends GraphicShape {
         shape.addObserver(this);
     }
 
-    public List<Point> getPointList() {
-        return ((PolyLine) shape).getPointList();
-    }
+
 
     @Override
     public void paint(Graphics graphics) {

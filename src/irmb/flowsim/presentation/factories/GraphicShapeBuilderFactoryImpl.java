@@ -8,9 +8,11 @@ import irmb.flowsim.presentation.builders.GraphicShapeBuilder;
 /**
  * Created by Sven on 20.10.2016.
  */
-public class ShapeBuilderFactoryImpl implements ShapeBuilderFactory {
+public class GraphicShapeBuilderFactoryImpl extends GraphicShapeBuilderFactory {
 
-    private ShapeFactory factory = new ShapeFactoryImpl();
+    public GraphicShapeBuilderFactoryImpl(GraphicShapeFactory factory) {
+        super(factory);
+    }
 
     @Override
     public GraphicShapeBuilder makeShapeBuilder(String type) {

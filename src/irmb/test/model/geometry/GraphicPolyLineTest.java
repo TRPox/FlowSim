@@ -18,13 +18,13 @@ import static org.junit.Assert.*;
 public class GraphicPolyLineTest {
 
     private PolyLine polyLine;
-    private GraphicPolyLine graphicPolyLine;
+    private GraphicPolyLineSpy graphicPolyLine;
     private GraphicViewSpy graphicViewSpy;
 
     @Before
     public void setUp() throws Exception {
         polyLine = new PolyLine();
-        graphicPolyLine = new GraphicPolyLine(polyLine);
+        graphicPolyLine = new GraphicPolyLineSpy(polyLine);
         graphicViewSpy = new GraphicViewSpy();
     }
 

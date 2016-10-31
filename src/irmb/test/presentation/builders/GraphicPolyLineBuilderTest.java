@@ -5,11 +5,15 @@ import irmb.flowsim.view.GraphicPolyLine;
 import irmb.flowsim.model.geometry.Point;
 import irmb.flowsim.presentation.builders.GraphicPolyLineBuilder;
 import irmb.flowsim.presentation.builders.GraphicShapeBuilder;
-import irmb.flowsim.presentation.factories.ShapeFactory;
-import irmb.flowsim.presentation.factories.ShapeFactoryImpl;
+import irmb.flowsim.presentation.factories.GraphicShapeFactory;
+import irmb.flowsim.presentation.factories.GraphicShapeFactoryImpl;
+import irmb.test.model.geometry.GraphicPolyLineSpy;
+import irmb.test.presentation.factories.GraphicShapeFactoryStub;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
+import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
@@ -23,7 +27,7 @@ public class GraphicPolyLineBuilderTest {
 
     @Before
     public void setUp() {
-        ShapeFactory factory = new ShapeFactoryImpl();
+        GraphicShapeFactory factory = new GraphicShapeFactoryStub();
         builder = new GraphicPolyLineBuilder(factory);
     }
 
@@ -31,48 +35,48 @@ public class GraphicPolyLineBuilderTest {
     public void whenAddingOnePoint_shouldHaveCorrectPoint() {
         builder.addPoint(first);
 
-        GraphicPolyLine polyLine = (GraphicPolyLine) builder.getShape();
+        GraphicPolyLineSpy polyLine = (GraphicPolyLineSpy) builder.getShape();
         assertEquals(first, polyLine.getPointList().get(0));
     }
 
-//    public class OnePointAddedContext {
-//
-//        private final Point second = new Point(10, 5);
+    public class OnePointAddedContext {
 
-//        @Before
-//        public void setUp() {
-//            builder.addPoint(first);
-//        }
+        private final Point second = new Point(10, 5);
 
-//        @Test
-//        public void whenSettingLastPoint_shouldAdjustFirstPoint() {
-//            builder.setLastPoint(second);
-//
-//            GraphicPolyLineBuilderTest polyLine = (GraphicPolyLineBuilderTest) builder.getShape();
-//            List<Point> pointList = polyLine.getPointList();
-//            assertEquals(1, pointList.size());
-//            assertEquals(second, pointList.get(0));
-//        }
+        @Before
+        public void setUp() {
+            builder.addPoint(first);
+        }
 
-//        public class TwoPointsAddedContext {
-//            @Before
-//            public void setUp() {
-//                builder.addPoint(second);
-//            }
-//
-//            @Test
-//            public void whenSettingLastPoint_shouldAdjustSecond() {
-//                Point third = new Point(10, 11);
-//
-//                builder.setLastPoint(third);
-//
-//                GraphicPolyLineBuilderTest polyLine = (GraphicPolyLineBuilderTest) builder.getShape();
-//                List<Point> pointList = polyLine.getPointList();
-//                assertEquals(2, pointList.size());
-//                assertEquals(first, pointList.get(0));
-//                assertEquals(third, pointList.get(1));
-//            }
-//        }
-//    }
+        @Test
+        public void whenSettingLastPoint_shouldAdjustFirstPoint() {
+            builder.setLastPoint(second);
+
+            GraphicPolyLineSpy polyLine = (GraphicPolyLineSpy) builder.getShape();
+            List<Point> pointList = polyLine.getPointList();
+            assertEquals(1, pointList.size());
+            assertEquals(second, pointList.get(0));
+        }
+
+        public class TwoPointsAddedContext {
+            @Before
+            public void setUp() {
+                builder.addPoint(second);
+            }
+
+            @Test
+            public void whenSettingLastPoint_shouldAdjustSecond() {
+                Point third = new Point(10, 11);
+
+                builder.setLastPoint(third);
+
+                GraphicPolyLineSpy polyLine = (GraphicPolyLineSpy) builder.getShape();
+                List<Point> pointList = polyLine.getPointList();
+                assertEquals(2, pointList.size());
+                assertEquals(first, pointList.get(0));
+                assertEquals(third, pointList.get(1));
+            }
+        }
+    }
 
 }

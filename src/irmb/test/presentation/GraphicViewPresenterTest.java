@@ -3,6 +3,9 @@ package irmb.test.presentation;
 import de.bechte.junit.runners.context.HierarchicalContextRunner;
 import irmb.flowsim.model.geometry.Point;
 import irmb.flowsim.presentation.GraphicViewPresenter;
+import irmb.flowsim.presentation.factories.GraphicShapeBuilderFactory;
+import irmb.flowsim.presentation.factories.GraphicShapeBuilderFactoryImpl;
+import irmb.test.presentation.factories.GraphicShapeFactoryStub;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -20,15 +23,17 @@ import static org.junit.Assert.assertFalse;
 public class GraphicViewPresenterTest {
 
     private GraphicViewPresenter sut;
-    private GraphicViewSpy graphicViewSpy;
     private final Point first = new Point(1, 2);
     private final Point second = new Point(3, 4);
     private final Point third = new Point(5, 6);
+    private GraphicViewSpy graphicViewSpy;
 
     @Before
     public void setUp() throws Exception {
+        GraphicShapeFactoryStub graphicShapeFactoryStub = new GraphicShapeFactoryStub();
+        GraphicShapeBuilderFactory graphicShapeBuilderFactory = new GraphicShapeBuilderFactoryImpl(graphicShapeFactoryStub);
+        sut = new GraphicViewPresenter(graphicShapeBuilderFactory);
         graphicViewSpy = new GraphicViewSpy();
-        sut = new GraphicViewPresenter();
         sut.setGraphicView(graphicViewSpy);
     }
 
@@ -52,8 +57,13 @@ public class GraphicViewPresenterTest {
     }
 
     public class BuildLineContext {
+
+        private GraphicViewSpyForLine graphicViewSpy;
+
         @Before
         public void setUp() {
+            graphicViewSpy = new GraphicViewSpyForLine();
+            sut.setGraphicView(graphicViewSpy);
             sut.setObjectType("Line");
         }
 
@@ -68,7 +78,7 @@ public class GraphicViewPresenterTest {
         @Test
         public void whenLeftClickingOnce_spyShouldNotReceiveLine() {
             sut.handleLeftClick(0, 0);
-            assertFalse(graphicViewSpy.hasReceivedLine());
+            assertFalse(GraphicViewPresenterTest.this.graphicViewSpy.hasReceivedLine());
         }
 
         @Test
@@ -131,6 +141,15 @@ public class GraphicViewPresenterTest {
                     assertExpectedPointEqualsActual(first, graphicViewSpy.getFirst());
                     assertExpectedPointEqualsActual(second, graphicViewSpy.getSecond());
                 }
+
+                @Test
+                public void whenMovingMouseTwice_shouldAdjustLastPoint() {
+                    sut.handleMouseMove(second.getX(), second.getY());
+                    sut.handleMouseMove(third.getX(), third.getY());
+
+                    assertExpectedPointEqualsActual(first, graphicViewSpy.getFirst());
+                    assertExpectedPointEqualsActual(third, graphicViewSpy.getSecond());
+                }
             }
 
 
@@ -139,10 +158,18 @@ public class GraphicViewPresenterTest {
     }
 
     public class BuildRectangleContext {
+
+        private GraphicViewSpyForRectangle graphicViewSpy;
+
+        @Before
+        public void setUp() {
+            graphicViewSpy = new GraphicViewSpyForRectangle();
+            sut.setGraphicView(graphicViewSpy);
+            sut.setObjectType("Rectangle");
+        }
+
         @Test
         public void buildRectangleAcceptanceTest() {
-            sut.setObjectType("Rectangle");
-
             transmitTwoPointsToPresenter(first, second);
 
             assertExpectedPointEqualsActual(first, graphicViewSpy.getFirst());
@@ -153,9 +180,12 @@ public class GraphicViewPresenterTest {
 
     public class BuildPolyLineContext {
         private List<Point> pointList;
+        private GraphicViewSpyForPolyLine graphicViewSpy;
 
         @Before
         public void setUp() {
+            graphicViewSpy = new GraphicViewSpyForPolyLine();
+            sut.setGraphicView(graphicViewSpy);
             sut.setObjectType("PolyLine");
         }
 
@@ -213,10 +243,14 @@ public class GraphicViewPresenterTest {
 
     public class CancelPaintingContext {
 
+        private GraphicViewSpy graphicViewSpy;
+
         public class CancelLineContext {
 
             @Before
             public void setUp() {
+                graphicViewSpy = new GraphicViewSpy();
+                sut.setGraphicView(graphicViewSpy);
                 sut.setObjectType("Line");
                 sut.handleLeftClick(first.getX(), first.getY());
 

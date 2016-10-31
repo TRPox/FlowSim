@@ -16,13 +16,7 @@ public class GraphicLine extends GraphicShape {
         shape.addObserver(this);
     }
 
-    public Point getStart() {
-        return ((Line) shape).getStart();
-    }
 
-    public Point getEnd() {
-        return ((Line) shape).getEnd();
-    }
 
     @Override
     public void paint(Graphics graphics) {

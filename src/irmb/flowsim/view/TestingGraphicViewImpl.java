@@ -2,15 +2,17 @@ package irmb.flowsim.view;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 
 /**
  * Created by Sven on 27.10.2016.
  */
-public class TestingGraphicViewImpl extends GraphicViewImpl implements MouseListener {
+public class TestingGraphicViewImpl extends GraphicViewImpl implements MouseListener, MouseMotionListener {
 
     public TestingGraphicViewImpl() {
         setDoubleBuffered(true);
         addMouseListener(this);
+        addMouseMotionListener(this);
     }
 
     @Override
@@ -36,5 +38,15 @@ public class TestingGraphicViewImpl extends GraphicViewImpl implements MouseList
     @Override
     public void mouseExited(MouseEvent e) {
 
+    }
+
+    @Override
+    public void mouseDragged(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseMoved(MouseEvent e) {
+        presenter.handleMouseMove(e.getX(), e.getY());
     }
 }

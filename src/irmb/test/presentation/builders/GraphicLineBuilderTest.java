@@ -2,16 +2,18 @@ package irmb.test.presentation.builders;
 
 import de.bechte.junit.runners.context.HierarchicalContextRunner;
 import irmb.flowsim.model.geometry.Line;
-import irmb.flowsim.view.GraphicLine;
 import irmb.flowsim.model.geometry.Point;
 import irmb.flowsim.presentation.builders.GraphicLineBuilder;
-import irmb.flowsim.presentation.factories.ShapeFactory;
-import irmb.flowsim.presentation.factories.ShapeFactoryImpl;
+import irmb.flowsim.presentation.factories.GraphicShapeFactory;
+import irmb.flowsim.view.GraphicLine;
+import irmb.test.model.geometry.GraphicLineSpy;
+import irmb.test.presentation.factories.GraphicShapeFactoryStub;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 /**
  * Created by Sven on 20.10.2016.
@@ -24,7 +26,7 @@ public class GraphicLineBuilderTest extends Line {
 
     @Before
     public void setUp() throws Exception {
-        ShapeFactory factory = new ShapeFactoryImpl();
+        GraphicShapeFactory factory = new GraphicShapeFactoryStub();
         builder = new GraphicLineBuilder(factory);
         start = new Point(5, 3);
         end = new Point(7, 8);
@@ -34,7 +36,7 @@ public class GraphicLineBuilderTest extends Line {
     public void whenAddingOnePoint_lineStartShouldEqualPoint() {
         builder.addPoint(start);
 
-        GraphicLine line = (GraphicLine) builder.getShape();
+        GraphicLineSpy line = (GraphicLineSpy) builder.getShape();
         assertEquals(line.getStart(), start);
     }
 
@@ -44,13 +46,14 @@ public class GraphicLineBuilderTest extends Line {
 //        assertFalse(builder.isObjectFinished());
 //    }
 
-//    @Test
-//    public void whenSettingLastPointBeforeAddingPoint_shouldDoNothing() {
-//        builder.setLastPoint(start);
-//
-//        GraphicLine line = (GraphicLine) builder.getShape();
-//        assertNull(line.getStart());
-//    }
+    @Test
+    public void whenSettingLastPoint_shouldDoNothing() {
+        builder.setLastPoint(start);
+
+        GraphicLineSpy line = (GraphicLineSpy) builder.getShape();
+        assertNull(line.getStart());
+        assertNull(line.getEnd());
+    }
 
     public class OnePointAddedContext {
         @Before
@@ -62,7 +65,7 @@ public class GraphicLineBuilderTest extends Line {
         public void whenAddingSecondPoint_lineStartShouldEqualFirstLineEndShouldEqualSecond() {
             builder.addPoint(end);
 
-            GraphicLine line = (GraphicLine) builder.getShape();
+            GraphicLineSpy line = (GraphicLineSpy) builder.getShape();
             assertEquals(line.getStart(), start);
             assertEquals(line.getEnd(), end);
         }
@@ -74,13 +77,13 @@ public class GraphicLineBuilderTest extends Line {
 //            assertTrue(builder.isObjectFinished());
 //        }
 
-//        @Test
-//        public void whenSettingLastPoint_shouldAdjustPoint() {
-//            builder.setLastPoint(end);
-//
-//            GraphicLine line = (GraphicLine) builder.getShape();
-//            assertEquals(end, line.getStart());
-//        }
+        @Test
+        public void whenSettingLastPoint_shouldAdjustPoint() {
+            builder.setLastPoint(end);
+
+            GraphicLineSpy line = (GraphicLineSpy) builder.getShape();
+            assertEquals(end, line.getStart());
+        }
 
         public class TwoPointsAddedContext {
             private final Point third = new Point(2, 8);
@@ -96,30 +99,30 @@ public class GraphicLineBuilderTest extends Line {
 
                 builder.addPoint(unused);
 
-                GraphicLine line = (GraphicLine) builder.getShape();
+                GraphicLineSpy line = (GraphicLineSpy) builder.getShape();
                 assertEquals(line.getStart(), start);
                 assertEquals(line.getEnd(), end);
             }
 
-//            @Test
-//            public void whenSettingLastPoint_shouldAdjustSecondPoint() {
-//
-//                builder.setLastPoint(third);
-//
-//                GraphicLine line = (GraphicLine) builder.getShape();
-//                assertEquals(third, line.getEnd());
-//            }
-//
-//            @Test
-//            public void whenSettingLastPointAfterAddingPoint_shouldAdjustSecondPoint() {
-//                Point point = new Point(10, 11);
-//
-//                builder.addPoint(third);
-//                builder.setLastPoint(point);
-//
-//                GraphicLine line = (GraphicLine) builder.getShape();
-//                assertEquals(point, line.getEnd());
-//            }
+            @Test
+            public void whenSettingLastPoint_shouldAdjustSecondPoint() {
+                builder.setLastPoint(third);
+
+                GraphicLineSpy line = (GraphicLineSpy) builder.getShape();
+                assertEquals(start, line.getStart());
+                assertEquals(third, line.getEnd());
+            }
+
+            @Test
+            public void whenSettingLastPointAfterAddingPoint_shouldAdjustSecondPoint() {
+                Point point = new Point(10, 11);
+
+                builder.addPoint(third);
+                builder.setLastPoint(point);
+
+                GraphicLineSpy line = (GraphicLineSpy) builder.getShape();
+                assertEquals(point, line.getEnd());
+            }
         }
     }
 }

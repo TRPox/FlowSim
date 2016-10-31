@@ -1,6 +1,8 @@
 package irmb;
 
 import irmb.flowsim.presentation.GraphicViewPresenter;
+import irmb.flowsim.presentation.factories.GraphicShapeBuilderFactoryImpl;
+import irmb.flowsim.presentation.factories.GraphicShapeFactoryImpl;
 import irmb.flowsim.view.MainWindow;
 
 /**
@@ -11,7 +13,7 @@ public class Main {
         MainWindow view = new MainWindow();
         view.setSize(800, 600);
         view.setVisible(true);
-        GraphicViewPresenter presenter = new GraphicViewPresenter();
+        GraphicViewPresenter presenter = new GraphicViewPresenter(new GraphicShapeBuilderFactoryImpl(new GraphicShapeFactoryImpl()));
         view.setPresenter(presenter);
         presenter.setGraphicView(view.getGraphicPanel());
     }
