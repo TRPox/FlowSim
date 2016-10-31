@@ -1,13 +1,11 @@
 package irmb.test.presentation.builders;
 
 import de.bechte.junit.runners.context.HierarchicalContextRunner;
-import irmb.flowsim.view.GraphicPolyLine;
 import irmb.flowsim.model.geometry.Point;
 import irmb.flowsim.presentation.builders.GraphicPolyLineBuilder;
 import irmb.flowsim.presentation.builders.GraphicShapeBuilder;
 import irmb.flowsim.presentation.factories.GraphicShapeFactory;
-import irmb.flowsim.presentation.factories.GraphicShapeFactoryImpl;
-import irmb.test.model.geometry.GraphicPolyLineSpy;
+import irmb.test.view.GraphicPolyLineSpy;
 import irmb.test.presentation.factories.GraphicShapeFactoryStub;
 import org.junit.Before;
 import org.junit.Test;

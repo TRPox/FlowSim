@@ -42,4 +42,9 @@ public class GraphicLineBuilder extends GraphicShapeBuilder {
         else if (pointsAdded >= 2)
             line.setEnd(point);
     }
+
+    @Override
+    public boolean isObjectFinished() {
+        return pointsAdded > 1;
+    }
 }

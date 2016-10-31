@@ -42,4 +42,9 @@ public class GraphicRectangleBuilder extends GraphicShapeBuilder {
         else if (pointsAdded >= 2)
             rectangle.setSecond(point);
     }
+
+    @Override
+    public boolean isObjectFinished() {
+        return false;
+    }
 }

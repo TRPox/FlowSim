@@ -1,9 +1,8 @@
-package irmb.test.model.geometry;
+package irmb.test.view;
 
 import de.bechte.junit.runners.context.HierarchicalContextRunner;
 import irmb.flowsim.model.geometry.Point;
 import irmb.flowsim.model.geometry.PolyLine;
-import irmb.flowsim.view.GraphicPolyLine;
 import irmb.test.presentation.GraphicViewSpy;
 import org.junit.Before;
 import org.junit.Test;

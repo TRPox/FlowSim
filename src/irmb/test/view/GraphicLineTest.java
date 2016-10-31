@@ -1,4 +1,4 @@
-package irmb.test.model.geometry;
+package irmb.test.view;
 
 import de.bechte.junit.runners.context.HierarchicalContextRunner;
 import irmb.flowsim.model.geometry.Line;

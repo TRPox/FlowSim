@@ -34,4 +34,9 @@ public class GraphicPolyLineBuilder extends GraphicShapeBuilder {
     public void setLastPoint(Point point) {
         polyLine.setLastPoint(point);
     }
+
+    @Override
+    public boolean isObjectFinished() {
+        return false;
+    }
 }

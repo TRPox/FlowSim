@@ -4,7 +4,6 @@ import de.bechte.junit.runners.context.HierarchicalContextRunner;
 import irmb.flowsim.model.geometry.Line;
 import irmb.flowsim.model.geometry.Point;
 import irmb.flowsim.view.GraphicViewImpl;
-import irmb.test.model.geometry.GraphicLineSpy;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

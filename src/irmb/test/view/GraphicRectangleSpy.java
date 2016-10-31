@@ -1,4 +1,4 @@
-package irmb.test.model.geometry;
+package irmb.test.view;
 
 import irmb.flowsim.model.geometry.Point;
 import irmb.flowsim.model.geometry.Rectangle;

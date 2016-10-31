@@ -150,9 +150,23 @@ public class GraphicViewPresenterTest {
                     assertExpectedPointEqualsActual(first, graphicViewSpy.getFirst());
                     assertExpectedPointEqualsActual(third, graphicViewSpy.getSecond());
                 }
+
+                public class MovedMouseOnceContext {
+                    @Before
+                    public void setUp() {
+                        sut.handleMouseMove(second.getX(), second.getY());
+                    }
+
+                    @Test
+                    public void whenMovingMouseAfterLeftClick_shouldNotAdjustLastPoint() {
+                        sut.handleLeftClick(second.getX(), second.getY());
+                        sut.handleMouseMove(third.getX(), third.getY());
+
+                        assertExpectedPointEqualsActual(first, graphicViewSpy.getFirst());
+                        assertExpectedPointEqualsActual(second, graphicViewSpy.getSecond());
+                    }
+                }
             }
-
-
         }
 
     }

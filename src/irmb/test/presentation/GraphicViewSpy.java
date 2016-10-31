@@ -6,12 +6,7 @@ import irmb.flowsim.view.GraphicLine;
 import irmb.flowsim.view.GraphicPolyLine;
 import irmb.flowsim.view.GraphicRectangle;
 import irmb.flowsim.view.GraphicShape;
-import irmb.test.model.geometry.GraphicLineSpy;
-import irmb.test.model.geometry.GraphicPolyLineSpy;
-import irmb.test.model.geometry.GraphicRectangleSpy;
 import irmb.util.Observer;
-
-import java.util.List;
 
 /**
  * Created by Sven on 19.10.2016.

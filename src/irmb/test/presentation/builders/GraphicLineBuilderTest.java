@@ -5,14 +5,15 @@ import irmb.flowsim.model.geometry.Line;
 import irmb.flowsim.model.geometry.Point;
 import irmb.flowsim.presentation.builders.GraphicLineBuilder;
 import irmb.flowsim.presentation.factories.GraphicShapeFactory;
-import irmb.flowsim.view.GraphicLine;
-import irmb.test.model.geometry.GraphicLineSpy;
 import irmb.test.presentation.factories.GraphicShapeFactoryStub;
+import irmb.test.view.GraphicLineSpy;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
 
 /**
@@ -33,6 +34,11 @@ public class GraphicLineBuilderTest extends Line {
     }
 
     @Test
+    public void whenAddingNoPoints_isObjectFinishedShouldBeFalse() {
+        assertFalse(builder.isObjectFinished());
+    }
+
+    @Test
     public void whenAddingOnePoint_lineStartShouldEqualPoint() {
         builder.addPoint(start);
 
@@ -40,11 +46,11 @@ public class GraphicLineBuilderTest extends Line {
         assertEquals(line.getStart(), start);
     }
 
-//    @Test
-//    public void whenAddingOnePoint_isObjectFinishedShouldBeFalse() {
-//        builder.addPoint(start);
-//        assertFalse(builder.isObjectFinished());
-//    }
+    @Test
+    public void whenAddingOnePoint_isObjectFinishedShouldBeFalse() {
+        builder.addPoint(start);
+        assertFalse(builder.isObjectFinished());
+    }
 
     @Test
     public void whenSettingLastPoint_shouldDoNothing() {
@@ -71,11 +77,11 @@ public class GraphicLineBuilderTest extends Line {
         }
 
 
-//        @Test
-//        public void whenAddingSecondPoint_isObjectFinishedShouldBeTrue() {
-//            builder.addPoint(end);
-//            assertTrue(builder.isObjectFinished());
-//        }
+        @Test
+        public void whenAddingSecondPoint_isObjectFinishedShouldBeTrue() {
+            builder.addPoint(end);
+            assertTrue(builder.isObjectFinished());
+        }
 
         @Test
         public void whenSettingLastPoint_shouldAdjustPoint() {

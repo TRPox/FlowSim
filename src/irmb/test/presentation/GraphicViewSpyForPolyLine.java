@@ -1,8 +1,7 @@
 package irmb.test.presentation;
 
 import irmb.flowsim.model.geometry.Point;
-import irmb.flowsim.view.GraphicPolyLine;
-import irmb.test.model.geometry.GraphicPolyLineSpy;
+import irmb.test.view.GraphicPolyLineSpy;
 
 import java.util.List;
 

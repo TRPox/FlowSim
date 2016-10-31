@@ -10,6 +10,7 @@ import irmb.flowsim.presentation.factories.GraphicShapeFactory;
 public abstract class GraphicShapeBuilder {
 
     protected GraphicShapeFactory shapeFactory;
+    protected boolean objectFinished;
 
     public GraphicShapeBuilder(GraphicShapeFactory shapeFactory) {
         this.shapeFactory = shapeFactory;
@@ -20,4 +21,6 @@ public abstract class GraphicShapeBuilder {
     public abstract GraphicShape getShape();
 
     public abstract void setLastPoint(Point point);
+
+    public abstract boolean isObjectFinished();
 }

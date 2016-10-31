@@ -22,9 +22,10 @@ public class GraphicViewPresenter {
         timesClicked++;
         if (shapeBuilder != null) {
             shapeBuilder.addPoint(makePoint(x, y));
-            if (timesClicked == 2) {
+            if (timesClicked == 2)
                 graphicView.receiveShape(shapeBuilder.getShape());
-            }
+            if (shapeBuilder.isObjectFinished())
+                shapeBuilder = null;
         }
     }
 
@@ -46,12 +47,13 @@ public class GraphicViewPresenter {
     }
 
     public void handleMouseMove(int x, int y) {
-        if (timesClicked == 1) {
-            shapeBuilder.addPoint(makePoint(x, y));
-            graphicView.receiveShape(shapeBuilder.getShape());
-            timesClicked++;
-        } else if (timesClicked > 1) {
-            shapeBuilder.setLastPoint(makePoint(x, y));
-        }
+        if (shapeBuilder != null)
+            if (timesClicked == 1) {
+                shapeBuilder.addPoint(makePoint(x, y));
+                graphicView.receiveShape(shapeBuilder.getShape());
+                timesClicked++;
+            } else if (timesClicked > 1) {
+                shapeBuilder.setLastPoint(makePoint(x, y));
+            }
     }
 }
