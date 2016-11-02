@@ -24,6 +24,8 @@ public class GraphicViewSpy implements GraphicView, Observer {
     private boolean hasReceivedPolyLine;
     private boolean wasNotified;
 
+    private boolean wasLineRemoved;
+
     protected GraphicShape receivedShape;
 
 
@@ -81,5 +83,9 @@ public class GraphicViewSpy implements GraphicView, Observer {
 
     public boolean wasNotified() {
         return wasNotified;
+    }
+
+    public boolean wasLineRemoved() {
+        return wasLineRemoved;
     }
 }

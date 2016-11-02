@@ -277,6 +277,14 @@ public class GraphicViewPresenterTest {
 
                 assertFalse(graphicViewSpy.hasReceivedShape());
             }
+
+            @Test
+            public void whenMovingMouseThenRightClicking_shouldRemoveLine() {
+                sut.handleMouseMove(second.getX(), second.getY());
+                sut.handleRightClick(second.getX(), second.getY());
+
+                assertTrue(graphicViewSpy.wasLineRemoved());
+            }
         }
 
 //        public class CancelPolyLineContext {
