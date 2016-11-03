@@ -19,12 +19,15 @@ public class GraphicViewSpy implements GraphicView, Observer {
 
     private boolean hasReceivedShape;
     private boolean hasReceivedLine;
-    private int timesReceivedLineCalled;
     private boolean hasReceivedRectangle;
     private boolean hasReceivedPolyLine;
     private boolean wasNotified;
 
+    private int timesReceivedLineCalled;
+
     private boolean wasLineRemoved;
+    private boolean wasRectangleRemoved;
+    private boolean wasPolyLineRemoved;
 
     protected GraphicShape receivedShape;
 
@@ -54,6 +57,16 @@ public class GraphicViewSpy implements GraphicView, Observer {
             receiveRectangle((GraphicRectangle) graphicShape);
         else if (graphicShape instanceof GraphicPolyLine)
             receivePolyLine((GraphicPolyLine) graphicShape);
+    }
+
+    @Override
+    public void removeShape(GraphicShape graphicShape) {
+        if (graphicShape instanceof GraphicLine)
+            wasLineRemoved = true;
+        else if (graphicShape instanceof GraphicRectangle)
+            wasRectangleRemoved = true;
+        else if (graphicShape instanceof GraphicPolyLine)
+            wasPolyLineRemoved = true;
     }
 
     @Override
@@ -87,5 +100,13 @@ public class GraphicViewSpy implements GraphicView, Observer {
 
     public boolean wasLineRemoved() {
         return wasLineRemoved;
+    }
+
+    public boolean wasRectangleRemoved() {
+        return wasRectangleRemoved;
+    }
+
+    public boolean wasPolyLineRemoved() {
+        return wasPolyLineRemoved;
     }
 }

@@ -42,11 +42,6 @@ public class MainWindow extends JFrame {
         return (GraphicView) drawPanel;
     }
 
-    public void setGraphicPanel(GraphicPanel panel) {
-        this.drawPanel = panel;
-        this.panel.add(drawPanel);
-    }
-
     private void createUIComponents() {
         drawPanel = new TestingGraphicViewImpl();
         ((GraphicViewImpl) drawPanel).setPresenter(presenter);

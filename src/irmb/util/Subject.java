@@ -1,5 +1,7 @@
 package irmb.util;
 
+import irmb.flowsim.view.GraphicViewImpl;
+
 import java.util.LinkedList;
 import java.util.List;
 
@@ -19,4 +21,7 @@ public abstract class Subject {
             o.update();
     }
 
+    public void removeObserver(Observer observer) {
+        observers.remove(observer);
+    }
 }

@@ -25,6 +25,14 @@ public class GraphicViewImpl extends JPanel implements GraphicView, Observer {
         repaint();
     }
 
+    @Override
+    public void removeShape(GraphicShape graphicShape) {
+        graphicShapeList.remove(graphicShape);
+        graphicShape.removeObserver(this);
+//        paintComponent(getGraphics());
+        repaint();
+    }
+
     public void setPresenter(GraphicViewPresenter presenter) {
         this.presenter = presenter;
     }

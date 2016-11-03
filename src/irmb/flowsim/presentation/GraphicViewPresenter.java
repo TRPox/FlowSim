@@ -57,8 +57,9 @@ public class GraphicViewPresenter {
         graphicView.receiveShape(shapeBuilder.getShape());
     }
 
-
     public void handleRightClick(int x, int y) {
+        if (hasShapeBuilder())
+            graphicView.removeShape(shapeBuilder.getShape());
         shapeBuilder = null;
     }
 

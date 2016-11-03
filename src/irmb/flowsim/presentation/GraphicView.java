@@ -8,5 +8,6 @@ import irmb.flowsim.view.GraphicShape;
 public interface GraphicView {
     void receiveShape(GraphicShape graphicShape);
 
-    void update();
+    void removeShape(GraphicShape graphicShape);
+
 }

@@ -21,8 +21,8 @@ public class GraphicViewImplTest {
 
     private JFrame frame;
     private GraphicViewImpl view;
-    private GraphicLineSpy first;
-    private Line line;
+    private GraphicLineSpy firstGraphicLine;
+    private Line firstLine;
 
     @Before
     public void setUp() throws Exception {
@@ -30,64 +30,74 @@ public class GraphicViewImplTest {
         view = new GraphicViewImpl();
         frame.add(view);
         frame.setVisible(true);
-        line = new Line();
-        first = new GraphicLineSpy(line);
+        firstLine = new Line();
+        firstGraphicLine = new GraphicLineSpy(firstLine);
     }
 
     @Test
     public void whenReceivingLine_shouldPaintLine() {
-        //        try {
-//            SwingUtilities.invokeAndWait(
-//                    new Runnable() {
-//                        @Override
-//                        public void run() {
-//                            observer.receiveShape(first);
-//                        }
-//                    });
+//        try {
+//            SwingUtilities.invokeAndWait(() -> view.receiveShape(firstGraphicLine));
 //        } catch (Exception e) {
 //            e.printStackTrace();
 //        }
-        view.receiveShape(first);
-        assertTrue(first.wasPainted());
+        view.receiveShape(firstGraphicLine);
+        assertTrue(firstGraphicLine.wasPainted());
     }
 
 
     @Test
     public void whenLineChanges_shouldRepaint() {
-        view.receiveShape(first);
-        assertTrue(first.wasPainted());
+        view.receiveShape(firstGraphicLine);
+        assertTrue(firstGraphicLine.wasPainted());
         Point point = new Point(1, 1);
-        line.setStart(point);
-        assertEquals(2, first.getTimesPainted());
+        firstLine.setStart(point);
+        assertEquals(2, firstGraphicLine.getTimesPainted());
     }
 
     public class OneLineAddedContext {
-        private GraphicLineSpy second;
+        private GraphicLineSpy secondGraphicLine;
+        private Line secondLine;
 
         @Before
         public void setUp() {
-            view.receiveShape(first);
-            second = new GraphicLineSpy(new Line());
+            view.receiveShape(firstGraphicLine);
+            secondLine = new Line();
+            secondGraphicLine = new GraphicLineSpy(secondLine);
         }
 
         @Test
         public void whenReceivingNextLine_shouldPaintAllShapes() {
-            view.receiveShape(second);
-            assertTrue(first.wasPainted());
-            assertTrue(second.wasPainted());
+            view.receiveShape(secondGraphicLine);
+            assertTrue(firstGraphicLine.wasPainted());
+            assertTrue(secondGraphicLine.wasPainted());
         }
-
 
         public class TwoLinesAddedContext {
             @Before
             public void setUp() {
-                view.receiveShape(second);
+                view.receiveShape(secondGraphicLine);
             }
 
             @Test
             public void whenChangingFirstLine_shouldPaintAllShapes() {
-                line.setStart(new Point(1, 1));
-                assertEquals(3, first.getTimesPainted());
+                firstLine.setStart(new Point(1, 1));
+                assertEquals(3, firstGraphicLine.getTimesPainted());
+            }
+
+            @Test
+            public void whenRemovingLine_shouldRepaint() {
+                view.removeShape(secondGraphicLine);
+                assertEquals(3, firstGraphicLine.getTimesPainted());
+                assertEquals(1, secondGraphicLine.getTimesPainted());
+            }
+
+            @Test
+            public void whenChangingLineAfterRemoving_shouldNotRepaint() {
+                view.removeShape(firstGraphicLine);
+                firstLine.setStart(new Point(1, 1));
+                assertEquals(2, firstGraphicLine.getTimesPainted());
+                assertEquals(2, secondGraphicLine.getTimesPainted());
             }
         }
     }

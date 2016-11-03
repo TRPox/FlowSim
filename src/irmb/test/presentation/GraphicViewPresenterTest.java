@@ -285,6 +285,14 @@ public class GraphicViewPresenterTest {
 
                 assertTrue(graphicViewSpy.wasLineRemoved());
             }
+
+            @Test
+            public void whenLeftClickingThenRightClicking_shouldNotRemoveLine() {
+                sut.handleLeftClick(second.getX(), second.getY());
+                sut.handleRightClick(second.getX(), second.getY());
+
+                assertFalse(graphicViewSpy.wasLineRemoved());
+            }
         }
 
 //        public class CancelPolyLineContext {
