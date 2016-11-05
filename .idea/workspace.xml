@@ -13,8 +13,31 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DockManager">
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+            <file leaf-file-name="GraphicViewPresenter.java" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/src/irmb/flowsim/presentation/GraphicViewPresenter.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="142">
+                    <caret line="28" column="33" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
+                    <folding>
+                      <element signature="method#addPointToShape#0;class#GraphicViewPresenter#0" expanded="false" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
@@ -22,67 +45,54 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GraphicViewSpy.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/irmb/test/presentation/GraphicViewSpy.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="686">
-              <caret line="109" column="34" selection-start-line="109" selection-start-column="34" selection-end-line="109" selection-end-column="34" />
-              <folding>
-                <element signature="e#2716#2717#0" expanded="true" />
-                <element signature="e#2753#2754#0" expanded="true" />
-                <element signature="e#2797#2798#0" expanded="true" />
-                <element signature="e#2839#2840#0" expanded="true" />
-                <element signature="e#2882#2883#0" expanded="true" />
-                <element signature="e#2923#2924#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainWindow.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/irmb/flowsim/view/MainWindow.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="618">
-              <caret line="42" column="5" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="GraphicViewPresenterTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/irmb/test/presentation/GraphicViewPresenterTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="355">
-              <caret line="294" column="13" selection-start-line="294" selection-start-column="13" selection-end-line="294" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GraphicViewImplTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/irmb/test/view/GraphicViewImplTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="454">
-              <caret line="100" column="13" selection-start-line="100" selection-start-column="13" selection-end-line="100" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Point.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/irmb/flowsim/model/geometry/Point.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+            <state relative-caret-position="184">
+              <caret line="28" column="18" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
               <folding>
-                <element signature="e#242#243#0" expanded="false" />
-                <element signature="e#266#267#0" expanded="false" />
-                <element signature="e#297#298#0" expanded="false" />
-                <element signature="e#323#324#0" expanded="false" />
-                <element signature="e#348#349#0" expanded="false" />
-                <element signature="e#372#373#0" expanded="false" />
-                <element signature="e#475#476#0" expanded="false" />
-                <element signature="e#521#522#0" expanded="false" />
+                <element signature="docComment;class#GraphicViewPresenterTest#0" expanded="false" />
+                <element signature="method#setUp#0;class#GraphicViewPresenterTest#0" expanded="false" />
+                <element signature="method#transmitTwoPointsToPresenter#0;class#GraphicViewPresenterTest#0" expanded="false" />
+                <element signature="method#assertExpectedPointEqualsActual#0;class#GraphicViewPresenterTest#0" expanded="false" />
+                <element signature="method#whenLeftClickingTwiceBeforeSettingObjectType_spyShouldNotReceiveData#0;class#GraphicViewPresenterTest#0" expanded="false" />
+                <element signature="class#BuildLineContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+                <element signature="method#setUp#0;class#BuildLineContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+                <element signature="method#buildLineAcceptanceTest#0;class#BuildLineContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+                <element signature="method#whenLeftClickingOnce_spyShouldNotReceiveLine#0;class#BuildLineContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+                <element signature="method#whenLeftClickingTwice_spyShouldReceiveLine#0;class#BuildLineContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+                <element signature="method#whenLeftClickingTwice_spyShouldReceiveLineWithCorrectCoordinates#0;class#BuildLineContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+                <element signature="method#whenLeftClickingThreeTimes_spyShouldNotReceiveLine#0;class#BuildLineContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+                <element signature="class#LivePaintingLineContext#0;class#BuildLineContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+                <element signature="method#livePaintingLineAcceptanceTest#0;class#LivePaintingLineContext#0;class#BuildLineContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+                <element signature="method#whenMovingMouseBeforeLeftClicking_graphicSpyShouldNotReceiveLine#0;class#LivePaintingLineContext#0;class#BuildLineContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+                <element signature="class#LeftClickedOnceContext#0;class#LivePaintingLineContext#0;class#BuildLineContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+                <element signature="method#whenMovingMouse_graphicSpyShouldReceiveLine#0;class#LeftClickedOnceContext#0;class#LivePaintingLineContext#0;class#BuildLineContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+                <element signature="method#whenMovingMouse_graphicSpyShouldReceiveLineWithCorrectCoordinates#0;class#LeftClickedOnceContext#0;class#LivePaintingLineContext#0;class#BuildLineContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+                <element signature="method#whenMovingMouseTwice_shouldAdjustLastPoint#0;class#LeftClickedOnceContext#0;class#LivePaintingLineContext#0;class#BuildLineContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+                <element signature="class#MovedMouseOnceContext#0;class#LeftClickedOnceContext#0;class#LivePaintingLineContext#0;class#BuildLineContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+                <element signature="method#whenMovingMouseAfterLeftClick_shouldNotAdjustLastPoint#0;class#MovedMouseOnceContext#0;class#LeftClickedOnceContext#0;class#LivePaintingLineContext#0;class#BuildLineContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+                <element signature="class#BuildRectangleContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+                <element signature="method#buildRectangleAcceptanceTest#0;class#BuildRectangleContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+                <element signature="class#LivePaintingRectangleContext#0;class#BuildRectangleContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+                <element signature="class#BuildPolyLineContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+                <element signature="method#setUp#0;class#BuildPolyLineContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+                <element signature="method#buildPolyLineAcceptanceTest#0;class#BuildPolyLineContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+                <element signature="method#whenLeftClickingTwice_spyShouldReceivePolyLine#0;class#BuildPolyLineContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+                <element signature="method#whenLeftClickingTwice_spyShouldReceivePolyLineWithCorrectPoints#0;class#BuildPolyLineContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+                <element signature="class#LeftClickedTwiceContext#0;class#BuildPolyLineContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+                <element signature="method#whenLeftClickingThreeTimes_spyShouldReceivePolyLineWithCorrectCoordinates#0;class#LeftClickedTwiceContext#0;class#BuildPolyLineContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+                <element signature="class#LivePaintingPolyLineContext#0;class#BuildPolyLineContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+                <element signature="method#livePaintingPolyLineAcceptance#0;class#LivePaintingPolyLineContext#0;class#BuildPolyLineContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+                <element signature="class#CancelPaintingContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+                <element signature="class#CancelLineContext#0;class#CancelPaintingContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+                <element signature="method#setUp#0;class#CancelLineContext#0;class#CancelPaintingContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+                <element signature="method#whenRightClickingThenLeftClicking_shouldNotTransmitShapeToView#0;class#CancelLineContext#0;class#CancelPaintingContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+                <element signature="method#whenMovingMouseThenRightClicking_shouldRemoveLine#0;class#CancelLineContext#0;class#CancelPaintingContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+                <element signature="method#whenLeftClickingThenRightClicking_shouldNotRemoveLine#0;class#CancelLineContext#0;class#CancelPaintingContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+                <element signature="e#14462#14508#0" expanded="false" />
+                <element signature="class#ChangeObjectTypeContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+                <element signature="method#whenLeftClickingThenChangingObjectTypeThenLeftClicking_shouldNotTransmitShape#0;class#ChangeObjectTypeContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -110,14 +120,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/irmb/flowsim/model/geometry/Shape.java" />
         <option value="$PROJECT_DIR$/src/irmb/flowsim/view/GraphicShape.java" />
         <option value="$PROJECT_DIR$/src/irmb/flowsim/presentation/factories/ShapeBuilderFactoryImpl.java" />
         <option value="$PROJECT_DIR$/src/irmb/test/presentation/factories/GraphicShapeBuilderFactoryImplTest.java" />
         <option value="$PROJECT_DIR$/src/irmb/flowsim/presentation/builders/LineBuilder.java" />
         <option value="$PROJECT_DIR$/src/irmb/flowsim/presentation/builders/PolyLineBuilder.java" />
         <option value="$PROJECT_DIR$/src/irmb/flowsim/presentation/builders/ShapeBuilder.java" />
-        <option value="$PROJECT_DIR$/src/irmb/flowsim/model/geometry/PolyLine.java" />
         <option value="$PROJECT_DIR$/src/irmb/flowsim/presentation/factories/ShapeFactory.java" />
         <option value="$PROJECT_DIR$/src/irmb/flowsim/presentation/factories/ShapeFactoryImpl.java" />
         <option value="$PROJECT_DIR$/src/irmb/flowsim/presentation/factories/GraphicShapeFactory.java" />
@@ -135,7 +143,6 @@
         <option value="$PROJECT_DIR$/src/irmb/flowsim/view/GraphicRectangle.java" />
         <option value="$PROJECT_DIR$/src/irmb/test/model/geometry/GraphicPolyLineTest.java" />
         <option value="$PROJECT_DIR$/src/irmb/test/presentation/factories/GraphicGraphicShapeBuilderFactoryImplTest.java" />
-        <option value="$PROJECT_DIR$/src/irmb/test/presentation/builders/GraphicRectangleBuilderTest.java" />
         <option value="$PROJECT_DIR$/src/irmb/Main.java" />
         <option value="$PROJECT_DIR$/src/irmb/test/presentation/builders/GraphicPolyLineBuilderTest.java" />
         <option value="$PROJECT_DIR$/src/irmb/test/model/geometry/GraphicPolyLineSpy.java" />
@@ -145,22 +152,25 @@
         <option value="$PROJECT_DIR$/src/irmb/test/presentation/GraphicViewSpyForLine.java" />
         <option value="$PROJECT_DIR$/src/irmb/test/presentation/GraphicViewSpyForRectangle.java" />
         <option value="$PROJECT_DIR$/src/irmb/test/presentation/GraphicViewSpyForPolyLine.java" />
-        <option value="$PROJECT_DIR$/src/irmb/flowsim/view/TestingGraphicViewImpl.java" />
         <option value="$PROJECT_DIR$/src/irmb/test/view/GraphicRectangleTest.java" />
         <option value="$PROJECT_DIR$/src/irmb/flowsim/presentation/builders/GraphicShapeBuilder.java" />
         <option value="$PROJECT_DIR$/src/irmb/flowsim/presentation/builders/GraphicPolyLineBuilder.java" />
-        <option value="$PROJECT_DIR$/src/irmb/flowsim/presentation/builders/GraphicRectangleBuilder.java" />
         <option value="$PROJECT_DIR$/src/irmb/test/presentation/builders/GraphicLineBuilderTest.java" />
         <option value="$PROJECT_DIR$/src/irmb/flowsim/presentation/builders/GraphicLineBuilder.java" />
         <option value="$PROJECT_DIR$/src/irmb/flowsim/presentation/GraphicView.java" />
-        <option value="$PROJECT_DIR$/src/irmb/test/presentation/GraphicViewSpy.java" />
         <option value="$PROJECT_DIR$/src/irmb/flowsim/view/GraphicPanel.java" />
         <option value="$PROJECT_DIR$/src/irmb/flowsim/view/MainWindow.java" />
-        <option value="$PROJECT_DIR$/src/irmb/test/presentation/GraphicViewPresenterTest.java" />
         <option value="$PROJECT_DIR$/src/irmb/flowsim/presentation/GraphicViewPresenter.java" />
         <option value="$PROJECT_DIR$/src/irmb/test/view/GraphicViewImplTest.java" />
         <option value="$PROJECT_DIR$/src/irmb/util/Subject.java" />
+        <option value="$PROJECT_DIR$/src/irmb/flowsim/view/TestingGraphicViewImpl.java" />
         <option value="$PROJECT_DIR$/src/irmb/flowsim/view/GraphicViewImpl.java" />
+        <option value="$PROJECT_DIR$/src/irmb/test/presentation/GraphicViewSpy.java" />
+        <option value="$PROJECT_DIR$/src/irmb/test/view/GraphicPolyLineTest.java" />
+        <option value="$PROJECT_DIR$/src/irmb/flowsim/model/geometry/PolyLine.java" />
+        <option value="$PROJECT_DIR$/src/irmb/test/presentation/builders/GraphicRectangleBuilderTest.java" />
+        <option value="$PROJECT_DIR$/src/irmb/flowsim/presentation/builders/GraphicRectangleBuilder.java" />
+        <option value="$PROJECT_DIR$/src/irmb/test/presentation/GraphicViewPresenterTest.java" />
       </list>
     </option>
   </component>
@@ -178,10 +188,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1688" />
-    <option name="y" value="31" />
-    <option name="width" value="1696" />
-    <option name="height" value="1026" />
+    <option name="x" value="-7" />
+    <option name="width" value="1031" />
+    <option name="height" value="1057" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -208,373 +217,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FlowSim" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FlowSim" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FlowSim" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FlowSim" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FlowSim" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="irmb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FlowSim" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FlowSim" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="irmb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="util" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FlowSim" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FlowSim" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="irmb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FlowSim" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FlowSim" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="irmb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="swing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FlowSim" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FlowSim" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="irmb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="presentation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FlowSim" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FlowSim" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="irmb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="presentation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="factories" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FlowSim" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FlowSim" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="irmb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="presentation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="builders" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FlowSim" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FlowSim" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="irmb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="geometry" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FlowSim" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FlowSim" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="irmb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="flowsim" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FlowSim" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FlowSim" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="irmb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="flowsim" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="presentation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FlowSim" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FlowSim" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="irmb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="flowsim" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="presentation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="factories" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FlowSim" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FlowSim" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="irmb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="flowsim" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="presentation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="builders" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FlowSim" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FlowSim" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="irmb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="flowsim" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="geometry" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
+        <subPane />
       </pane>
       <pane id="PackagesPane" />
     </panes>
@@ -619,85 +265,7 @@
       <recent name="C:\Users\Sven\Documents\FlowSim\src\irmb\flowsim\view" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration default="false" name="GraphicViewPresenterTest$BuildLineContext$LivePaintingLineContext" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="irmb.test.presentation.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="FlowSim" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="irmb.test.presentation" />
-      <option name="MAIN_CLASS_NAME" value="irmb.test.presentation.GraphicViewPresenterTest$BuildLineContext$LivePaintingLineContext" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="GraphicViewPresenterTest$BuildLineContext$LivePaintingLineContext$LeftClickedOnceContext$MovedMouseOnveContext.whenMovingMouseAfterLeftClick_shouldNotAdjustLastPoint" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="irmb.test.presentation.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="FlowSim" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="irmb.test.presentation" />
-      <option name="MAIN_CLASS_NAME" value="irmb.test.presentation.GraphicViewPresenterTest$BuildLineContext$LivePaintingLineContext$LeftClickedOnceContext$MovedMouseOnveContext" />
-      <option name="METHOD_NAME" value="whenMovingMouseAfterLeftClick_shouldNotAdjustLastPoint" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="GraphicViewPresenterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="irmb.test.presentation.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="FlowSim" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="irmb.test.presentation" />
-      <option name="MAIN_CLASS_NAME" value="irmb.test.presentation.GraphicViewPresenterTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JUnit.GraphicRectangleBuilderTest">
     <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -718,7 +286,7 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="GraphicViewImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="GraphicPolyLineTest$GraphicViewAddedContext$OnePointAddedContext.whenSettingLastPoint_shouldNotifyGraphicView" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="irmb.test.view.*" />
@@ -729,7 +297,85 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="irmb.test.view" />
-      <option name="MAIN_CLASS_NAME" value="irmb.test.view.GraphicViewImplTest" />
+      <option name="MAIN_CLASS_NAME" value="irmb.test.view.GraphicPolyLineTest$GraphicViewAddedContext$OnePointAddedContext" />
+      <option name="METHOD_NAME" value="whenSettingLastPoint_shouldNotifyGraphicView" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="GraphicViewPresenterTest$BuildLineContext$LivePaintingLineContext.livePaintingLineAcceptanceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="irmb.test.presentation.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="FlowSim" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="irmb.test.presentation" />
+      <option name="MAIN_CLASS_NAME" value="irmb.test.presentation.GraphicViewPresenterTest$BuildLineContext$LivePaintingLineContext" />
+      <option name="METHOD_NAME" value="livePaintingLineAcceptanceTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="GraphicViewPresenterTest$BuildRectangleContext$LivePaintingRectangleContext" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="irmb.test.presentation.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="FlowSim" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="irmb.test.presentation" />
+      <option name="MAIN_CLASS_NAME" value="irmb.test.presentation.GraphicViewPresenterTest$BuildRectangleContext$LivePaintingRectangleContext" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="GraphicRectangleBuilderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="irmb.test.presentation.builders.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="FlowSim" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="irmb.test.presentation.builders" />
+      <option name="MAIN_CLASS_NAME" value="irmb.test.presentation.builders.GraphicRectangleBuilderTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -763,13 +409,8 @@
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
       <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
       <option name="FORCE_STOP_RUNNING_APP" value="true" />
-      <option name="DEBUGGER_TYPE" value="Java" />
       <option name="USE_LAST_SELECTED_DEVICE" value="false" />
       <option name="PREFERRED_AVD" value="" />
-      <Java />
-      <Profilers>
-        <option name="GAPID_DISABLE_PCS" value="false" />
-      </Profilers>
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="" />
       <method />
@@ -788,13 +429,8 @@
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
       <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
       <option name="FORCE_STOP_RUNNING_APP" value="true" />
-      <option name="DEBUGGER_TYPE" value="Java" />
       <option name="USE_LAST_SELECTED_DEVICE" value="false" />
       <option name="PREFERRED_AVD" value="" />
-      <Java />
-      <Profilers>
-        <option name="GAPID_DISABLE_PCS" value="false" />
-      </Profilers>
       <method />
     </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
@@ -877,6 +513,16 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="BatchConfigurationType" factoryName="Batch">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <module name="" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
       <method />
     </configuration>
     <configuration default="true" type="Cold Fusion runner description" factoryName="Cold Fusion" custom_browser="" web_path="">
@@ -1159,19 +805,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.GraphicViewPresenterTest$BuildLineContext$LivePaintingLineContext" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.GraphicViewPresenterTest$BuildLineContext$LivePaintingLineContext$LeftClickedOnceContext$MovedMouseOnveContext.whenMovingMouseAfterLeftClick_shouldNotAdjustLastPoint" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.GraphicViewPresenterTest" />
-      <item index="3" class="java.lang.String" itemvalue="Application.Main" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.GraphicViewImplTest" />
+      <item index="0" class="java.lang.String" itemvalue="Application.Main" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.GraphicPolyLineTest$GraphicViewAddedContext$OnePointAddedContext.whenSettingLastPoint_shouldNotifyGraphicView" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.GraphicViewPresenterTest$BuildLineContext$LivePaintingLineContext.livePaintingLineAcceptanceTest" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.GraphicViewPresenterTest$BuildRectangleContext$LivePaintingRectangleContext" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.GraphicRectangleBuilderTest" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.Main" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.GraphicViewPresenterTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.GraphicViewImplTest" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.GraphicViewPresenterTest$BuildLineContext$LivePaintingLineContext" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.GraphicViewPresenterTest$BuildLineContext$LivePaintingLineContext$LeftClickedOnceContext$MovedMouseOnveContext.whenMovingMouseAfterLeftClick_shouldNotAdjustLastPoint" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.GraphicRectangleBuilderTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.GraphicViewPresenterTest$BuildRectangleContext$LivePaintingRectangleContext" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.GraphicViewPresenterTest$BuildLineContext$LivePaintingLineContext.livePaintingLineAcceptanceTest" />
+        <item index="3" class="java.lang.String" itemvalue="Application.Main" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.GraphicPolyLineTest$GraphicViewAddedContext$OnePointAddedContext.whenSettingLastPoint_shouldNotifyGraphicView" />
       </list>
     </recent_temporary>
   </component>
@@ -1202,75 +848,77 @@
       <workItem from="1477938039300" duration="1228000" />
       <workItem from="1478088462213" duration="2419000" />
       <workItem from="1478186316025" duration="2567000" />
+      <workItem from="1478278232545" duration="9519000" />
+      <workItem from="1478349323584" duration="2202000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="GraphicViewImplTest - 2016.11.03 at 16h 50m 00s.xml">
-      <configuration name="GraphicViewImplTest" configurationId="JUnit" />
+    <history-entry file="GraphicRectangleBuilderTest - 2016.11.05 at 14h 14m 18s.xml">
+      <configuration name="GraphicRectangleBuilderTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GraphicViewImplTest - 2016.11.03 at 16h 50m 08s.xml">
-      <configuration name="GraphicViewImplTest" configurationId="JUnit" />
+    <history-entry file="GraphicRectangleBuilderTest - 2016.11.05 at 14h 14m 26s.xml">
+      <configuration name="GraphicRectangleBuilderTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GraphicViewImplTest - 2016.11.03 at 16h 51m 15s.xml">
-      <configuration name="GraphicViewImplTest" configurationId="JUnit" />
+    <history-entry file="GraphicRectangleBuilderTest - 2016.11.05 at 14h 14m 43s.xml">
+      <configuration name="GraphicRectangleBuilderTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GraphicViewImplTest - 2016.11.03 at 16h 52m 00s.xml">
-      <configuration name="GraphicViewImplTest" configurationId="JUnit" />
+    <history-entry file="GraphicRectangleBuilderTest - 2016.11.05 at 14h 15m 06s.xml">
+      <configuration name="GraphicRectangleBuilderTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GraphicViewImplTest - 2016.11.03 at 16h 52m 20s.xml">
-      <configuration name="GraphicViewImplTest" configurationId="JUnit" />
+    <history-entry file="GraphicRectangleBuilderTest - 2016.11.05 at 14h 16m 40s.xml">
+      <configuration name="GraphicRectangleBuilderTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GraphicViewImplTest - 2016.11.03 at 16h 53m 39s.xml">
-      <configuration name="GraphicViewImplTest" configurationId="JUnit" />
+    <history-entry file="GraphicRectangleBuilderTest - 2016.11.05 at 14h 16m 47s.xml">
+      <configuration name="GraphicRectangleBuilderTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GraphicViewImplTest - 2016.11.03 at 16h 54m 05s.xml">
-      <configuration name="GraphicViewImplTest" configurationId="JUnit" />
+    <history-entry file="GraphicRectangleBuilderTest - 2016.11.05 at 14h 17m 30s.xml">
+      <configuration name="GraphicRectangleBuilderTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GraphicViewImplTest - 2016.11.03 at 16h 54m 58s.xml">
-      <configuration name="GraphicViewImplTest" configurationId="JUnit" />
+    <history-entry file="GraphicViewPresenterTest$BuildLineContext$LivePaintingLineContext_livePaintingLineAcceptanceTest - 2016.11.05 at 14h 10m 05s.xml">
+      <configuration name="GraphicViewPresenterTest$BuildLineContext$LivePaintingLineContext.livePaintingLineAcceptanceTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GraphicViewImplTest - 2016.11.03 at 16h 55m 02s.xml">
-      <configuration name="GraphicViewImplTest" configurationId="JUnit" />
+    <history-entry file="GraphicViewPresenterTest$BuildRectangleContext$LivePaintingRectangleContext - 2016.11.05 at 14h 11m 15s.xml">
+      <configuration name="GraphicViewPresenterTest$BuildRectangleContext$LivePaintingRectangleContext" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GraphicViewPresenterTest - 2016.11.03 at 16h 55m 22s.xml">
-      <configuration name="GraphicViewPresenterTest" configurationId="JUnit" />
+    <history-entry file="GraphicViewPresenterTest$BuildRectangleContext$LivePaintingRectangleContext - 2016.11.05 at 14h 12m 49s.xml">
+      <configuration name="GraphicViewPresenterTest$BuildRectangleContext$LivePaintingRectangleContext" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="96923000" />
+    <option name="totallyTimeSpent" value="108644000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1688" y="31" width="1696" height="1026" extended-state="6" />
+    <frame x="-7" y="0" width="1031" height="1057" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281075" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32792208" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25979844" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="26" y="724" width="1636" height="228" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23701298" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="26" y="724" width="1636" height="228" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29278728" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37033194" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="LuaJ" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26651737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26651737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="LuaJ" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="92" y="92" width="1496" height="826" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1319,7 +967,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="19" />
+      <option name="time" value="22" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1333,21 +981,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/irmb/flowsim/model/geometry/PolyLine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="23" column="42" selection-start-line="23" selection-start-column="42" selection-end-line="23" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#493#494#0" expanded="false" />
-            <element signature="e#551#552#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1379,7 +1012,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="25" column="40" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1390,14 +1022,6 @@
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/irmb/flowsim/view/GraphicPolyLine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1416,7 +1040,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1427,24 +1050,6 @@
           <folding>
             <element signature="e#500#501#0" expanded="false" />
             <element signature="e#530#531#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/irmb/test/presentation/builders/GraphicPolyLineBuilderTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/irmb/test/presentation/builders/GraphicRectangleBuilderTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="652">
-          <caret line="122" column="98" selection-start-line="122" selection-start-column="98" selection-end-line="122" selection-end-column="98" />
-          <folding>
-            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1475,7 +1080,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1484,7 +1088,7 @@
         <state relative-caret-position="476">
           <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding>
-            <element signature="e#619#620#0" expanded="true" />
+            <element signature="e#619#620#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1493,12 +1097,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding>
-            <element signature="e#191#192#0" expanded="true" />
-            <element signature="e#219#220#0" expanded="true" />
-            <element signature="e#350#351#0" expanded="true" />
-            <element signature="e#376#377#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1542,31 +1140,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#358#359#0" expanded="false" />
-            <element signature="e#430#431#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/irmb/test/presentation/GraphicViewSpyForPolyLine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#303#304#0" expanded="false" />
-            <element signature="e#377#378#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/irmb/test/view/GraphicRectangleTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1574,17 +1147,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/irmb/test/view/GraphicPolyLineTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1620,30 +1182,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/irmb/flowsim/presentation/builders/GraphicPolyLineBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="473">
-          <caret line="39" column="8" selection-start-line="39" selection-start-column="8" selection-end-line="39" selection-end-column="21" />
-          <folding>
-            <element signature="e#827#828#0" expanded="false" />
-            <element signature="e#865#866#0" expanded="false" />
-            <element signature="e#1023#1024#0" expanded="false" />
-            <element signature="e#1051#1052#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/irmb/flowsim/presentation/builders/GraphicRectangleBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="512">
-          <caret line="47" column="20" selection-start-line="47" selection-start-column="15" selection-end-line="47" selection-end-column="20" />
-          <folding>
-            <element signature="e#1305#1306#0" expanded="false" />
-            <element signature="e#1333#1334#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/irmb/test/presentation/builders/GraphicLineBuilderTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -1659,19 +1197,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="e#311#312#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/irmb/flowsim/presentation/builders/GraphicLineBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-          <folding>
-            <element signature="e#1247#1248#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1692,55 +1217,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/irmb/test/presentation/GraphicViewSpy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="686">
-          <caret line="109" column="34" selection-start-line="109" selection-start-column="34" selection-end-line="109" selection-end-column="34" />
-          <folding>
-            <element signature="e#2716#2717#0" expanded="true" />
-            <element signature="e#2753#2754#0" expanded="true" />
-            <element signature="e#2797#2798#0" expanded="true" />
-            <element signature="e#2839#2840#0" expanded="true" />
-            <element signature="e#2882#2883#0" expanded="true" />
-            <element signature="e#2923#2924#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/irmb/flowsim/view/MainWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="618">
-          <caret line="42" column="5" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/irmb/flowsim/view/GraphicPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/irmb/flowsim/view/GraphicPanel.java" />
     <entry file="file://$PROJECT_DIR$/src/irmb/util/Subject.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding>
-            <element signature="e#499#500#0" expanded="true" />
-            <element signature="e#541#542#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/irmb/flowsim/presentation/GraphicViewPresenter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="61" column="32" selection-start-line="61" selection-start-column="32" selection-end-line="61" selection-end-column="32" />
-          <folding>
-            <element signature="method#addPointToShape#0;class#GraphicViewPresenter#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1748,39 +1229,202 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/irmb/flowsim/view/TestingGraphicViewImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        <state relative-caret-position="292">
+          <caret line="22" column="57" selection-start-line="22" selection-start-column="57" selection-end-line="22" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/irmb/flowsim/view/MainWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="618">
+          <caret line="42" column="5" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
+          <folding>
+            <element signature="e#1233#1234#0" expanded="false" />
+            <element signature="e#1279#1280#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/irmb/flowsim/view/GraphicViewImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/irmb/flowsim/presentation/builders/GraphicPolyLineBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
+          <folding>
+            <element signature="e#1023#1024#0" expanded="false" />
+            <element signature="e#1051#1052#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/irmb/test/presentation/GraphicViewSpyForPolyLine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="13" column="36" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/irmb/test/presentation/GraphicViewSpy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="76" column="24" selection-start-line="76" selection-start-column="24" selection-end-line="76" selection-end-column="24" />
+          <folding>
+            <element signature="e#2771#2772#0" expanded="true" />
+            <element signature="e#2807#2808#0" expanded="true" />
+            <element signature="e#3012#3013#0" expanded="true" />
+            <element signature="e#3053#3054#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/irmb/flowsim/model/geometry/PolyLine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="24" column="26" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/irmb/flowsim/view/GraphicPolyLine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/irmb/flowsim/presentation/builders/GraphicRectangleBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="609">
+          <caret line="47" column="30" selection-start-line="47" selection-start-column="30" selection-end-line="47" selection-end-column="30" />
+          <folding>
+            <element signature="e#1305#1306#0" expanded="true" />
+            <element signature="e#1343#1344#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/irmb/test/presentation/builders/GraphicPolyLineBuilderTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="35" column="43" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/irmb/test/view/GraphicRectangleTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/irmb/test/view/GraphicViewImplTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="100" column="13" selection-start-line="100" selection-start-column="13" selection-end-line="100" selection-end-column="13" />
+        <state relative-caret-position="508">
+          <caret line="55" column="5" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/irmb/flowsim/view/GraphicViewImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/irmb/test/view/GraphicPolyLineTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+        <state relative-caret-position="664">
+          <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/irmb/flowsim/presentation/builders/GraphicLineBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="524">
+          <caret line="47" column="27" selection-start-line="47" selection-start-column="27" selection-end-line="47" selection-end-column="27" />
+          <folding>
+            <element signature="e#1209#1210#0" expanded="false" />
+            <element signature="e#1247#1248#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/irmb/flowsim/presentation/GraphicViewPresenter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="28" column="33" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
+          <folding>
+            <element signature="method#addPointToShape#0;class#GraphicViewPresenter#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/irmb/test/presentation/builders/GraphicRectangleBuilderTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="626">
+          <caret line="112" column="0" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/irmb/test/presentation/GraphicViewPresenterTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="294" column="13" selection-start-line="294" selection-start-column="13" selection-end-line="294" selection-end-column="13" />
-          <folding />
+        <state relative-caret-position="184">
+          <caret line="28" column="18" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
+          <folding>
+            <element signature="docComment;class#GraphicViewPresenterTest#0" expanded="false" />
+            <element signature="method#setUp#0;class#GraphicViewPresenterTest#0" expanded="false" />
+            <element signature="method#transmitTwoPointsToPresenter#0;class#GraphicViewPresenterTest#0" expanded="false" />
+            <element signature="method#assertExpectedPointEqualsActual#0;class#GraphicViewPresenterTest#0" expanded="false" />
+            <element signature="method#whenLeftClickingTwiceBeforeSettingObjectType_spyShouldNotReceiveData#0;class#GraphicViewPresenterTest#0" expanded="false" />
+            <element signature="class#BuildLineContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+            <element signature="method#setUp#0;class#BuildLineContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+            <element signature="method#buildLineAcceptanceTest#0;class#BuildLineContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+            <element signature="method#whenLeftClickingOnce_spyShouldNotReceiveLine#0;class#BuildLineContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+            <element signature="method#whenLeftClickingTwice_spyShouldReceiveLine#0;class#BuildLineContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+            <element signature="method#whenLeftClickingTwice_spyShouldReceiveLineWithCorrectCoordinates#0;class#BuildLineContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+            <element signature="method#whenLeftClickingThreeTimes_spyShouldNotReceiveLine#0;class#BuildLineContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+            <element signature="class#LivePaintingLineContext#0;class#BuildLineContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+            <element signature="method#livePaintingLineAcceptanceTest#0;class#LivePaintingLineContext#0;class#BuildLineContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+            <element signature="method#whenMovingMouseBeforeLeftClicking_graphicSpyShouldNotReceiveLine#0;class#LivePaintingLineContext#0;class#BuildLineContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+            <element signature="class#LeftClickedOnceContext#0;class#LivePaintingLineContext#0;class#BuildLineContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+            <element signature="method#whenMovingMouse_graphicSpyShouldReceiveLine#0;class#LeftClickedOnceContext#0;class#LivePaintingLineContext#0;class#BuildLineContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+            <element signature="method#whenMovingMouse_graphicSpyShouldReceiveLineWithCorrectCoordinates#0;class#LeftClickedOnceContext#0;class#LivePaintingLineContext#0;class#BuildLineContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+            <element signature="method#whenMovingMouseTwice_shouldAdjustLastPoint#0;class#LeftClickedOnceContext#0;class#LivePaintingLineContext#0;class#BuildLineContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+            <element signature="class#MovedMouseOnceContext#0;class#LeftClickedOnceContext#0;class#LivePaintingLineContext#0;class#BuildLineContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+            <element signature="method#whenMovingMouseAfterLeftClick_shouldNotAdjustLastPoint#0;class#MovedMouseOnceContext#0;class#LeftClickedOnceContext#0;class#LivePaintingLineContext#0;class#BuildLineContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+            <element signature="class#BuildRectangleContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+            <element signature="method#buildRectangleAcceptanceTest#0;class#BuildRectangleContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+            <element signature="class#LivePaintingRectangleContext#0;class#BuildRectangleContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+            <element signature="class#BuildPolyLineContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+            <element signature="method#setUp#0;class#BuildPolyLineContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+            <element signature="method#buildPolyLineAcceptanceTest#0;class#BuildPolyLineContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+            <element signature="method#whenLeftClickingTwice_spyShouldReceivePolyLine#0;class#BuildPolyLineContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+            <element signature="method#whenLeftClickingTwice_spyShouldReceivePolyLineWithCorrectPoints#0;class#BuildPolyLineContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+            <element signature="class#LeftClickedTwiceContext#0;class#BuildPolyLineContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+            <element signature="method#whenLeftClickingThreeTimes_spyShouldReceivePolyLineWithCorrectCoordinates#0;class#LeftClickedTwiceContext#0;class#BuildPolyLineContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+            <element signature="class#LivePaintingPolyLineContext#0;class#BuildPolyLineContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+            <element signature="method#livePaintingPolyLineAcceptance#0;class#LivePaintingPolyLineContext#0;class#BuildPolyLineContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+            <element signature="class#CancelPaintingContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+            <element signature="class#CancelLineContext#0;class#CancelPaintingContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+            <element signature="method#setUp#0;class#CancelLineContext#0;class#CancelPaintingContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+            <element signature="method#whenRightClickingThenLeftClicking_shouldNotTransmitShapeToView#0;class#CancelLineContext#0;class#CancelPaintingContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+            <element signature="method#whenMovingMouseThenRightClicking_shouldRemoveLine#0;class#CancelLineContext#0;class#CancelPaintingContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+            <element signature="method#whenLeftClickingThenRightClicking_shouldNotRemoveLine#0;class#CancelLineContext#0;class#CancelPaintingContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+            <element signature="e#14462#14508#0" expanded="false" />
+            <element signature="class#ChangeObjectTypeContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+            <element signature="method#whenLeftClickingThenChangingObjectTypeThenLeftClicking_shouldNotTransmitShape#0;class#ChangeObjectTypeContext#0;class#GraphicViewPresenterTest#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

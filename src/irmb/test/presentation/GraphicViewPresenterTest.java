@@ -26,6 +26,7 @@ public class GraphicViewPresenterTest {
     private final Point first = new Point(1, 2);
     private final Point second = new Point(3, 4);
     private final Point third = new Point(5, 6);
+    private final Point fourth = new Point(7, 8);
     private GraphicViewSpy graphicViewSpy;
 
     @Before
@@ -114,6 +115,12 @@ public class GraphicViewPresenterTest {
                 sut.handleMouseMove(third.getX(), third.getY());
                 assertExpectedPointEqualsActual(first, graphicViewSpy.getFirst());
                 assertExpectedPointEqualsActual(third, graphicViewSpy.getSecond());
+
+                sut.handleLeftClick(third.getX(), third.getY());
+
+                sut.handleMouseMove(fourth.getX(), fourth.getY());
+                assertExpectedPointEqualsActual(first, graphicViewSpy.getFirst());
+                assertExpectedPointEqualsActual(third, graphicViewSpy.getSecond());
             }
 
             @Test
@@ -190,6 +197,38 @@ public class GraphicViewPresenterTest {
             assertExpectedPointEqualsActual(second, graphicViewSpy.getSecond());
             assertTrue(graphicViewSpy.hasReceivedRectangle());
         }
+
+        public class LivePaintingRectangleContext {
+
+            @Test
+            public void livePaintingRectangleAcceptanceTest() {
+                sut.handleLeftClick(first.getX(), first.getY());
+
+                sut.handleMouseMove(second.getX(), second.getY());
+                assertExpectedPointEqualsActual(first, graphicViewSpy.getFirst());
+                assertExpectedPointEqualsActual(second, graphicViewSpy.getSecond());
+
+                sut.handleMouseMove(third.getX(), third.getY());
+                assertExpectedPointEqualsActual(first, graphicViewSpy.getFirst());
+                assertExpectedPointEqualsActual(third, graphicViewSpy.getSecond());
+
+                sut.handleLeftClick(third.getX(), third.getY());
+
+                sut.handleMouseMove(fourth.getX(), fourth.getY());
+                assertExpectedPointEqualsActual(first, graphicViewSpy.getFirst());
+                assertExpectedPointEqualsActual(third, graphicViewSpy.getSecond());
+            }
+
+            @Test
+            public void whenMovingMouseAfterCompletingObject_shouldNotAdjustLastPoint() {
+                transmitTwoPointsToPresenter(first, second);
+                sut.handleMouseMove(third.getX(), third.getY());
+
+                assertExpectedPointEqualsActual(first, graphicViewSpy.getFirst());
+                assertExpectedPointEqualsActual(second, graphicViewSpy.getSecond());
+            }
+        }
+
     }
 
     public class BuildPolyLineContext {
@@ -207,15 +246,19 @@ public class GraphicViewPresenterTest {
         public void buildPolyLineAcceptanceTest() {
             transmitTwoPointsToPresenter(first, second);
             assertTrue(graphicViewSpy.hasReceivedPolyLine());
-            pointList = graphicViewSpy.getReceivedPolyLinePointList();
+            pointList = updatePointList();
             assertExpectedPointEqualsActual(first, pointList.get(0));
             assertExpectedPointEqualsActual(second, pointList.get(1));
 
             sut.handleLeftClick(third.getX(), third.getY());
-            pointList = graphicViewSpy.getReceivedPolyLinePointList();
+            pointList = updatePointList();
             assertExpectedPointEqualsActual(first, pointList.get(0));
             assertExpectedPointEqualsActual(second, pointList.get(1));
             assertExpectedPointEqualsActual(third, pointList.get(2));
+        }
+
+        private List<Point> updatePointList() {
+            return graphicViewSpy.getReceivedPolyLinePointList();
         }
 
         @Test
@@ -229,7 +272,7 @@ public class GraphicViewPresenterTest {
         public void whenLeftClickingTwice_spyShouldReceivePolyLineWithCorrectPoints() {
             transmitTwoPointsToPresenter(first, second);
 
-            pointList = graphicViewSpy.getReceivedPolyLinePointList();
+            pointList = updatePointList();
             assertExpectedPointEqualsActual(first, pointList.get(0));
             assertExpectedPointEqualsActual(second, pointList.get(1));
         }
@@ -245,14 +288,45 @@ public class GraphicViewPresenterTest {
             public void whenLeftClickingThreeTimes_spyShouldReceivePolyLineWithCorrectCoordinates() {
                 sut.handleLeftClick(third.getX(), third.getY());
 
-                pointList = graphicViewSpy.getReceivedPolyLinePointList();
+                pointList = updatePointList();
                 assertExpectedPointEqualsActual(first, pointList.get(0));
                 assertExpectedPointEqualsActual(second, pointList.get(1));
                 assertExpectedPointEqualsActual(third, pointList.get(2));
             }
-
-
         }
+
+        public class LivePaintingPolyLineContext {
+            @Test
+            public void livePaintingPolyLineAcceptance() {
+                List<Point> pointList;
+
+                sut.handleLeftClick(first.getX(), first.getY());
+
+                sut.handleMouseMove(second.getX(), second.getY());
+                pointList = updatePointList();
+                assertTrue(graphicViewSpy.hasReceivedPolyLine());
+                assertEquals(2, pointList.size());
+                assertExpectedPointEqualsActual(first, pointList.get(0));
+                assertExpectedPointEqualsActual(second, pointList.get(1));
+
+                sut.handleMouseMove(third.getX(), third.getY());
+                pointList = updatePointList();
+                assertTrue(graphicViewSpy.hasReceivedPolyLine());
+                assertEquals(2, pointList.size());
+                assertExpectedPointEqualsActual(first, pointList.get(0));
+                assertExpectedPointEqualsActual(third, pointList.get(1));
+
+                sut.handleLeftClick(third.getX(), third.getY());
+
+                sut.handleMouseMove(fourth.getX(), fourth.getY());
+                pointList = updatePointList();
+                assertEquals(3, pointList.size());
+                assertExpectedPointEqualsActual(first, pointList.get(0));
+                assertExpectedPointEqualsActual(third, pointList.get(1));
+                assertExpectedPointEqualsActual(fourth, pointList.get(2));
+            }
+        }
+
     }
 
     public class CancelPaintingContext {
@@ -296,24 +370,16 @@ public class GraphicViewPresenterTest {
         }
 
 //        public class CancelPolyLineContext {
+//
+//            private GraphicViewSpyForPolyLine graphicViewSpy;
+//
 //            @Before
 //            public void setUp() {
+//                graphicViewSpy = new GraphicViewSpyForPolyLine();
 //                sut.setObjectType("PolyLine");
 //                sut.handleLeftClick(first.getX(), first.getY());
-//                sut.handleLeftClick(second.getX(), second.getY());
-//
 //            }
 //
-//            @Test
-//            public void whenRightClickingThenLeftClicking_shouldNotAddPoint() {
-//                sut.handleRightClick(second.getX(), second.getY());
-//                sut.handleLeftClick(third.getX(), third.getY());
-//
-//                List<Point> pointList = graphicViewSpy.getReceivedPolyLinePointList();
-//                assertEquals(2, pointList.size());
-//                assertExpectedPointEqualsActual(first, pointList.get(0));
-//                assertExpectedPointEqualsActual(second, pointList.get(1));
-//            }
 //        }
 
     }

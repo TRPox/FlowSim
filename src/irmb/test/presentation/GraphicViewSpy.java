@@ -21,7 +21,9 @@ public class GraphicViewSpy implements GraphicView, Observer {
     private boolean hasReceivedLine;
     private boolean hasReceivedRectangle;
     private boolean hasReceivedPolyLine;
+
     private boolean wasNotified;
+    private int timesNotified;
 
     private int timesReceivedLineCalled;
 
@@ -72,6 +74,7 @@ public class GraphicViewSpy implements GraphicView, Observer {
     @Override
     public void update() {
         wasNotified = true;
+        timesNotified++;
     }
 
     public boolean hasReceivedLine() {
@@ -96,6 +99,10 @@ public class GraphicViewSpy implements GraphicView, Observer {
 
     public boolean wasNotified() {
         return wasNotified;
+    }
+
+    public int getTimesNotified() {
+        return timesNotified;
     }
 
     public boolean wasLineRemoved() {

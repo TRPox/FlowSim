@@ -45,6 +45,6 @@ public class GraphicRectangleBuilder extends GraphicShapeBuilder {
 
     @Override
     public boolean isObjectFinished() {
-        return false;
+        return pointsAdded > 1;
     }
 }

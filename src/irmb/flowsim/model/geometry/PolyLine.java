@@ -22,5 +22,6 @@ public class PolyLine extends Shape {
 
     public void setLastPoint(Point point) {
         pointList.set(pointList.size() - 1, point);
+        notifyObservers();
     }
 }

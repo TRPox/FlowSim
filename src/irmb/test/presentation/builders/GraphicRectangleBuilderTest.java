@@ -10,7 +10,9 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
 
 /**
@@ -38,11 +40,11 @@ public class GraphicRectangleBuilderTest {
         assertEquals(first, rectangle.getFirst());
     }
 
-//    @Test
-//    public void whenAddingOnePoint_isObjectFinishedShouldBeFalse() {
-//        rectangleBuilder.addPoint(first);
-//        assertFalse(rectangleBuilder.isObjectFinished());
-//    }
+    @Test
+    public void whenAddingOnePoint_isObjectFinishedShouldBeFalse() {
+        rectangleBuilder.addPoint(first);
+        assertFalse(rectangleBuilder.isObjectFinished());
+    }
 
     @Test
     public void whenSettingLastPoint_shouldDoNothing() {
@@ -68,11 +70,11 @@ public class GraphicRectangleBuilderTest {
             assertEquals(second, rectangle.getSecond());
         }
 
-//        @Test
-//        public void whenAddingSecondPoint_isObjectFinishedShouldBeTrue() {
-//            rectangleBuilder.addPoint(second);
-//            assertTrue(rectangleBuilder.isObjectFinished());
-//        }
+        @Test
+        public void whenAddingSecondPoint_isObjectFinishedShouldBeTrue() {
+            rectangleBuilder.addPoint(second);
+            assertTrue(rectangleBuilder.isObjectFinished());
+        }
 
         @Test
         public void whenSettingLastPoint_shouldAdjustFirst() {
@@ -100,6 +102,13 @@ public class GraphicRectangleBuilderTest {
                 GraphicRectangleSpy rectangle = (GraphicRectangleSpy) rectangleBuilder.getShape();
                 assertEquals(first, rectangle.getFirst());
                 assertEquals(second, rectangle.getSecond());
+            }
+
+            @Test
+            public void whenAddingThirdPoint_isObjectFinishedShouldBeTrue() {
+                rectangleBuilder.addPoint(third);
+
+                assertTrue(rectangleBuilder.isObjectFinished());
             }
 
             @Test

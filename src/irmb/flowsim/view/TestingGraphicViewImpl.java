@@ -17,7 +17,10 @@ public class TestingGraphicViewImpl extends GraphicViewImpl implements MouseList
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        presenter.handleLeftClick(e.getX(), e.getY());
+        if (e.getButton() == MouseEvent.BUTTON1)
+            presenter.handleLeftClick(e.getX(), e.getY());
+        else if (e.getButton() == MouseEvent.BUTTON3)
+            presenter.handleRightClick(e.getX(), e.getY());
     }
 
     @Override

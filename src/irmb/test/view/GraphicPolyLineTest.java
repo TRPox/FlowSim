@@ -58,5 +58,19 @@ public class GraphicPolyLineTest {
             polyLine.addPoint(new Point(1, 1));
             assertTrue(graphicViewSpy.wasNotified());
         }
+
+        public class OnePointAddedContext {
+            @Before
+            public void setUp() {
+                polyLine.addPoint(new Point(0, 0));
+            }
+
+            @Test
+            public void whenSettingLastPoint_shouldNotifyGraphicView() {
+                polyLine.setLastPoint(new Point(1, 1));
+                assertEquals(2, graphicViewSpy.getTimesNotified());
+            }
+        }
+
     }
 }
