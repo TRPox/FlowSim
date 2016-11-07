@@ -44,6 +44,11 @@ public class GraphicRectangleBuilder extends GraphicShapeBuilder {
     }
 
     @Override
+    public void removeLastPoint() {
+
+    }
+
+    @Override
     public boolean isObjectFinished() {
         return pointsAdded > 1;
     }

@@ -61,6 +61,22 @@ public class GraphicLineBuilderTest extends Line {
         assertNull(line.getEnd());
     }
 
+    public class LastPointRemovedContext {
+        @Before
+        public void setUp() {
+            builder.removeLastPoint();
+        }
+
+        @Test
+        public void whenAddingOnePoint_lineStartShouldEqualPoint() {
+            builder.addPoint(start);
+
+            GraphicLineSpy line = (GraphicLineSpy) builder.getShape();
+            assertEquals(start, line.getStart());
+        }
+    }
+
+
     public class OnePointAddedContext {
         @Before
         public void setUp() {
@@ -89,6 +105,29 @@ public class GraphicLineBuilderTest extends Line {
 
             GraphicLineSpy line = (GraphicLineSpy) builder.getShape();
             assertEquals(end, line.getStart());
+        }
+
+        @Test
+        public void whenRemovingLastPoint_startShouldBeNull() {
+            builder.removeLastPoint();
+
+            GraphicLineSpy line = (GraphicLineSpy) builder.getShape();
+            assertNull(line.getStart());
+        }
+
+        public class LastPointRemovedContext {
+            @Before
+            public void setUp() {
+                builder.removeLastPoint();
+            }
+
+            @Test
+            public void whenAddingOnePoint_startShouldEqualPoint() {
+                builder.addPoint(end);
+
+                GraphicLineSpy line = (GraphicLineSpy) builder.getShape();
+                assertEquals(end, line.getStart());
+            }
         }
 
         public class TwoPointsAddedContext {
@@ -128,6 +167,30 @@ public class GraphicLineBuilderTest extends Line {
 
                 GraphicLineSpy line = (GraphicLineSpy) builder.getShape();
                 assertEquals(point, line.getEnd());
+            }
+
+            @Test
+            public void whenRemovingLastPoint_endShouldBeNull() {
+                builder.removeLastPoint();
+
+                GraphicLineSpy line = (GraphicLineSpy) builder.getShape();
+                assertEquals(start, line.getStart());
+                assertNull(line.getEnd());
+            }
+
+            public class LastPointRemovedContext {
+                @Before
+                public void setUp() {
+                    builder.removeLastPoint();
+                }
+
+                @Test
+                public void whenAddingPoint_endShouldEqualPoint() {
+                    builder.addPoint(start);
+
+                    GraphicLineSpy line = (GraphicLineSpy) builder.getShape();
+                    assertEquals(start, line.getEnd());
+                }
             }
         }
     }

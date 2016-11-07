@@ -70,6 +70,12 @@ public class GraphicPolyLineTest {
                 polyLine.setLastPoint(new Point(1, 1));
                 assertEquals(2, graphicViewSpy.getTimesNotified());
             }
+
+            @Test
+            public void whenRemovingLastPoint_shouldNotifyGraphicView() {
+                polyLine.removeLastPoint();
+                assertEquals(2, graphicViewSpy.getTimesNotified());
+            }
         }
 
     }

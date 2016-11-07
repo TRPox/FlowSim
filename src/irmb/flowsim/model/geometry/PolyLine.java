@@ -24,4 +24,10 @@ public class PolyLine extends Shape {
         pointList.set(pointList.size() - 1, point);
         notifyObservers();
     }
+
+    public void removeLastPoint() {
+        if (!pointList.isEmpty())
+            pointList.remove(pointList.size() - 1);
+        notifyObservers();
+    }
 }

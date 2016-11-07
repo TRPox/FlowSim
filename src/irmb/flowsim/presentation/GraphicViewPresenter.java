@@ -58,8 +58,12 @@ public class GraphicViewPresenter {
     }
 
     public void handleRightClick(int x, int y) {
-        if (hasShapeBuilder())
-            graphicView.removeShape(shapeBuilder.getShape());
+        if (hasShapeBuilder()) {
+            if (pointsAdded <= 2)
+                graphicView.removeShape(shapeBuilder.getShape());
+            else
+                shapeBuilder.removeLastPoint();
+        }
         shapeBuilder = null;
     }
 

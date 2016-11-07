@@ -22,5 +22,8 @@ public abstract class GraphicShapeBuilder {
 
     public abstract void setLastPoint(Point point);
 
+    public abstract void removeLastPoint();
+
     public abstract boolean isObjectFinished();
+
 }

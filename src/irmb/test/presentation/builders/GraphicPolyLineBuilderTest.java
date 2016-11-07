@@ -37,6 +37,14 @@ public class GraphicPolyLineBuilderTest {
         assertEquals(first, polyLine.getPointList().get(0));
     }
 
+    @Test
+    public void whenRemovingLastPoint_shouldDoNothing() {
+        builder.removeLastPoint();
+
+        GraphicPolyLineSpy polyLine = (GraphicPolyLineSpy) builder.getShape();
+        assertEquals(0, polyLine.getPointList().size());
+    }
+
     public class OnePointAddedContext {
 
         private final Point second = new Point(10, 5);
@@ -54,6 +62,15 @@ public class GraphicPolyLineBuilderTest {
             List<Point> pointList = polyLine.getPointList();
             assertEquals(1, pointList.size());
             assertEquals(second, pointList.get(0));
+        }
+
+        @Test
+        public void whenRemovingLastPoint_shouldRemoveLastPointFromList() {
+            builder.removeLastPoint();
+
+            GraphicPolyLineSpy polyLine = (GraphicPolyLineSpy) builder.getShape();
+            List<Point> pointList = polyLine.getPointList();
+            assertEquals(0, pointList.size());
         }
 
         public class TwoPointsAddedContext {

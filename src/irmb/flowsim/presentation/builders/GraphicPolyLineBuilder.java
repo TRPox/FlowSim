@@ -36,7 +36,13 @@ public class GraphicPolyLineBuilder extends GraphicShapeBuilder {
     }
 
     @Override
+    public void removeLastPoint() {
+        polyLine.removeLastPoint();
+    }
+
+    @Override
     public boolean isObjectFinished() {
         return false;
     }
+
 }

@@ -44,6 +44,18 @@ public class GraphicLineBuilder extends GraphicShapeBuilder {
     }
 
     @Override
+    public void removeLastPoint() {
+        if (pointsAdded == 1) {
+            line.setStart(null);
+            pointsAdded = 0;
+        } else if (pointsAdded > 1) {
+            line.setEnd(null);
+            pointsAdded = 1;
+        }
+
+    }
+
+    @Override
     public boolean isObjectFinished() {
         return pointsAdded > 1;
     }

@@ -369,19 +369,32 @@ public class GraphicViewPresenterTest {
             }
         }
 
-//        public class CancelPolyLineContext {
-//
-//            private GraphicViewSpyForPolyLine graphicViewSpy;
-//
-//            @Before
-//            public void setUp() {
-//                graphicViewSpy = new GraphicViewSpyForPolyLine();
-//                sut.setObjectType("PolyLine");
-//                sut.handleLeftClick(first.getX(), first.getY());
-//            }
-//
-//        }
+        public class CancelPolyLineContext {
 
+            private GraphicViewSpyForPolyLine graphicViewSpy;
+
+            @Before
+            public void setUp() {
+                graphicViewSpy = new GraphicViewSpyForPolyLine();
+                sut.setGraphicView(graphicViewSpy);
+                sut.setObjectType("PolyLine");
+                sut.handleLeftClick(first.getX(), first.getY());
+                sut.handleMouseMove(second.getX(), second.getY());
+                sut.handleLeftClick(second.getX(), second.getY());
+            }
+
+            @Test
+            public void whenMovingMouseThenRightClicking_shouldRemoveLastPoint() {
+                sut.handleMouseMove(third.getX(), third.getY());
+                sut.handleRightClick(third.getX(), third.getY());
+                
+                List<Point> pointList = graphicViewSpy.getReceivedPolyLinePointList();
+                int receivedPoints = pointList.size();
+                assertEquals(2, receivedPoints);
+                assertExpectedPointEqualsActual(first, pointList.get(0));
+                assertExpectedPointEqualsActual(second, pointList.get(1));
+            }
+        }
     }
 
     public class ChangeObjectTypeContext {
