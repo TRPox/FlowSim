@@ -5,7 +5,7 @@ import irmb.flowsim.model.geometry.Point;
 import irmb.flowsim.presentation.builders.GraphicPolyLineBuilder;
 import irmb.flowsim.presentation.builders.GraphicShapeBuilder;
 import irmb.flowsim.presentation.factories.GraphicShapeFactory;
-import irmb.test.view.GraphicPolyLineSpy;
+import irmb.test.view.graphics.GraphicPolyLineSpy;
 import irmb.test.presentation.factories.GraphicShapeFactoryStub;
 import org.junit.Before;
 import org.junit.Test;

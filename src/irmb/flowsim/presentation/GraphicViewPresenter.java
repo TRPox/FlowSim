@@ -3,6 +3,10 @@ package irmb.flowsim.presentation;
 import irmb.flowsim.model.geometry.Point;
 import irmb.flowsim.presentation.builders.GraphicShapeBuilder;
 import irmb.flowsim.presentation.factories.GraphicShapeBuilderFactory;
+import irmb.flowsim.view.graphics.GraphicShape;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Sven on 19.10.2016.
@@ -12,6 +16,9 @@ public class GraphicViewPresenter {
     private int pointsAdded;
     private GraphicShapeBuilder shapeBuilder;
     private final GraphicShapeBuilderFactory factory;
+
+    private List<GraphicShape> shapeList = new ArrayList<>();
+    private GraphicShape redoShape;
 
     public GraphicViewPresenter(GraphicShapeBuilderFactory factory) {
         this.factory = factory;
@@ -55,6 +62,7 @@ public class GraphicViewPresenter {
 
     private void sendShapeToView() {
         graphicView.receiveShape(shapeBuilder.getShape());
+        shapeList.add(shapeBuilder.getShape());
     }
 
     public void handleRightClick(int x, int y) {
@@ -85,4 +93,16 @@ public class GraphicViewPresenter {
         shapeBuilder.setLastPoint(makePoint(x, y));
     }
 
+    public void undo() {
+        if (shapeList.size() > 0) {
+            int lastElement = shapeList.size() - 1;
+            graphicView.removeShape(shapeList.get(lastElement));
+            redoShape = shapeList.get(lastElement);
+            shapeList.remove(lastElement);
+        }
+    }
+
+    public void redo() {
+        graphicView.receiveShape(redoShape);
+    }
 }

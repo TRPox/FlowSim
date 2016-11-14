@@ -1,7 +1,7 @@
 package irmb.test.presentation;
 
 import irmb.flowsim.model.geometry.Point;
-import irmb.test.view.GraphicRectangleSpy;
+import irmb.test.view.graphics.GraphicRectangleSpy;
 
 /**
  * Created by Sven on 31.10.2016.

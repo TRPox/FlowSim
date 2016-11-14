@@ -2,10 +2,10 @@ package irmb.test.presentation;
 
 import irmb.flowsim.model.geometry.*;
 import irmb.flowsim.presentation.GraphicView;
-import irmb.flowsim.view.GraphicLine;
-import irmb.flowsim.view.GraphicPolyLine;
-import irmb.flowsim.view.GraphicRectangle;
-import irmb.flowsim.view.GraphicShape;
+import irmb.flowsim.view.graphics.GraphicLine;
+import irmb.flowsim.view.graphics.GraphicPolyLine;
+import irmb.flowsim.view.graphics.GraphicRectangle;
+import irmb.flowsim.view.graphics.GraphicShape;
 import irmb.util.Observer;
 
 /**
@@ -31,23 +31,14 @@ public class GraphicViewSpy implements GraphicView, Observer {
     private boolean wasRectangleRemoved;
     private boolean wasPolyLineRemoved;
 
+    private int timesRemoveLineCalled;
+
     protected GraphicShape receivedShape;
 
 
     private void receiveLine(GraphicLine line) {
         timesReceivedLineCalled++;
         hasReceivedLine = true;
-        receivedShape = line;
-    }
-
-    private void receiveRectangle(GraphicRectangle rectangle) {
-        hasReceivedRectangle = true;
-        receivedShape = rectangle;
-    }
-
-    private void receivePolyLine(GraphicPolyLine polyLine) {
-        hasReceivedPolyLine = true;
-        receivedShape = polyLine;
     }
 
     @Override
@@ -56,19 +47,34 @@ public class GraphicViewSpy implements GraphicView, Observer {
         if (graphicShape instanceof GraphicLine)
             receiveLine((GraphicLine) graphicShape);
         else if (graphicShape instanceof GraphicRectangle)
-            receiveRectangle((GraphicRectangle) graphicShape);
+            hasReceivedRectangle = true;
         else if (graphicShape instanceof GraphicPolyLine)
-            receivePolyLine((GraphicPolyLine) graphicShape);
+            hasReceivedPolyLine = true;
+        receivedShape = graphicShape;
     }
 
     @Override
     public void removeShape(GraphicShape graphicShape) {
         if (graphicShape instanceof GraphicLine)
-            wasLineRemoved = true;
+            removeLine();
         else if (graphicShape instanceof GraphicRectangle)
-            wasRectangleRemoved = true;
+            removeRectangle();
         else if (graphicShape instanceof GraphicPolyLine)
-            wasPolyLineRemoved = true;
+            removePolyLine();
+        receivedShape = graphicShape;
+    }
+
+    private void removeLine() {
+        wasLineRemoved = true;
+        timesRemoveLineCalled++;
+    }
+
+    private void removeRectangle() {
+        wasRectangleRemoved = true;
+    }
+
+    private void removePolyLine() {
+        wasPolyLineRemoved = true;
     }
 
     @Override
@@ -81,7 +87,7 @@ public class GraphicViewSpy implements GraphicView, Observer {
         return hasReceivedLine;
     }
 
-    public int getTimesReceivedLineCalled() {
+    public int getTimesReceiveLineCalled() {
         return timesReceivedLineCalled;
     }
 
@@ -115,5 +121,9 @@ public class GraphicViewSpy implements GraphicView, Observer {
 
     public boolean wasPolyLineRemoved() {
         return wasPolyLineRemoved;
+    }
+
+    public int getTimesRemoveLineCalled() {
+        return timesRemoveLineCalled;
     }
 }

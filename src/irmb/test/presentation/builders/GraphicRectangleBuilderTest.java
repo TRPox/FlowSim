@@ -4,7 +4,7 @@ import de.bechte.junit.runners.context.HierarchicalContextRunner;
 import irmb.flowsim.model.geometry.Point;
 import irmb.flowsim.presentation.builders.GraphicRectangleBuilder;
 import irmb.flowsim.presentation.factories.GraphicShapeFactory;
-import irmb.test.view.GraphicRectangleSpy;
+import irmb.test.view.graphics.GraphicRectangleSpy;
 import irmb.test.presentation.factories.GraphicShapeFactoryStub;
 import org.junit.Before;
 import org.junit.Test;

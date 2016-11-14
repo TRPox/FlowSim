@@ -2,6 +2,7 @@ package irmb.flowsim.view;
 
 import irmb.flowsim.presentation.GraphicView;
 import irmb.flowsim.presentation.GraphicViewPresenter;
+import irmb.flowsim.view.graphics.GraphicShape;
 import irmb.util.Observer;
 
 import javax.swing.*;

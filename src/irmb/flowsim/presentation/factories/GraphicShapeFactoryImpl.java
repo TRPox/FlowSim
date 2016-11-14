@@ -4,10 +4,10 @@ import irmb.flowsim.model.geometry.Line;
 import irmb.flowsim.model.geometry.PolyLine;
 import irmb.flowsim.model.geometry.Rectangle;
 import irmb.flowsim.model.geometry.Shape;
-import irmb.flowsim.view.GraphicLine;
-import irmb.flowsim.view.GraphicPolyLine;
-import irmb.flowsim.view.GraphicRectangle;
-import irmb.flowsim.view.GraphicShape;
+import irmb.flowsim.view.graphics.GraphicLine;
+import irmb.flowsim.view.graphics.GraphicPolyLine;
+import irmb.flowsim.view.graphics.GraphicRectangle;
+import irmb.flowsim.view.graphics.GraphicShape;
 
 /**
  * Created by Sven on 20.10.2016.

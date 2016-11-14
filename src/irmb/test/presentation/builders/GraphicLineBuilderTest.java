@@ -6,7 +6,7 @@ import irmb.flowsim.model.geometry.Point;
 import irmb.flowsim.presentation.builders.GraphicLineBuilder;
 import irmb.flowsim.presentation.factories.GraphicShapeFactory;
 import irmb.test.presentation.factories.GraphicShapeFactoryStub;
-import irmb.test.view.GraphicLineSpy;
+import irmb.test.view.graphics.GraphicLineSpy;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

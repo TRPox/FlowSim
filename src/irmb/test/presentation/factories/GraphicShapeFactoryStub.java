@@ -5,10 +5,10 @@ import irmb.flowsim.model.geometry.PolyLine;
 import irmb.flowsim.model.geometry.Rectangle;
 import irmb.flowsim.model.geometry.Shape;
 import irmb.flowsim.presentation.factories.GraphicShapeFactory;
-import irmb.flowsim.view.GraphicShape;
-import irmb.test.view.GraphicLineSpy;
-import irmb.test.view.GraphicPolyLineSpy;
-import irmb.test.view.GraphicRectangleSpy;
+import irmb.flowsim.view.graphics.GraphicShape;
+import irmb.test.view.graphics.GraphicLineSpy;
+import irmb.test.view.graphics.GraphicPolyLineSpy;
+import irmb.test.view.graphics.GraphicRectangleSpy;
 
 /**
  * Created by Sven on 20.10.2016.

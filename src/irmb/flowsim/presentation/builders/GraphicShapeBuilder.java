@@ -1,7 +1,7 @@
 package irmb.flowsim.presentation.builders;
 
 import irmb.flowsim.model.geometry.Point;
-import irmb.flowsim.view.GraphicShape;
+import irmb.flowsim.view.graphics.GraphicShape;
 import irmb.flowsim.presentation.factories.GraphicShapeFactory;
 
 /**

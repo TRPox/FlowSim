@@ -3,8 +3,8 @@ package irmb.flowsim.presentation.builders;
 import irmb.flowsim.model.geometry.Point;
 import irmb.flowsim.model.geometry.Rectangle;
 import irmb.flowsim.presentation.factories.GraphicShapeFactory;
-import irmb.flowsim.view.GraphicRectangle;
-import irmb.flowsim.view.GraphicShape;
+import irmb.flowsim.view.graphics.GraphicRectangle;
+import irmb.flowsim.view.graphics.GraphicShape;
 
 /**
  * Created by Sven on 20.10.2016.

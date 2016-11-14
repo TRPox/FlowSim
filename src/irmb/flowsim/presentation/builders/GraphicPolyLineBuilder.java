@@ -1,9 +1,9 @@
 package irmb.flowsim.presentation.builders;
 
 import irmb.flowsim.model.geometry.PolyLine;
-import irmb.flowsim.view.GraphicPolyLine;
+import irmb.flowsim.view.graphics.GraphicPolyLine;
 import irmb.flowsim.model.geometry.Point;
-import irmb.flowsim.view.GraphicShape;
+import irmb.flowsim.view.graphics.GraphicShape;
 import irmb.flowsim.presentation.factories.GraphicShapeFactory;
 
 /**

@@ -1,6 +1,6 @@
 package irmb.flowsim.presentation;
 
-import irmb.flowsim.view.GraphicShape;
+import irmb.flowsim.view.graphics.GraphicShape;
 
 /**
  * Created by Sven on 19.10.2016.
