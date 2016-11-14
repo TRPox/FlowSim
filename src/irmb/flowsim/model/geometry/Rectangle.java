@@ -1,18 +1,20 @@
 package irmb.flowsim.model.geometry;
 
 /**
- * Created by Sven on 20.10.2016.
+ * Created by Sven on 25.10.2016.
  */
-public class Rectangle implements Shape {
+public class Rectangle extends Shape {
+
     private Point first;
     private Point second;
 
-    public Point getFirst() {
-        return first;
-    }
-
     public void setFirst(Point first) {
         this.first = first;
+        notifyObservers();
+    }
+
+    public Point getFirst() {
+        return first;
     }
 
     public Point getSecond() {
@@ -21,5 +23,6 @@ public class Rectangle implements Shape {
 
     public void setSecond(Point second) {
         this.second = second;
+        notifyObservers();
     }
 }

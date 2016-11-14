@@ -2,61 +2,79 @@ package irmb.test.presentation;
 
 import irmb.flowsim.model.geometry.*;
 import irmb.flowsim.presentation.GraphicView;
-
-import java.util.List;
+import irmb.flowsim.view.GraphicLine;
+import irmb.flowsim.view.GraphicPolyLine;
+import irmb.flowsim.view.GraphicRectangle;
+import irmb.flowsim.view.GraphicShape;
+import irmb.util.Observer;
 
 /**
  * Created by Sven on 19.10.2016.
  */
-public class GraphicViewSpy implements GraphicView {
+public class GraphicViewSpy implements GraphicView, Observer {
 
 
     private Point first;
     private Point second;
 
+    private boolean hasReceivedShape;
     private boolean hasReceivedLine;
-    private int timesReceivedLineCalled;
     private boolean hasReceivedRectangle;
     private boolean hasReceivedPolyLine;
-    private List<Point> receivedPolyLinePointList;
 
-    @Override
-    public void receiveLine(Line line) {
+    private boolean wasNotified;
+    private int timesNotified;
+
+    private int timesReceivedLineCalled;
+
+    private boolean wasLineRemoved;
+    private boolean wasRectangleRemoved;
+    private boolean wasPolyLineRemoved;
+
+    protected GraphicShape receivedShape;
+
+
+    private void receiveLine(GraphicLine line) {
         timesReceivedLineCalled++;
         hasReceivedLine = true;
-        this.first = line.getStart();
-        this.second = line.getEnd();
+        receivedShape = line;
     }
 
-    @Override
-    public void receiveRectangle(Rectangle rectangle) {
+    private void receiveRectangle(GraphicRectangle rectangle) {
         hasReceivedRectangle = true;
-        this.first = rectangle.getFirst();
-        this.second = rectangle.getSecond();
+        receivedShape = rectangle;
     }
 
-    @Override
-    public void receivePolyLine(PolyLine polyLine) {
+    private void receivePolyLine(GraphicPolyLine polyLine) {
         hasReceivedPolyLine = true;
-        receivedPolyLinePointList = polyLine.getPointList();
+        receivedShape = polyLine;
     }
 
     @Override
-    public void receiveShape(Shape shape) {
-        if (shape instanceof Line)
-            receiveLine((Line) shape);
-        else if (shape instanceof Rectangle)
-            receiveRectangle((Rectangle) shape);
-        else if (shape instanceof PolyLine)
-            receivePolyLine((PolyLine) shape);
+    public void receiveShape(GraphicShape graphicShape) {
+        hasReceivedShape = true;
+        if (graphicShape instanceof GraphicLine)
+            receiveLine((GraphicLine) graphicShape);
+        else if (graphicShape instanceof GraphicRectangle)
+            receiveRectangle((GraphicRectangle) graphicShape);
+        else if (graphicShape instanceof GraphicPolyLine)
+            receivePolyLine((GraphicPolyLine) graphicShape);
     }
 
-    public Point getFirst() {
-        return first;
+    @Override
+    public void removeShape(GraphicShape graphicShape) {
+        if (graphicShape instanceof GraphicLine)
+            wasLineRemoved = true;
+        else if (graphicShape instanceof GraphicRectangle)
+            wasRectangleRemoved = true;
+        else if (graphicShape instanceof GraphicPolyLine)
+            wasPolyLineRemoved = true;
     }
 
-    public Point getSecond() {
-        return second;
+    @Override
+    public void update() {
+        wasNotified = true;
+        timesNotified++;
     }
 
     public boolean hasReceivedLine() {
@@ -75,7 +93,27 @@ public class GraphicViewSpy implements GraphicView {
         return hasReceivedPolyLine;
     }
 
-    public List<Point> getReceivedPolyLinePointList() {
-        return receivedPolyLinePointList;
+    public boolean hasReceivedShape() {
+        return hasReceivedShape;
+    }
+
+    public boolean wasNotified() {
+        return wasNotified;
+    }
+
+    public int getTimesNotified() {
+        return timesNotified;
+    }
+
+    public boolean wasLineRemoved() {
+        return wasLineRemoved;
+    }
+
+    public boolean wasRectangleRemoved() {
+        return wasRectangleRemoved;
+    }
+
+    public boolean wasPolyLineRemoved() {
+        return wasPolyLineRemoved;
     }
 }

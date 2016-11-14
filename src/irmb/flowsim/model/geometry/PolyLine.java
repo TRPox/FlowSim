@@ -1,19 +1,33 @@
 package irmb.flowsim.model.geometry;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Created by Sven on 20.10.2016.
+ * Created by Sven on 25.10.2016.
  */
-public class PolyLine implements Shape {
+public class PolyLine extends Shape {
+
     private List<Point> pointList = new LinkedList<>();
 
-    public List<Point> getPointList() {
-        return pointList;
+    public void addPoint(Point point) {
+        pointList.add(point);
+        notifyObservers();
     }
 
-    public void setPointList(List<Point> pointList) {
-        this.pointList = pointList;
+    public List<Point> getPointList() {
+        return new ArrayList<>(pointList);
+    }
+
+    public void setLastPoint(Point point) {
+        pointList.set(pointList.size() - 1, point);
+        notifyObservers();
+    }
+
+    public void removeLastPoint() {
+        if (!pointList.isEmpty())
+            pointList.remove(pointList.size() - 1);
+        notifyObservers();
     }
 }
