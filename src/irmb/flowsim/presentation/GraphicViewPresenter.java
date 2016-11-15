@@ -96,7 +96,7 @@ public class GraphicViewPresenter {
     }
 
     public void undo() {
-        if (shapeList.size() > 0) {
+        if (currentIndex > -1) {
             graphicView.removeShape(shapeList.get(currentIndex));
             currentIndex--;
         }

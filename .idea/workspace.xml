@@ -24,8 +24,8 @@
             <file leaf-file-name="GraphicViewPresenter.java" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/src/irmb/flowsim/presentation/GraphicViewPresenter.java">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="323">
-                    <caret line="66" column="47" selection-start-line="66" selection-start-column="47" selection-end-line="66" selection-end-column="47" />
+                  <state relative-caret-position="646">
+                    <caret line="101" column="9" selection-start-line="101" selection-start-column="9" selection-end-line="101" selection-end-column="9" />
                     <folding>
                       <element signature="method#addPointToShape#0;class#GraphicViewPresenter#0" expanded="false" />
                     </folding>
@@ -60,10 +60,40 @@
       <file leaf-file-name="GraphicViewPresenterTestForCommandQueue.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/irmb/test/presentation/GraphicViewPresenterTestForCommandQueue.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+            <state relative-caret-position="373">
+              <caret line="119" column="82" selection-start-line="119" selection-start-column="82" selection-end-line="119" selection-end-column="82" />
               <folding />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestingGraphicViewImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/irmb/flowsim/view/TestingGraphicViewImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="22" column="57" selection-start-line="22" selection-start-column="57" selection-end-line="22" selection-end-column="57" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainWindow.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/irmb/flowsim/view/MainWindow.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="465">
+              <caret line="36" column="60" selection-start-line="36" selection-start-column="60" selection-end-line="36" selection-end-column="60" />
+              <folding>
+                <element signature="e#1419#1420#0" expanded="true" />
+                <element signature="e#1465#1466#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TempView.form" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/irmb/flowsim/view/TempView.form">
+          <provider selected="true" editor-type-id="ui-designer">
+            <state />
           </provider>
         </entry>
       </file>
@@ -89,7 +119,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/irmb/flowsim/presentation/factories/ShapeBuilderFactoryImpl.java" />
         <option value="$PROJECT_DIR$/src/irmb/test/presentation/factories/GraphicShapeBuilderFactoryImplTest.java" />
         <option value="$PROJECT_DIR$/src/irmb/flowsim/presentation/builders/LineBuilder.java" />
         <option value="$PROJECT_DIR$/src/irmb/flowsim/presentation/builders/PolyLineBuilder.java" />
@@ -122,7 +151,6 @@
         <option value="$PROJECT_DIR$/src/irmb/test/view/GraphicRectangleTest.java" />
         <option value="$PROJECT_DIR$/src/irmb/flowsim/presentation/GraphicView.java" />
         <option value="$PROJECT_DIR$/src/irmb/flowsim/view/GraphicPanel.java" />
-        <option value="$PROJECT_DIR$/src/irmb/flowsim/view/MainWindow.java" />
         <option value="$PROJECT_DIR$/src/irmb/test/view/GraphicViewImplTest.java" />
         <option value="$PROJECT_DIR$/src/irmb/util/Subject.java" />
         <option value="$PROJECT_DIR$/src/irmb/flowsim/view/TestingGraphicViewImpl.java" />
@@ -138,8 +166,10 @@
         <option value="$PROJECT_DIR$/src/irmb/test/view/GraphicPolyLineTest.java" />
         <option value="$PROJECT_DIR$/src/irmb/flowsim/model/geometry/PolyLine.java" />
         <option value="$PROJECT_DIR$/src/irmb/test/presentation/GraphicViewPresenterTest.java" />
-        <option value="$PROJECT_DIR$/src/irmb/flowsim/presentation/GraphicViewPresenter.java" />
+        <option value="$PROJECT_DIR$/src/irmb/flowsim/view/TempView.form" />
+        <option value="$PROJECT_DIR$/src/irmb/flowsim/view/MainWindow.java" />
         <option value="$PROJECT_DIR$/src/irmb/test/presentation/GraphicViewPresenterTestForCommandQueue.java" />
+        <option value="$PROJECT_DIR$/src/irmb/flowsim/presentation/GraphicViewPresenter.java" />
       </list>
     </option>
   </component>
@@ -346,6 +376,40 @@
               <option name="myItemId" value="flowsim" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MainWindow" />
+              <option name="myItemType" value="com.intellij.uiDesigner.projectView.FormNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FlowSim" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FlowSim" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="irmb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="flowsim" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -370,6 +434,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="presentation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FlowSim" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FlowSim" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="irmb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="flowsim" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -418,7 +504,7 @@
       <recent name="C:\Users\Sven\Documents\FlowSim\src\irmb\flowsim\view" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.GraphicViewPresenterTestForCommandQueue.commandQueueAcceptanceTest">
+  <component name="RunManager" selected="JUnit.GraphicViewPresenterTestForCommandQueue">
     <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -966,11 +1052,11 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.GraphicViewPresenterTestForCommandQueue.commandQueueAcceptanceTest" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.GraphicViewPresenterTestForCommandQueue" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.GraphicViewPresenterTestForCommandQueue$LineAddedContext" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.irmb.test in FlowSim" />
-        <item index="4" class="java.lang.String" itemvalue="Application.Main" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.GraphicViewPresenterTestForCommandQueue" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Main" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.GraphicViewPresenterTestForCommandQueue.commandQueueAcceptanceTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.GraphicViewPresenterTestForCommandQueue$LineAddedContext" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.irmb.test in FlowSim" />
       </list>
     </recent_temporary>
   </component>
@@ -1005,7 +1091,7 @@
       <workItem from="1478349323584" duration="11013000" />
       <workItem from="1479144521417" duration="99000" />
       <workItem from="1479144645902" duration="41000" />
-      <workItem from="1479207060404" duration="4724000" />
+      <workItem from="1479207060404" duration="5384000" />
     </task>
     <servers />
   </component>
@@ -1013,26 +1099,26 @@
     <history-entry file="GraphicViewPresenterTestForCommandQueue - 2016.11.15 at 14h 29m 46s.xml">
       <configuration name="GraphicViewPresenterTestForCommandQueue" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GraphicViewPresenterTestForCommandQueue$LineAddedContext - 2016.11.15 at 14h 20m 35s.xml">
-      <configuration name="GraphicViewPresenterTestForCommandQueue$LineAddedContext" configurationId="JUnit" />
+    <history-entry file="GraphicViewPresenterTestForCommandQueue - 2016.11.15 at 14h 48m 47s.xml">
+      <configuration name="GraphicViewPresenterTestForCommandQueue" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GraphicViewPresenterTestForCommandQueue$LineAddedContext - 2016.11.15 at 14h 20m 42s.xml">
-      <configuration name="GraphicViewPresenterTestForCommandQueue$LineAddedContext" configurationId="JUnit" />
+    <history-entry file="GraphicViewPresenterTestForCommandQueue - 2016.11.15 at 14h 50m 28s.xml">
+      <configuration name="GraphicViewPresenterTestForCommandQueue" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GraphicViewPresenterTestForCommandQueue$LineAddedContext - 2016.11.15 at 14h 21m 18s.xml">
-      <configuration name="GraphicViewPresenterTestForCommandQueue$LineAddedContext" configurationId="JUnit" />
+    <history-entry file="GraphicViewPresenterTestForCommandQueue - 2016.11.15 at 14h 51m 13s.xml">
+      <configuration name="GraphicViewPresenterTestForCommandQueue" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GraphicViewPresenterTestForCommandQueue$LineAddedContext - 2016.11.15 at 14h 24m 07s.xml">
-      <configuration name="GraphicViewPresenterTestForCommandQueue$LineAddedContext" configurationId="JUnit" />
+    <history-entry file="GraphicViewPresenterTestForCommandQueue - 2016.11.15 at 14h 51m 36s.xml">
+      <configuration name="GraphicViewPresenterTestForCommandQueue" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GraphicViewPresenterTestForCommandQueue$LineAddedContext - 2016.11.15 at 14h 24m 14s.xml">
-      <configuration name="GraphicViewPresenterTestForCommandQueue$LineAddedContext" configurationId="JUnit" />
+    <history-entry file="GraphicViewPresenterTestForCommandQueue - 2016.11.15 at 14h 52m 05s.xml">
+      <configuration name="GraphicViewPresenterTestForCommandQueue" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GraphicViewPresenterTestForCommandQueue$LineAddedContext - 2016.11.15 at 14h 25m 08s.xml">
-      <configuration name="GraphicViewPresenterTestForCommandQueue$LineAddedContext" configurationId="JUnit" />
+    <history-entry file="GraphicViewPresenterTestForCommandQueue - 2016.11.15 at 14h 52m 18s.xml">
+      <configuration name="GraphicViewPresenterTestForCommandQueue" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GraphicViewPresenterTestForCommandQueue$LineAddedContext - 2016.11.15 at 14h 25m 22s.xml">
-      <configuration name="GraphicViewPresenterTestForCommandQueue$LineAddedContext" configurationId="JUnit" />
+    <history-entry file="GraphicViewPresenterTestForCommandQueue - 2016.11.15 at 14h 52m 43s.xml">
+      <configuration name="GraphicViewPresenterTestForCommandQueue" configurationId="JUnit" />
     </history-entry>
     <history-entry file="GraphicViewPresenterTestForCommandQueue$LineAddedContext - 2016.11.15 at 14h 29m 37s.xml">
       <configuration name="GraphicViewPresenterTestForCommandQueue$LineAddedContext" configurationId="JUnit" />
@@ -1042,7 +1128,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="122319000" />
+    <option name="totallyTimeSpent" value="122979000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1688" y="31" width="1696" height="1026" extended-state="6" />
@@ -1056,7 +1142,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2362822" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="31" y="759" width="1636" height="228" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2362822" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="31" y="759" width="1636" height="228" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1132,13 +1218,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/irmb/flowsim/presentation/factories/GraphicShapeFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/irmb/test/presentation/factories/GraphicShapeFactoryImplTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="720">
@@ -1296,20 +1375,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/irmb/flowsim/view/TestingGraphicViewImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="22" column="57" selection-start-line="22" selection-start-column="57" selection-end-line="22" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/irmb/flowsim/view/MainWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="618">
-          <caret line="42" column="5" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/irmb/test/presentation/GraphicViewSpy.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
@@ -1415,6 +1480,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/irmb/flowsim/view/TempView.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/irmb/flowsim/view/MainWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="36" column="60" selection-start-line="36" selection-start-column="60" selection-end-line="36" selection-end-column="60" />
+          <folding>
+            <element signature="e#1419#1420#0" expanded="true" />
+            <element signature="e#1465#1466#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/irmb/test/presentation/GraphicViewPresenterTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -1426,21 +1507,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/irmb/flowsim/presentation/GraphicViewPresenter.java">
+    <entry file="file://$PROJECT_DIR$/src/irmb/flowsim/view/TestingGraphicViewImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="66" column="47" selection-start-line="66" selection-start-column="47" selection-end-line="66" selection-end-column="47" />
-          <folding>
-            <element signature="method#addPointToShape#0;class#GraphicViewPresenter#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="340">
+          <caret line="22" column="57" selection-start-line="22" selection-start-column="57" selection-end-line="22" selection-end-column="57" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/irmb/test/presentation/GraphicViewPresenterTestForCommandQueue.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+        <state relative-caret-position="373">
+          <caret line="119" column="82" selection-start-line="119" selection-start-column="82" selection-end-line="119" selection-end-column="82" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/irmb/flowsim/presentation/GraphicViewPresenter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="101" column="9" selection-start-line="101" selection-start-column="9" selection-end-line="101" selection-end-column="9" />
+          <folding>
+            <element signature="method#addPointToShape#0;class#GraphicViewPresenter#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

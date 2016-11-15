@@ -61,6 +61,8 @@ public class GraphicViewPresenterTestForCommandQueue extends GraphicViewPresente
         assertExpectedPointEqualsActual(first, graphicViewSpyForLine.getFirst());
         assertExpectedPointEqualsActual(second, graphicViewSpyForLine.getSecond());
 
+        sut.undo();
+
         sut.redo();
         assertEquals(4, graphicViewSpyForLine.getTimesReceiveLineCalled());
         assertExpectedPointEqualsActual(first, graphicViewSpyForLine.getFirst());
@@ -109,6 +111,13 @@ public class GraphicViewPresenterTestForCommandQueue extends GraphicViewPresente
             @Before
             public void setUp() {
                 sut.undo();
+            }
+
+            @Test
+            public void whenCallingUndo_shouldDoNothing() {
+                sut.undo();
+
+                assertEquals(1, graphicViewSpyForLine.getTimesRemoveLineCalled());
             }
 
             @Test

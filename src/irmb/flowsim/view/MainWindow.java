@@ -18,6 +18,8 @@ public class MainWindow extends JFrame {
     private JButton rectangleButton;
     private JButton circleButton;
     private JPanel drawPanel;
+    private JButton undoButton;
+    private JButton redoButton;
 
     public MainWindow() {
         this.add(panel);
@@ -31,6 +33,8 @@ public class MainWindow extends JFrame {
         polyLineButton.addActionListener(e -> presenter.setObjectType("PolyLine"));
         rectangleButton.addActionListener(e -> presenter.setObjectType("Rectangle"));
         circleButton.addActionListener(e -> presenter.setObjectType("Circle"));
+        undoButton.addActionListener(e -> presenter.undo());
+        redoButton.addActionListener(e -> presenter.redo());
     }
 
     public void setPresenter(GraphicViewPresenter presenter) {
