@@ -39,8 +39,8 @@ public class GraphicViewPresenterTestForCommandQueue extends GraphicViewPresente
 
     @Test
     public void commandQueueAcceptanceTest() {
-        Point seventh = new Point(71, 72);
-        Point eigth = new Point(81, 82);
+        final Point seventh = new Point(71, 72);
+        final Point eighth = new Point(81, 82);
 
         buildLineWith(first, second);
         buildLineWith(third, fourth);
@@ -71,10 +71,10 @@ public class GraphicViewPresenterTestForCommandQueue extends GraphicViewPresente
         assertExpectedPointEqualsActual(third, graphicViewSpyForLine.getFirst());
         assertExpectedPointEqualsActual(fourth, graphicViewSpyForLine.getSecond());
 
-        buildLineWith(seventh, eigth);
+        buildLineWith(seventh, eighth);
 
         sut.redo();
-        assertEquals(5, graphicViewSpyForLine.getTimesReceiveLineCalled());
+        assertEquals(6, graphicViewSpyForLine.getTimesReceiveLineCalled());
     }
 
     private void buildLineWith(Point first, Point second) {
@@ -118,6 +118,15 @@ public class GraphicViewPresenterTestForCommandQueue extends GraphicViewPresente
                 assertEquals(2, graphicViewSpyForLine.getTimesReceiveLineCalled());
                 assertExpectedPointEqualsActual(first, graphicViewSpyForLine.getFirst());
                 assertExpectedPointEqualsActual(second, graphicViewSpyForLine.getSecond());
+            }
+
+            @Test
+            public void whenCallingRedoAfterAddingNewLine_shouldDoNothing() {
+                sut.setObjectType("Line");
+                transmitTwoPointsToPresenter(third, fourth);
+
+                sut.redo();
+                assertEquals(2, graphicViewSpyForLine.getTimesReceiveLineCalled());
             }
         }
 

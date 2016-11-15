@@ -18,7 +18,7 @@ public class GraphicViewPresenter {
     private final GraphicShapeBuilderFactory factory;
 
     private List<GraphicShape> shapeList = new ArrayList<>();
-    private GraphicShape redoShape;
+    private int currentIndex = -1;
 
     public GraphicViewPresenter(GraphicShapeBuilderFactory factory) {
         this.factory = factory;
@@ -62,6 +62,8 @@ public class GraphicViewPresenter {
 
     private void sendShapeToView() {
         graphicView.receiveShape(shapeBuilder.getShape());
+        for (int i = ++currentIndex; i < shapeList.size(); i++)
+            shapeList.remove(i);
         shapeList.add(shapeBuilder.getShape());
     }
 
@@ -95,14 +97,13 @@ public class GraphicViewPresenter {
 
     public void undo() {
         if (shapeList.size() > 0) {
-            int lastElement = shapeList.size() - 1;
-            graphicView.removeShape(shapeList.get(lastElement));
-            redoShape = shapeList.get(lastElement);
-            shapeList.remove(lastElement);
+            graphicView.removeShape(shapeList.get(currentIndex));
+            currentIndex--;
         }
     }
 
     public void redo() {
-        graphicView.receiveShape(redoShape);
+        if (currentIndex + 1 < shapeList.size())
+            graphicView.receiveShape(shapeList.get(++currentIndex));
     }
 }
