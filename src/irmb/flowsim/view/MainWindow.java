@@ -1,5 +1,6 @@
 package irmb.flowsim.view;
 
+import irmb.flowsim.presentation.GraphicView;
 import irmb.flowsim.presentation.GraphicViewPresenter;
 
 import javax.swing.*;
@@ -17,6 +18,8 @@ public class MainWindow extends JFrame {
     private JButton rectangleButton;
     private JButton circleButton;
     private JPanel drawPanel;
+    private JButton undoButton;
+    private JButton redoButton;
 
     public MainWindow() {
         this.add(panel);
@@ -30,24 +33,21 @@ public class MainWindow extends JFrame {
         polyLineButton.addActionListener(e -> presenter.setObjectType("PolyLine"));
         rectangleButton.addActionListener(e -> presenter.setObjectType("Rectangle"));
         circleButton.addActionListener(e -> presenter.setObjectType("Circle"));
+        undoButton.addActionListener(e -> presenter.undo());
+        redoButton.addActionListener(e -> presenter.redo());
     }
 
     public void setPresenter(GraphicViewPresenter presenter) {
         this.presenter = presenter;
-        ((GraphicPanel) drawPanel).setPresenter(presenter);
+        ((GraphicViewImpl) drawPanel).setPresenter(presenter);
     }
 
-    public GraphicPanel getGraphicPanel() {
-        return (GraphicPanel) drawPanel;
-    }
-
-    public void setGraphicPanel(GraphicPanel panel) {
-        this.drawPanel = panel;
-        this.panel.add(drawPanel);
+    public GraphicView getGraphicPanel() {
+        return (GraphicView) drawPanel;
     }
 
     private void createUIComponents() {
-        drawPanel = new GraphicPanel();
-        ((GraphicPanel) drawPanel).setPresenter(presenter);
+        drawPanel = new TestingGraphicViewImpl();
+        ((GraphicViewImpl) drawPanel).setPresenter(presenter);
     }
 }

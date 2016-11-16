@@ -1,9 +1,9 @@
 package irmb.flowsim.model.geometry;
 
 /**
- * Created by Sven on 20.10.2016.
+ * Created by Sven on 25.10.2016.
  */
-public class Line implements Shape {
+public class Line extends Shape {
     private Point start;
     private Point end;
 
@@ -13,6 +13,7 @@ public class Line implements Shape {
 
     public void setStart(Point start) {
         this.start = start;
+        notifyObservers();
     }
 
     public Point getEnd() {
@@ -21,5 +22,6 @@ public class Line implements Shape {
 
     public void setEnd(Point end) {
         this.end = end;
+        notifyObservers();
     }
 }

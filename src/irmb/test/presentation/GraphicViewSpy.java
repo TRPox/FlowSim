@@ -2,68 +2,92 @@ package irmb.test.presentation;
 
 import irmb.flowsim.model.geometry.*;
 import irmb.flowsim.presentation.GraphicView;
-
-import java.util.List;
+import irmb.flowsim.view.graphics.GraphicLine;
+import irmb.flowsim.view.graphics.GraphicPolyLine;
+import irmb.flowsim.view.graphics.GraphicRectangle;
+import irmb.flowsim.view.graphics.GraphicShape;
+import irmb.util.Observer;
 
 /**
  * Created by Sven on 19.10.2016.
  */
-public class GraphicViewSpy implements GraphicView {
+public class GraphicViewSpy implements GraphicView, Observer {
 
 
     private Point first;
     private Point second;
 
+    private boolean hasReceivedShape;
     private boolean hasReceivedLine;
-    private int timesReceivedLineCalled;
     private boolean hasReceivedRectangle;
     private boolean hasReceivedPolyLine;
-    private List<Point> receivedPolyLinePointList;
 
-    @Override
-    public void receiveLine(Line line) {
+    private boolean wasNotified;
+    private int timesNotified;
+
+    private int timesReceivedLineCalled;
+
+    private boolean wasLineRemoved;
+    private boolean wasRectangleRemoved;
+    private boolean wasPolyLineRemoved;
+
+    private int timesRemoveLineCalled;
+
+    protected GraphicShape receivedShape;
+
+
+    private void receiveLine(GraphicLine line) {
         timesReceivedLineCalled++;
         hasReceivedLine = true;
-        this.first = line.getStart();
-        this.second = line.getEnd();
     }
 
     @Override
-    public void receiveRectangle(Rectangle rectangle) {
-        hasReceivedRectangle = true;
-        this.first = rectangle.getFirst();
-        this.second = rectangle.getSecond();
+    public void receiveShape(GraphicShape graphicShape) {
+        hasReceivedShape = true;
+        if (graphicShape instanceof GraphicLine)
+            receiveLine((GraphicLine) graphicShape);
+        else if (graphicShape instanceof GraphicRectangle)
+            hasReceivedRectangle = true;
+        else if (graphicShape instanceof GraphicPolyLine)
+            hasReceivedPolyLine = true;
+        receivedShape = graphicShape;
     }
 
     @Override
-    public void receivePolyLine(PolyLine polyLine) {
-        hasReceivedPolyLine = true;
-        receivedPolyLinePointList = polyLine.getPointList();
+    public void removeShape(GraphicShape graphicShape) {
+        if (graphicShape instanceof GraphicLine)
+            removeLine();
+        else if (graphicShape instanceof GraphicRectangle)
+            removeRectangle();
+        else if (graphicShape instanceof GraphicPolyLine)
+            removePolyLine();
+        receivedShape = graphicShape;
+    }
+
+    private void removeLine() {
+        wasLineRemoved = true;
+        timesRemoveLineCalled++;
+    }
+
+    private void removeRectangle() {
+        wasRectangleRemoved = true;
+    }
+
+    private void removePolyLine() {
+        wasPolyLineRemoved = true;
     }
 
     @Override
-    public void receiveShape(Shape shape) {
-        if (shape instanceof Line)
-            receiveLine((Line) shape);
-        else if (shape instanceof Rectangle)
-            receiveRectangle((Rectangle) shape);
-        else if (shape instanceof PolyLine)
-            receivePolyLine((PolyLine) shape);
-    }
-
-    public Point getFirst() {
-        return first;
-    }
-
-    public Point getSecond() {
-        return second;
+    public void update() {
+        wasNotified = true;
+        timesNotified++;
     }
 
     public boolean hasReceivedLine() {
         return hasReceivedLine;
     }
 
-    public int getTimesReceivedLineCalled() {
+    public int getTimesReceiveLineCalled() {
         return timesReceivedLineCalled;
     }
 
@@ -75,7 +99,31 @@ public class GraphicViewSpy implements GraphicView {
         return hasReceivedPolyLine;
     }
 
-    public List<Point> getReceivedPolyLinePointList() {
-        return receivedPolyLinePointList;
+    public boolean hasReceivedShape() {
+        return hasReceivedShape;
+    }
+
+    public boolean wasNotified() {
+        return wasNotified;
+    }
+
+    public int getTimesNotified() {
+        return timesNotified;
+    }
+
+    public boolean wasLineRemoved() {
+        return wasLineRemoved;
+    }
+
+    public boolean wasRectangleRemoved() {
+        return wasRectangleRemoved;
+    }
+
+    public boolean wasPolyLineRemoved() {
+        return wasPolyLineRemoved;
+    }
+
+    public int getTimesRemoveLineCalled() {
+        return timesRemoveLineCalled;
     }
 }
