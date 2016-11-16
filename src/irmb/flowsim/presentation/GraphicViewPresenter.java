@@ -87,6 +87,10 @@ public class GraphicViewPresenter {
             }
     }
 
+    public void handleMouseDrag(int x, int y) {
+
+    }
+
     private boolean onePointWasAdded() {
         return pointsAdded == 1;
     }
@@ -106,4 +110,6 @@ public class GraphicViewPresenter {
         if (currentIndex + 1 < shapeList.size())
             graphicView.receiveShape(shapeList.get(++currentIndex));
     }
+
+
 }

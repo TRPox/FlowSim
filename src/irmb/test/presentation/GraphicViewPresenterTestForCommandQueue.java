@@ -79,10 +79,6 @@ public class GraphicViewPresenterTestForCommandQueue extends GraphicViewPresente
         assertEquals(6, graphicViewSpyForLine.getTimesReceiveLineCalled());
     }
 
-    private void buildLineWith(Point first, Point second) {
-        sut.setObjectType("Line");
-        transmitTwoPointsToPresenter(first, second);
-    }
 
     @Test
     public void whenCallingUndo_shouldDoNothing() {
