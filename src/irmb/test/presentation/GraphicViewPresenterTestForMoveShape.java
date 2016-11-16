@@ -1,4 +1,4 @@
-package irmb.test.presentation.factories;
+package irmb.test.presentation;
 
 import de.bechte.junit.runners.context.HierarchicalContextRunner;
 import irmb.flowsim.model.geometry.Point;
@@ -8,6 +8,7 @@ import irmb.flowsim.presentation.factories.GraphicShapeBuilderFactoryImpl;
 import irmb.flowsim.presentation.factories.GraphicShapeFactory;
 import irmb.test.presentation.GraphicViewPresenterTest;
 import irmb.test.presentation.GraphicViewSpyForLine;
+import irmb.test.presentation.factories.GraphicShapeFactoryStub;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -24,7 +25,7 @@ public class GraphicViewPresenterTestForMoveShape extends GraphicViewPresenterTe
         GraphicViewSpyForLine graphicViewSpyForLine = new GraphicViewSpyForLine();
         GraphicShapeFactory graphicShapeFactory = new GraphicShapeFactoryStub();
         GraphicShapeBuilderFactory graphicShapeBuilderFactory = new GraphicShapeBuilderFactoryImpl(graphicShapeFactory);
-        GraphicViewPresenter sut = new GraphicViewPresenter(graphicShapeBuilderFactory);
+        sut = new GraphicViewPresenter(graphicShapeBuilderFactory);
         sut.setGraphicView(graphicViewSpyForLine);
 
         buildLineWith(first, second);
@@ -37,6 +38,12 @@ public class GraphicViewPresenterTestForMoveShape extends GraphicViewPresenterTe
         sut.handleMouseDrag(third.getX(), third.getY());
         Point newStart = new Point(third.getX() - 5, third.getY() - 5);
         Point newEnd = new Point(third.getX() + 5, third.getY() + 5);
+        assertExpectedPointEqualsActual(newStart, graphicViewSpyForLine.getFirst());
+        assertExpectedPointEqualsActual(newEnd, graphicViewSpyForLine.getSecond());
+
+        sut.handleMouseDrag(fourth.getX(), fourth.getY());
+        newStart = new Point(fourth.getX() - 5, fourth.getY() - 5);
+        newEnd = new Point(fourth.getX() + 5, fourth.getY() + 5);
         assertExpectedPointEqualsActual(newStart, graphicViewSpyForLine.getFirst());
         assertExpectedPointEqualsActual(newEnd, graphicViewSpyForLine.getSecond());
 

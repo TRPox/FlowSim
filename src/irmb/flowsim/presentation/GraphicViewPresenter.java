@@ -1,5 +1,6 @@
 package irmb.flowsim.presentation;
 
+import irmb.flowsim.model.geometry.Line;
 import irmb.flowsim.model.geometry.Point;
 import irmb.flowsim.presentation.builders.GraphicShapeBuilder;
 import irmb.flowsim.presentation.factories.GraphicShapeBuilderFactory;
@@ -19,6 +20,8 @@ public class GraphicViewPresenter {
 
     private List<GraphicShape> shapeList = new ArrayList<>();
     private int currentIndex = -1;
+    private Line lineToMove;
+    private Point clickedPoint;
 
     public GraphicViewPresenter(GraphicShapeBuilderFactory factory) {
         this.factory = factory;
@@ -40,6 +43,22 @@ public class GraphicViewPresenter {
                 sendShapeToView();
             if (shapeBuilder.isObjectFinished())
                 shapeBuilder = null;
+        } else {
+            clickedPoint = makePoint(x, y);
+            for (GraphicShape graphicShape : shapeList) {
+                if (graphicShape.getShape() instanceof Line) {
+                    Line line = (Line) graphicShape.getShape();
+                    double gradient = ((double) line.getEnd().getY() - (double) line.getStart().getY()) /
+                            ((double) line.getEnd().getX() - (double) line.getStart().getX());
+                    int dx = Math.abs(line.getStart().getX() - clickedPoint.getX());
+                    double lineYCoord = line.getStart().getY() + dx * gradient;
+                    if (Math.abs(lineYCoord - clickedPoint.getY()) <= 3) {
+                        lineToMove = line;
+                        break;
+                    }
+                }
+
+            }
         }
     }
 
@@ -88,7 +107,19 @@ public class GraphicViewPresenter {
     }
 
     public void handleMouseDrag(int x, int y) {
+        if (clickedPoint != null && lineToMove != null) {
+            int dx = x - clickedPoint.getX();
+            int dy = y - clickedPoint.getY();
 
+            Point newStart = new Point(lineToMove.getStart().getX() + dx, lineToMove.getStart().getY() + dy);
+            Point newEnd = new Point(lineToMove.getEnd().getX() + dx, lineToMove.getEnd().getY() + dy);
+
+            lineToMove.setStart(newStart);
+            lineToMove.setEnd(newEnd);
+
+            clickedPoint.setX(x);
+            clickedPoint.setY(y);
+        }
     }
 
     private boolean onePointWasAdded() {
