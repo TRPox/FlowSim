@@ -25,4 +25,9 @@ public class Rectangle extends Shape {
         this.second = second;
         notifyObservers();
     }
+
+    @Override
+    public boolean isPointOnBoundary(Point point) {
+        return false;
+    }
 }

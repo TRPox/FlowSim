@@ -30,4 +30,9 @@ public class PolyLine extends Shape {
             pointList.remove(pointList.size() - 1);
         notifyObservers();
     }
+
+    @Override
+    public boolean isPointOnBoundary(Point point) {
+        return false;
+    }
 }
