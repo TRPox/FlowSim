@@ -2,6 +2,7 @@ package irmb.test.view.graphics;
 
 import irmb.flowsim.model.geometry.*;
 import irmb.flowsim.model.geometry.Point;
+import irmb.flowsim.model.geometry.Shape;
 import irmb.flowsim.view.graphics.GraphicLine;
 
 import java.awt.*;
@@ -24,6 +25,10 @@ public class GraphicLineSpy extends GraphicLine {
 
     public Point getEnd() {
         return ((Line) shape).getEnd();
+    }
+
+    public Shape getShape() {
+        return shape;
     }
 
     @Override
