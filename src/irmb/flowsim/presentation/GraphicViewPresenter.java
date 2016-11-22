@@ -23,6 +23,8 @@ public class GraphicViewPresenter {
     private Line lineToMove;
     private Point clickedPoint;
 
+    private LineMover lineMover;
+
     public GraphicViewPresenter(GraphicShapeBuilderFactory factory) {
         this.factory = factory;
     }
@@ -53,7 +55,8 @@ public class GraphicViewPresenter {
                     int dx = Math.abs(line.getStart().getX() - clickedPoint.getX());
                     double lineYCoord = line.getStart().getY() + dx * gradient;
                     if (Math.abs(lineYCoord - clickedPoint.getY()) <= 3) {
-                        lineToMove = line;
+//                        lineToMove = line;
+                        lineMover = new LineMover(line);
                         break;
                     }
                 }
@@ -107,19 +110,13 @@ public class GraphicViewPresenter {
     }
 
     public void handleMouseDrag(int x, int y) {
-        if (clickedPoint != null && lineToMove != null) {
-            int dx = x - clickedPoint.getX();
-            int dy = y - clickedPoint.getY();
+        int dx = x - clickedPoint.getX();
+        int dy = y - clickedPoint.getY();
 
-            Point newStart = new Point(lineToMove.getStart().getX() + dx, lineToMove.getStart().getY() + dy);
-            Point newEnd = new Point(lineToMove.getEnd().getX() + dx, lineToMove.getEnd().getY() + dy);
+        lineMover.moveBy(dx, dy);
 
-            lineToMove.setStart(newStart);
-            lineToMove.setEnd(newEnd);
-
-            clickedPoint.setX(x);
-            clickedPoint.setY(y);
-        }
+        clickedPoint.setX(x);
+        clickedPoint.setY(y);
     }
 
     private boolean onePointWasAdded() {

@@ -18,7 +18,7 @@ import static irmb.test.presentation.TestUtil.assertExpectedPointEqualsActual;
  * Created by Sven on 16.11.2016.
  */
 @RunWith(HierarchicalContextRunner.class)
-public class GraphicViewPresenterTestForMoveShape extends GraphicViewPresenterTest {
+public class GraphicViewPresenterTestForShapeMoving extends GraphicViewPresenterTest {
 
     @Test
     public void moveLineAcceptanceTest() {
@@ -33,7 +33,6 @@ public class GraphicViewPresenterTestForMoveShape extends GraphicViewPresenterTe
         sut.handleLeftClick(pointOnLine.getX(), pointOnLine.getY());
         assertExpectedPointEqualsActual(first, graphicViewSpyForLine.getFirst());
         assertExpectedPointEqualsActual(second, graphicViewSpyForLine.getSecond());
-
 
         sut.handleMouseDrag(third.getX(), third.getY());
         Point newStart = new Point(third.getX() - 5, third.getY() - 5);
