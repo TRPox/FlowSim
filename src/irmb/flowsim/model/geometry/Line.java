@@ -34,11 +34,10 @@ public class Line extends Shape {
 
         if (point.getX() > maxPoint.getX())
             return getDistance(point, maxPoint) <= radius;
-        
+
         Point intersection = getIntersectionPoint(point);
         double dist = getDistance(point, intersection);
         return dist <= radius;
-
     }
 
     private Point getIntersectionPoint(Point point) {

@@ -3,10 +3,12 @@ package irmb.test.presentation;
 import de.bechte.junit.runners.context.HierarchicalContextRunner;
 import irmb.flowsim.model.geometry.Line;
 import irmb.flowsim.model.geometry.Point;
+import irmb.flowsim.model.geometry.Rectangle;
 import irmb.flowsim.presentation.GraphicShapeRepository;
 import irmb.flowsim.view.graphics.GraphicLine;
 import irmb.flowsim.view.graphics.GraphicShape;
 import irmb.test.view.graphics.GraphicLineSpy;
+import irmb.test.view.graphics.GraphicRectangleSpy;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -123,6 +125,33 @@ public class GraphicShapeRepositoryTest {
 
 
         }
+    }
+
+    public class GraphicRectangleAddedContext {
+
+        private Rectangle rectangle;
+
+        @Before
+        public void setUp() {
+            rectangle = new Rectangle();
+            rectangle.setFirst(new Point(11, 12));
+            rectangle.setSecond(new Point(21, 22));
+            GraphicRectangleSpy rectangleSpy = new GraphicRectangleSpy(rectangle);
+            sut.add(rectangleSpy);
+        }
+
+        @Test
+        public void whenCallingGetGraphicShapeAtWithPointOnRectangle_shouldReturnGraphicRectangle() {
+            GraphicRectangleSpy graphicRectangle = (GraphicRectangleSpy) sut.getGraphicShapeAt(new Point(11, 12));
+            assertEquals(rectangle, graphicRectangle.getShape());
+        }
+
+        @Test
+        public void whenCallingGetGraphicShapeAtWithPointNotOnRectangle_shouldReturnNull() {
+            GraphicRectangleSpy graphicRectangle = (GraphicRectangleSpy) sut.getGraphicShapeAt(new Point(0, 0));
+            assertNull(graphicRectangle);
+        }
+
     }
 
 }

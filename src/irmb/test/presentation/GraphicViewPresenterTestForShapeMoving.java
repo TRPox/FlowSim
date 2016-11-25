@@ -21,7 +21,6 @@ import static irmb.test.presentation.TestUtil.assertExpectedPointEqualsActual;
 @RunWith(HierarchicalContextRunner.class)
 public class GraphicViewPresenterTestForShapeMoving extends GraphicViewPresenterTest {
 
-
     private Point newStart;
     private Point newEnd;
 
