@@ -27,7 +27,7 @@ public class Rectangle extends Shape {
     }
 
     @Override
-    public boolean isPointOnBoundary(Point point) {
+    public boolean isPointOnBoundary(Point point, double radius) {
         return false;
     }
 }

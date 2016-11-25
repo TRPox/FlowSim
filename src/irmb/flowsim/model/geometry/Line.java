@@ -26,21 +26,31 @@ public class Line extends Shape {
     }
 
     @Override
-    public boolean isPointOnBoundary(Point point) {
-        if (isInBoundingBox(point))
-            return true;
-        return false;
+    public boolean isPointOnBoundary(Point point, double radius) {
+        double lineYCoord = getYCoord(point);
+        int minX, maxX;
+        if (start.getX() <= end.getX()) {
+            minX = start.getX();
+            maxX = end.getX();
+        } else {
+            minX = end.getX();
+            maxX = start.getX();
+        }
+        return Math.abs(lineYCoord - point.getY()) <= radius && point.getX() >= minX && point.getX() <= maxX;
     }
 
-    private boolean isInBoundingBox(Point point) {
-        return isInXInterval(point) && isInYInterval(point);
+    private double getYCoord(Point point) {
+        double gradient = getGradient();
+        int dx = getDeltaXToLineStart(point);
+        return start.getY() + dx * gradient;
     }
 
-    private boolean isInYInterval(Point point) {
-        return point.getY() >= start.getY() && point.getY() <= end.getY();
+    private int getDeltaXToLineStart(Point point) {
+        return Math.abs(start.getX() - point.getX());
     }
 
-    private boolean isInXInterval(Point point) {
-        return point.getX() >= start.getX() && point.getX() <= end.getX();
+    private double getGradient() {
+        return ((double) end.getY() - (double) start.getY()) /
+                ((double) end.getX() - (double) start.getX());
     }
 }

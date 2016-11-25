@@ -27,24 +27,47 @@ public class LineTest {
     }
 
     @Test
-    public void testIsPointOnBoundaryWithPointOnLine() {
-
-
-        assertTrue(sut.isPointOnBoundary(makePoint(11, 12)));
-//        assertTrue(sut.isPointOnBoundary(makePoint(12, 13)));
-//        assertTrue(sut.isPointOnBoundary(makePoint(13, 14)));
-//        assertTrue(sut.isPointOnBoundary(makePoint(14, 15)));
+    public void givenPointOnStart_shouldReturnTrue() {
+        assertTrue(sut.isPointOnBoundary(makePoint(11, 12), 0));
     }
 
+    @Test
+    public void givenOrigin_shouldReturnFalse() {
+        assertFalse(sut.isPointOnBoundary(makePoint(0, 0), 0));
+    }
 
     @Test
-    public void testIsPointOnLineWithPointNotOnLine() {
-        assertFalse(sut.isPointOnBoundary(makePoint(0, 0)));
-        assertFalse(sut.isPointOnBoundary(makePoint(1, 0)));
-        assertFalse(sut.isPointOnBoundary(makePoint(11, 0)));
-        assertFalse(sut.isPointOnBoundary(makePoint(11, 23)));
-        assertFalse(sut.isPointOnBoundary(makePoint(22, 12)));
-        assertFalse(sut.isPointOnBoundary(makePoint(11, 13)));
+    public void givenPointOnEnd_shouldReturnTrue() {
+        assertTrue(sut.isPointOnBoundary(makePoint(21, 22), 0));
+    }
+
+    @Test
+    public void givenPointAboveStart_shouldReturnFalse() {
+        assertFalse(sut.isPointOnBoundary(makePoint(11, 13), 0));
+    }
+
+    @Test
+    public void givenPointBelowEnd_shouldReturnFalse() {
+        assertFalse(sut.isPointOnBoundary(makePoint(21, 21), 0));
+    }
+
+    @Test
+    public void givenPointOnLine_shouldReturnTrue() {
+        assertTrue(sut.isPointOnBoundary(makePoint(12, 13), 0));
+        assertTrue(sut.isPointOnBoundary(makePoint(13, 14), 0));
+        assertTrue(sut.isPointOnBoundary(makePoint(14, 15), 0));
+        assertTrue(sut.isPointOnBoundary(makePoint(15, 16), 0));
+        assertTrue(sut.isPointOnBoundary(makePoint(16, 17), 0));
+        assertTrue(sut.isPointOnBoundary(makePoint(17, 18), 0));
+        assertTrue(sut.isPointOnBoundary(makePoint(18, 19), 0));
+        assertTrue(sut.isPointOnBoundary(makePoint(19, 20), 0));
+        assertTrue(sut.isPointOnBoundary(makePoint(20, 21), 0));
+    }
+
+    @Test
+    public void givenPointWithinAllowedRadius_shouldReturnTrue() {
+        assertTrue(sut.isPointOnBoundary(makePoint(11, 13), 1));
+        assertTrue(sut.isPointOnBoundary(makePoint(11, 13), 1));
     }
 
     private Point makePoint(int x, int y) {
