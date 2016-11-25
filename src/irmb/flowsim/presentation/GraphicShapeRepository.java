@@ -32,7 +32,7 @@ public class GraphicShapeRepository {
 
     public GraphicShape getGraphicShapeAt(Point point) {
         for (GraphicShape graphicShape : graphicShapeList) {
-            if (graphicShape.getShape().isPointOnBoundary(point, 0))
+            if (graphicShape.getShape().isPointOnBoundary(point, 3))
                 return graphicShape;
         }
         return null;

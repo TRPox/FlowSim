@@ -20,8 +20,8 @@ public class LineTest {
     @Before
     public void setUp() throws Exception {
         sut = new Line();
-        start = makePoint(11, 12);
-        end = makePoint(21, 22);
+        start = makePoint(21, 22);
+        end = makePoint(11, 12);
         sut.setStart(start);
         sut.setEnd(end);
     }
@@ -52,6 +52,16 @@ public class LineTest {
     }
 
     @Test
+    public void givenPointLeftOfStart_shouldReturnFalse() {
+        assertFalse(sut.isPointOnBoundary(makePoint(10, 11), 0));
+    }
+
+    @Test
+    public void givenPointRightOfEnd_shouldReturnFalse() {
+        assertFalse(sut.isPointOnBoundary(makePoint(22, 23), 0));
+    }
+
+    @Test
     public void givenPointOnLine_shouldReturnTrue() {
         assertTrue(sut.isPointOnBoundary(makePoint(12, 13), 0));
         assertTrue(sut.isPointOnBoundary(makePoint(13, 14), 0));
@@ -68,6 +78,8 @@ public class LineTest {
     public void givenPointWithinAllowedRadius_shouldReturnTrue() {
         assertTrue(sut.isPointOnBoundary(makePoint(11, 13), 1));
         assertTrue(sut.isPointOnBoundary(makePoint(11, 13), 1));
+        assertTrue(sut.isPointOnBoundary(makePoint(12, 16), 3));
+        assertTrue(sut.isPointOnBoundary(makePoint(14, 19), 3));
     }
 
     private Point makePoint(int x, int y) {

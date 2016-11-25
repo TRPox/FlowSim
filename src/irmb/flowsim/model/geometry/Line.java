@@ -6,6 +6,8 @@ package irmb.flowsim.model.geometry;
 public class Line extends Shape {
     private Point start;
     private Point end;
+    private Point minPoint;
+    private Point maxPoint;
 
     public Point getStart() {
         return start;
@@ -27,26 +29,42 @@ public class Line extends Shape {
 
     @Override
     public boolean isPointOnBoundary(Point point, double radius) {
-        double lineYCoord = getYCoord(point);
-        int minX, maxX;
-        if (start.getX() <= end.getX()) {
-            minX = start.getX();
-            maxX = end.getX();
-        } else {
-            minX = end.getX();
-            maxX = start.getX();
-        }
-        return Math.abs(lineYCoord - point.getY()) <= radius && point.getX() >= minX && point.getX() <= maxX;
+        maxPoint = start.getX() < end.getX() ? end : start;
+        minPoint = start.getX() < end.getX() ? start : end;
+
+        if (point.getX() > maxPoint.getX())
+            return getDistance(point, maxPoint) <= radius;
+        
+        Point intersection = getIntersectionPoint(point);
+        double dist = getDistance(point, intersection);
+        return dist <= radius;
+
     }
 
-    private double getYCoord(Point point) {
+    private Point getIntersectionPoint(Point point) {
         double gradient = getGradient();
-        int dx = getDeltaXToLineStart(point);
-        return start.getY() + dx * gradient;
+        double reverseGradient = -1. / gradient;
+        double YIntercept = start.getY() - gradient * start.getX();
+        double reverseYIntercept = point.getY() - reverseGradient * point.getX();
+        double intersectX = (reverseYIntercept - YIntercept) / (gradient + 1 / gradient);
+        double intersectY = getYCoord(intersectX);
+        return new Point((int) intersectX, (int) intersectY);
     }
 
-    private int getDeltaXToLineStart(Point point) {
-        return Math.abs(start.getX() - point.getX());
+    private double getDistance(Point point, Point pointOnLine) {
+        double dx = Math.abs(point.getX() - pointOnLine.getX());
+        double dy = Math.abs(point.getY() - pointOnLine.getY());
+        return Math.sqrt(dx * dx + dy * dy);
+    }
+
+    private double getYCoord(double x) {
+        double gradient = getGradient();
+        double dx = getDeltaXToLineStart(x);
+        return minPoint.getY() + dx * gradient;
+    }
+
+    private double getDeltaXToLineStart(double x) {
+        return Math.abs((double) minPoint.getX() - x);
     }
 
     private double getGradient() {

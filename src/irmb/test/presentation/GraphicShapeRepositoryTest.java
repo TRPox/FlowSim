@@ -94,6 +94,12 @@ public class GraphicShapeRepositoryTest {
         }
 
         @Test
+        public void whenCallingGetGraphicShapeAtWithPointWithinRadius_shouldReturnLine() {
+            GraphicLineSpy graphicLineSpy = (GraphicLineSpy) sut.getGraphicShapeAt(new Point(14, 19));
+            assertEquals(line, graphicLineSpy.getShape());
+        }
+
+        @Test
         public void whenCallingRemoveWithIndex_graphicShapeListShouldBeEmpty() {
             sut.remove(0);
             assertTrue(sut.getGraphicShapeList().isEmpty());
