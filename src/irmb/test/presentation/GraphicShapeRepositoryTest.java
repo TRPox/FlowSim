@@ -3,9 +3,11 @@ package irmb.test.presentation;
 import de.bechte.junit.runners.context.HierarchicalContextRunner;
 import irmb.flowsim.model.geometry.Line;
 import irmb.flowsim.model.geometry.Point;
+import irmb.flowsim.model.geometry.PolyLine;
 import irmb.flowsim.model.geometry.Rectangle;
 import irmb.flowsim.presentation.GraphicShapeRepository;
 import irmb.flowsim.view.graphics.GraphicLine;
+import irmb.flowsim.view.graphics.GraphicPolyLine;
 import irmb.flowsim.view.graphics.GraphicShape;
 import irmb.test.view.graphics.GraphicLineSpy;
 import irmb.test.view.graphics.GraphicRectangleSpy;
@@ -152,6 +154,28 @@ public class GraphicShapeRepositoryTest {
             GraphicRectangleSpy graphicRectangle = (GraphicRectangleSpy) sut.getGraphicShapeAt(new Point(0, 0));
             assertNull(graphicRectangle);
         }
+    }
+
+    public class GraphicPolyLineAddedContext {
+
+        private PolyLine polyLine;
+
+        @Before
+        public void setUp() {
+            polyLine = new PolyLine();
+            polyLine.addPoint(new Point(11, 12));
+            polyLine.addPoint(new Point(21, 22));
+            polyLine.addPoint(new Point(45, 39));
+
+            GraphicPolyLine graphicPolyLine = new GraphicPolyLine(polyLine);
+            sut.add(graphicPolyLine);
+        }
+
+        @Test
+        public void whenCallingGetGraphicShaptAtWithPointOnShape_shouldReturnGraphicPolyLine() {
+            assertEquals(polyLine, sut.getGraphicShapeAt(new Point(16, 17)).getShape());
+        }
+
     }
 
 }
