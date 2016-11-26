@@ -31,6 +31,14 @@ public class Rectangle extends Shape {
     }
 
     @Override
+    public void moveBy(int dx, int dy) {
+        first.setX(first.getX() + dx);
+        first.setY(first.getY() + dy);
+        second.setX(second.getX() + dx);
+        second.setY(second.getY() + dy);
+    }
+
+    @Override
     public boolean isPointOnBoundary(Point point, double radius) {
         if (first.getX() < second.getX()) {
             maxX = second.getX();

@@ -28,6 +28,14 @@ public class Line extends Shape {
     }
 
     @Override
+    public void moveBy(int dx, int dy) {
+        start.setX(start.getX() + dx);
+        start.setY(start.getY() + dy);
+        end.setX(end.getX() + dx);
+        end.setY(end.getY() + dy);
+    }
+
+    @Override
     public boolean isPointOnBoundary(Point point, double radius) {
         maxPoint = start.getX() < end.getX() ? end : start;
         minPoint = start.getX() < end.getX() ? start : end;

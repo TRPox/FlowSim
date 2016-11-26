@@ -32,6 +32,11 @@ public class PolyLine extends Shape {
     }
 
     @Override
+    public void moveBy(int dx, int dy) {
+
+    }
+
+    @Override
     public boolean isPointOnBoundary(Point point, double radius) {
         return false;
     }

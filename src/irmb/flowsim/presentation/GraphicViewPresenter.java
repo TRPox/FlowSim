@@ -103,24 +103,8 @@ public class GraphicViewPresenter {
         if (graphicShape != null) {
             int dx = x - clickedPoint.getX();
             int dy = y - clickedPoint.getY();
-            Point newStart, newEnd;
-            try {
-                Line line = (Line) graphicShape.getShape();
 
-                newStart = new Point(line.getStart().getX() + dx, line.getStart().getY() + dy);
-                newEnd = new Point(line.getEnd().getX() + dx, line.getEnd().getY() + dy);
-
-                line.setStart(newStart);
-                line.setEnd(newEnd);
-            } catch (Exception e) {
-                Rectangle rectangle = (Rectangle) graphicShape.getShape();
-
-                newStart = new Point(rectangle.getFirst().getX() + dx, rectangle.getFirst().getY() + dy);
-                newEnd = new Point(rectangle.getSecond().getX() + dx, rectangle.getSecond().getY() + dy);
-
-                rectangle.setFirst(newStart);
-                rectangle.setSecond(newEnd);
-            }
+            graphicShape.getShape().moveBy(dx, dy);
 
             clickedPoint.setX(x);
             clickedPoint.setY(y);
