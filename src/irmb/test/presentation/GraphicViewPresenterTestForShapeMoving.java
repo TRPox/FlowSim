@@ -14,6 +14,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import java.util.List;
+
 import static irmb.test.presentation.TestUtil.assertExpectedPointEqualsActual;
 
 /**
@@ -142,4 +144,29 @@ public class GraphicViewPresenterTestForShapeMoving extends GraphicViewPresenter
         }
     }
 
+    public class MovePolyLineContext {
+        @Test
+        public void movePolyLineAcceptanceTest() {
+            GraphicViewSpyForPolyLine graphicViewSpyForPolyLine = new GraphicViewSpyForPolyLine();
+            sut.setGraphicView(graphicViewSpyForPolyLine);
+            sut.setObjectType("PolyLine");
+
+            Point third = new Point(45, 34);
+
+            sut.handleLeftClick(first.getX(), first.getY());
+            sut.handleLeftClick(second.getX(), second.getY());
+            sut.handleLeftClick(third.getX(), third.getY());
+            sut.handleRightClick(third.getX(), third.getY());
+
+            Point pointOnShape = new Point(16, 17);
+
+            sut.handleLeftClick(pointOnShape.getX(), pointOnShape.getY());
+            sut.handleMouseDrag(fourth.getX(), fourth.getY());
+
+            List<Point> pointList = graphicViewSpyForPolyLine.getReceivedPolyLinePointList();
+            assertExpectedPointEqualsActual(new Point(36, 37), pointList.get(0));
+            assertExpectedPointEqualsActual(new Point(46, 47), pointList.get(1));
+            assertExpectedPointEqualsActual(new Point(70, 59), pointList.get(1));
+        }
+    }
 }

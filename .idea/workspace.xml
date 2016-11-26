@@ -22,11 +22,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GraphicViewPresenter.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GraphicViewPresenter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/irmb/flowsim/presentation/GraphicViewPresenter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="110" column="9" selection-start-line="110" selection-start-column="9" selection-end-line="110" selection-end-column="9" />
+            <state relative-caret-position="-3">
+              <caret line="96" column="41" selection-start-line="96" selection-start-column="41" selection-end-line="96" selection-end-column="41" />
               <folding>
                 <element signature="e#3911#3912#0" expanded="true" />
                 <element signature="e#3955#3956#0" expanded="true" />
@@ -48,7 +48,7 @@
       <file leaf-file-name="Rectangle.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/irmb/flowsim/model/geometry/Rectangle.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
+            <state relative-caret-position="495">
               <caret line="37" column="25" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
               <folding />
             </state>
@@ -58,7 +58,7 @@
       <file leaf-file-name="Line.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/irmb/flowsim/model/geometry/Line.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
+            <state relative-caret-position="450">
               <caret line="34" column="34" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
               <folding />
             </state>
@@ -68,19 +68,31 @@
       <file leaf-file-name="PolyLine.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/irmb/flowsim/model/geometry/PolyLine.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
+            <state relative-caret-position="465">
               <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GraphicViewPresenterTestForShapeMoving.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GraphicViewPresenterTestForShapeMoving.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/irmb/test/presentation/GraphicViewPresenterTestForShapeMoving.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="35" column="36" selection-start-line="35" selection-start-column="36" selection-end-line="35" selection-end-column="36" />
-              <folding />
+            <state relative-caret-position="417">
+              <caret line="168" column="60" selection-start-line="168" selection-start-column="60" selection-end-line="168" selection-end-column="60" />
+              <folding>
+                <element signature="docComment;class#GraphicViewPresenterTestForShapeMoving#0" expanded="false" />
+                <element signature="method#setUp#0;class#GraphicViewPresenterTestForShapeMoving#0" expanded="false" />
+                <element signature="class#MoveLineContext#0;class#GraphicViewPresenterTestForShapeMoving#0" expanded="false" />
+                <element signature="method#setUp#0;class#MoveLineContext#0;class#GraphicViewPresenterTestForShapeMoving#0" expanded="false" />
+                <element signature="method#moveLineAcceptanceTest#0;class#MoveLineContext#0;class#GraphicViewPresenterTestForShapeMoving#0" expanded="false" />
+                <element signature="class#OneLineAdded#0;class#MoveLineContext#0;class#GraphicViewPresenterTestForShapeMoving#0" expanded="false" />
+                <element signature="method#whenDraggingMouseFromPointNotOnShape_shouldDoNothing#0;class#OneLineAdded#0;class#MoveLineContext#0;class#GraphicViewPresenterTestForShapeMoving#0" expanded="false" />
+                <element signature="class#LineMovedContext#0;class#OneLineAdded#0;class#MoveLineContext#0;class#GraphicViewPresenterTestForShapeMoving#0" expanded="false" />
+                <element signature="method#setUp#0;class#LineMovedContext#0;class#OneLineAdded#0;class#MoveLineContext#0;class#GraphicViewPresenterTestForShapeMoving#0" expanded="false" />
+                <element signature="method#whenReleasingMouseThenDraggingFromPointNotOnLine_shouldNotMoveLine#0;class#LineMovedContext#0;class#OneLineAdded#0;class#MoveLineContext#0;class#GraphicViewPresenterTestForShapeMoving#0" expanded="false" />
+                <element signature="class#MoveRectangleContext#0;class#GraphicViewPresenterTestForShapeMoving#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -150,7 +162,6 @@
         <option value="$PROJECT_DIR$/src/irmb/flowsim/view/TestingGraphicViewImpl.java" />
         <option value="$PROJECT_DIR$/src/irmb/test/model/geometry/LineTest.java" />
         <option value="$PROJECT_DIR$/src/irmb/test/model/geometry/RectangleTest.java" />
-        <option value="$PROJECT_DIR$/src/irmb/test/presentation/GraphicViewPresenterTestForShapeMoving.java" />
         <option value="$PROJECT_DIR$/src/irmb/flowsim/presentation/GraphicShapeRepository.java" />
         <option value="$PROJECT_DIR$/src/irmb/test/presentation/GraphicShapeRepositoryTest.java" />
         <option value="$PROJECT_DIR$/src/irmb/flowsim/model/geometry/Shape.java" />
@@ -158,6 +169,7 @@
         <option value="$PROJECT_DIR$/src/irmb/flowsim/model/geometry/Rectangle.java" />
         <option value="$PROJECT_DIR$/src/irmb/flowsim/model/geometry/Line.java" />
         <option value="$PROJECT_DIR$/src/irmb/flowsim/presentation/GraphicViewPresenter.java" />
+        <option value="$PROJECT_DIR$/src/irmb/test/presentation/GraphicViewPresenterTestForShapeMoving.java" />
       </list>
     </option>
   </component>
@@ -204,8 +216,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -406,7 +418,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../jflowsim" />
     <property name="js-jscs-nodeInterpreter" value="D:\Programme\nodejs\node.exe" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
@@ -1039,12 +1051,13 @@
       <workItem from="1480094441354" duration="13579000" />
       <workItem from="1480166807264" duration="957000" />
       <workItem from="1480168083142" duration="42000" />
-      <workItem from="1480173090333" duration="8265000" />
+      <workItem from="1480173090333" duration="9438000" />
+      <workItem from="1480186756873" duration="4778000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="GraphicViewPresenterTestForShapeMoving - 2016.11.26 at 18h 42m 11s.xml">
+    <history-entry file="GraphicViewPresenterTestForShapeMoving - 2016.11.26 at 21h 18m 14s.xml">
       <configuration name="GraphicViewPresenterTestForShapeMoving" configurationId="JUnit" />
     </history-entry>
     <history-entry file="RectangleTest - 2016.11.26 at 18h 13m 59s.xml">
@@ -1076,11 +1089,11 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="193709000" />
+    <option name="totallyTimeSpent" value="199660000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="30" width="1366" height="738" extended-state="7" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1089,12 +1102,12 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29113925" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39408866" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="31" y="759" width="1636" height="228" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32512316" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="31" y="759" width="1636" height="228" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24281392" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21709532" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1185,7 +1198,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/irmb/test/presentation/GraphicViewSpyForPolyLine.java" />
-    <entry file="file://$PROJECT_DIR$/src/irmb/test/presentation/GraphicViewPresenterTestForShapeBuilding.java" />
     <entry file="file://$PROJECT_DIR$/src/irmb/flowsim/view/TempView.form">
       <provider editor-type-id="ui-designer">
         <state />
@@ -1314,14 +1326,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/irmb/test/presentation/GraphicViewPresenterTestForShapeMoving.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="35" column="36" selection-start-line="35" selection-start-column="36" selection-end-line="35" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/irmb/flowsim/presentation/GraphicShapeRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
@@ -1335,7 +1339,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/irmb/flowsim/model/geometry/PolyLine.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
+        <state relative-caret-position="465">
           <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding />
         </state>
@@ -1343,7 +1347,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/irmb/flowsim/model/geometry/Rectangle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
+        <state relative-caret-position="495">
           <caret line="37" column="25" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
           <folding />
         </state>
@@ -1351,7 +1355,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/irmb/flowsim/model/geometry/Line.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
+        <state relative-caret-position="450">
           <caret line="34" column="34" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
           <folding />
         </state>
@@ -1365,13 +1369,87 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/irmb/test/presentation/GraphicViewPresenterTestForShapeBuilding.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+          <folding>
+            <element signature="docComment;class#GraphicViewPresenterTestForShapeBuilding#0" expanded="false" />
+            <element signature="method#setUp#0;class#GraphicViewPresenterTestForShapeBuilding#0" expanded="false" />
+            <element signature="method#whenLeftClickingTwiceBeforeSettingObjectType_spyShouldNotReceiveData#0;class#GraphicViewPresenterTestForShapeBuilding#0" expanded="false" />
+            <element signature="class#BuildLineContext#0;class#GraphicViewPresenterTestForShapeBuilding#0" expanded="false" />
+            <element signature="method#setUp#0;class#BuildLineContext#0;class#GraphicViewPresenterTestForShapeBuilding#0" expanded="false" />
+            <element signature="method#buildLineAcceptanceTest#0;class#BuildLineContext#0;class#GraphicViewPresenterTestForShapeBuilding#0" expanded="false" />
+            <element signature="method#whenLeftClickingOnce_spyShouldNotReceiveLine#0;class#BuildLineContext#0;class#GraphicViewPresenterTestForShapeBuilding#0" expanded="false" />
+            <element signature="method#whenLeftClickingTwice_spyShouldReceiveLine#0;class#BuildLineContext#0;class#GraphicViewPresenterTestForShapeBuilding#0" expanded="false" />
+            <element signature="method#whenLeftClickingTwice_spyShouldReceiveLineWithCorrectCoordinates#0;class#BuildLineContext#0;class#GraphicViewPresenterTestForShapeBuilding#0" expanded="false" />
+            <element signature="method#whenLeftClickingThreeTimes_spyShouldNotReceiveLine#0;class#BuildLineContext#0;class#GraphicViewPresenterTestForShapeBuilding#0" expanded="false" />
+            <element signature="class#LivePaintingLineContext#0;class#BuildLineContext#0;class#GraphicViewPresenterTestForShapeBuilding#0" expanded="false" />
+            <element signature="method#livePaintingLineAcceptanceTest#0;class#LivePaintingLineContext#0;class#BuildLineContext#0;class#GraphicViewPresenterTestForShapeBuilding#0" expanded="false" />
+            <element signature="method#whenMovingMouseBeforeLeftClicking_graphicSpyShouldNotReceiveLine#0;class#LivePaintingLineContext#0;class#BuildLineContext#0;class#GraphicViewPresenterTestForShapeBuilding#0" expanded="false" />
+            <element signature="class#LeftClickedOnceContext#0;class#LivePaintingLineContext#0;class#BuildLineContext#0;class#GraphicViewPresenterTestForShapeBuilding#0" expanded="false" />
+            <element signature="method#whenMovingMouse_graphicSpyShouldReceiveLine#0;class#LeftClickedOnceContext#0;class#LivePaintingLineContext#0;class#BuildLineContext#0;class#GraphicViewPresenterTestForShapeBuilding#0" expanded="false" />
+            <element signature="method#whenMovingMouse_graphicSpyShouldReceiveLineWithCorrectCoordinates#0;class#LeftClickedOnceContext#0;class#LivePaintingLineContext#0;class#BuildLineContext#0;class#GraphicViewPresenterTestForShapeBuilding#0" expanded="false" />
+            <element signature="method#whenMovingMouseTwice_shouldAdjustLastPoint#0;class#LeftClickedOnceContext#0;class#LivePaintingLineContext#0;class#BuildLineContext#0;class#GraphicViewPresenterTestForShapeBuilding#0" expanded="false" />
+            <element signature="class#MovedMouseOnceContext#0;class#LeftClickedOnceContext#0;class#LivePaintingLineContext#0;class#BuildLineContext#0;class#GraphicViewPresenterTestForShapeBuilding#0" expanded="false" />
+            <element signature="method#whenMovingMouseAfterLeftClick_shouldNotAdjustLastPoint#0;class#MovedMouseOnceContext#0;class#LeftClickedOnceContext#0;class#LivePaintingLineContext#0;class#BuildLineContext#0;class#GraphicViewPresenterTestForShapeBuilding#0" expanded="false" />
+            <element signature="class#BuildRectangleContext#0;class#GraphicViewPresenterTestForShapeBuilding#0" expanded="false" />
+            <element signature="method#setUp#0;class#BuildRectangleContext#0;class#GraphicViewPresenterTestForShapeBuilding#0" expanded="false" />
+            <element signature="method#buildRectangleAcceptanceTest#0;class#BuildRectangleContext#0;class#GraphicViewPresenterTestForShapeBuilding#0" expanded="false" />
+            <element signature="class#LivePaintingRectangleContext#0;class#BuildRectangleContext#0;class#GraphicViewPresenterTestForShapeBuilding#0" expanded="false" />
+            <element signature="method#livePaintingRectangleAcceptanceTest#0;class#LivePaintingRectangleContext#0;class#BuildRectangleContext#0;class#GraphicViewPresenterTestForShapeBuilding#0" expanded="false" />
+            <element signature="method#whenMovingMouseAfterCompletingObject_shouldNotAdjustLastPoint#0;class#LivePaintingRectangleContext#0;class#BuildRectangleContext#0;class#GraphicViewPresenterTestForShapeBuilding#0" expanded="false" />
+            <element signature="class#BuildPolyLineContext#0;class#GraphicViewPresenterTestForShapeBuilding#0" expanded="false" />
+            <element signature="method#setUp#0;class#BuildPolyLineContext#0;class#GraphicViewPresenterTestForShapeBuilding#0" expanded="false" />
+            <element signature="method#buildPolyLineAcceptanceTest#0;class#BuildPolyLineContext#0;class#GraphicViewPresenterTestForShapeBuilding#0" expanded="false" />
+            <element signature="method#whenLeftClickingTwice_spyShouldReceivePolyLine#0;class#BuildPolyLineContext#0;class#GraphicViewPresenterTestForShapeBuilding#0" expanded="false" />
+            <element signature="method#whenLeftClickingTwice_spyShouldReceivePolyLineWithCorrectPoints#0;class#BuildPolyLineContext#0;class#GraphicViewPresenterTestForShapeBuilding#0" expanded="false" />
+            <element signature="class#LeftClickedTwiceContext#0;class#BuildPolyLineContext#0;class#GraphicViewPresenterTestForShapeBuilding#0" expanded="false" />
+            <element signature="method#whenLeftClickingThreeTimes_spyShouldReceivePolyLineWithCorrectCoordinates#0;class#LeftClickedTwiceContext#0;class#BuildPolyLineContext#0;class#GraphicViewPresenterTestForShapeBuilding#0" expanded="false" />
+            <element signature="class#LivePaintingPolyLineContext#0;class#BuildPolyLineContext#0;class#GraphicViewPresenterTestForShapeBuilding#0" expanded="false" />
+            <element signature="method#livePaintingPolyLineAcceptance#0;class#LivePaintingPolyLineContext#0;class#BuildPolyLineContext#0;class#GraphicViewPresenterTestForShapeBuilding#0" expanded="false" />
+            <element signature="class#CancelPaintingContext#0;class#GraphicViewPresenterTestForShapeBuilding#0" expanded="false" />
+            <element signature="class#CancelLineContext#0;class#CancelPaintingContext#0;class#GraphicViewPresenterTestForShapeBuilding#0" expanded="false" />
+            <element signature="method#setUp#0;class#CancelLineContext#0;class#CancelPaintingContext#0;class#GraphicViewPresenterTestForShapeBuilding#0" expanded="false" />
+            <element signature="method#whenRightClickingThenLeftClicking_shouldNotTransmitShapeToView#0;class#CancelLineContext#0;class#CancelPaintingContext#0;class#GraphicViewPresenterTestForShapeBuilding#0" expanded="false" />
+            <element signature="method#whenMovingMouseThenRightClicking_shouldRemoveLine#0;class#CancelLineContext#0;class#CancelPaintingContext#0;class#GraphicViewPresenterTestForShapeBuilding#0" expanded="false" />
+            <element signature="method#whenLeftClickingThenRightClicking_shouldNotRemoveLine#0;class#CancelLineContext#0;class#CancelPaintingContext#0;class#GraphicViewPresenterTestForShapeBuilding#0" expanded="false" />
+            <element signature="class#CancelPolyLineContext#0;class#CancelPaintingContext#0;class#GraphicViewPresenterTestForShapeBuilding#0" expanded="false" />
+            <element signature="method#setUp#0;class#CancelPolyLineContext#0;class#CancelPaintingContext#0;class#GraphicViewPresenterTestForShapeBuilding#0" expanded="false" />
+            <element signature="method#whenMovingMouseThenRightClicking_shouldRemoveLastPoint#0;class#CancelPolyLineContext#0;class#CancelPaintingContext#0;class#GraphicViewPresenterTestForShapeBuilding#0" expanded="false" />
+            <element signature="class#ChangeObjectTypeContext#0;class#GraphicViewPresenterTestForShapeBuilding#0" expanded="false" />
+            <element signature="method#whenLeftClickingThenChangingObjectTypeThenLeftClicking_shouldNotTransmitShape#0;class#ChangeObjectTypeContext#0;class#GraphicViewPresenterTestForShapeBuilding#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/irmb/flowsim/presentation/GraphicViewPresenter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="110" column="9" selection-start-line="110" selection-start-column="9" selection-end-line="110" selection-end-column="9" />
+        <state relative-caret-position="-3">
+          <caret line="96" column="41" selection-start-line="96" selection-start-column="41" selection-end-line="96" selection-end-column="41" />
           <folding>
             <element signature="e#3911#3912#0" expanded="true" />
             <element signature="e#3955#3956#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/irmb/test/presentation/GraphicViewPresenterTestForShapeMoving.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="417">
+          <caret line="168" column="60" selection-start-line="168" selection-start-column="60" selection-end-line="168" selection-end-column="60" />
+          <folding>
+            <element signature="docComment;class#GraphicViewPresenterTestForShapeMoving#0" expanded="false" />
+            <element signature="method#setUp#0;class#GraphicViewPresenterTestForShapeMoving#0" expanded="false" />
+            <element signature="class#MoveLineContext#0;class#GraphicViewPresenterTestForShapeMoving#0" expanded="false" />
+            <element signature="method#setUp#0;class#MoveLineContext#0;class#GraphicViewPresenterTestForShapeMoving#0" expanded="false" />
+            <element signature="method#moveLineAcceptanceTest#0;class#MoveLineContext#0;class#GraphicViewPresenterTestForShapeMoving#0" expanded="false" />
+            <element signature="class#OneLineAdded#0;class#MoveLineContext#0;class#GraphicViewPresenterTestForShapeMoving#0" expanded="false" />
+            <element signature="method#whenDraggingMouseFromPointNotOnShape_shouldDoNothing#0;class#OneLineAdded#0;class#MoveLineContext#0;class#GraphicViewPresenterTestForShapeMoving#0" expanded="false" />
+            <element signature="class#LineMovedContext#0;class#OneLineAdded#0;class#MoveLineContext#0;class#GraphicViewPresenterTestForShapeMoving#0" expanded="false" />
+            <element signature="method#setUp#0;class#LineMovedContext#0;class#OneLineAdded#0;class#MoveLineContext#0;class#GraphicViewPresenterTestForShapeMoving#0" expanded="false" />
+            <element signature="method#whenReleasingMouseThenDraggingFromPointNotOnLine_shouldNotMoveLine#0;class#LineMovedContext#0;class#OneLineAdded#0;class#MoveLineContext#0;class#GraphicViewPresenterTestForShapeMoving#0" expanded="false" />
+            <element signature="class#MoveRectangleContext#0;class#GraphicViewPresenterTestForShapeMoving#0" expanded="false" />
           </folding>
         </state>
       </provider>
