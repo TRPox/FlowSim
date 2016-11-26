@@ -7,6 +7,10 @@ public class Rectangle extends Shape {
 
     private Point first;
     private Point second;
+    private int maxX;
+    private int minX;
+    private int maxY;
+    private int minY;
 
     public void setFirst(Point first) {
         this.first = first;
@@ -28,22 +32,36 @@ public class Rectangle extends Shape {
 
     @Override
     public boolean isPointOnBoundary(Point point, double radius) {
-        return isInBoundingBox(point) && !isInside(point);
+        if (first.getX() < second.getX()) {
+            maxX = second.getX();
+            minX = first.getX();
+        } else {
+            maxX = first.getX();
+            minX = second.getX();
+        }
+        if (first.getY() < second.getY()) {
+            maxY = second.getY();
+            minY = first.getY();
+        } else {
+            maxY = first.getY();
+            minY = second.getY();
+        }
+        return isInBoundingBox(point, radius) && !isInside(point, radius);
     }
 
-    private boolean isInside(Point point) {
-        return point.getY() > first.getY() && point.getY() < second.getY() && point.getX() != first.getX() && point.getX() != second.getX();
+    private boolean isInside(Point point, double radius) {
+        return point.getY() > minY + radius && point.getY() < maxY - radius && point.getX() > minX + radius && point.getX() < maxX - radius;
     }
 
-    private boolean isInBoundingBox(Point point) {
-        return isInXBounds(point) && isInYBounds(point);
+    private boolean isInBoundingBox(Point point, double radius) {
+        return isInXBounds(point, radius) && isInYBounds(point, radius);
     }
 
-    private boolean isInYBounds(Point point) {
-        return point.getY() >= first.getY() && point.getY() <= second.getY();
+    private boolean isInYBounds(Point point, double radius) {
+        return point.getY() >= minY - radius && point.getY() <= maxY + radius;
     }
 
-    private boolean isInXBounds(Point point) {
-        return point.getX() >= first.getX() && point.getX() <= second.getX();
+    private boolean isInXBounds(Point point, double radius) {
+        return point.getX() >= minX - radius && point.getX() <= maxX + radius;
     }
 }

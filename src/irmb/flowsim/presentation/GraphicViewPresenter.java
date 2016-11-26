@@ -2,6 +2,8 @@ package irmb.flowsim.presentation;
 
 import irmb.flowsim.model.geometry.Line;
 import irmb.flowsim.model.geometry.Point;
+import irmb.flowsim.model.geometry.Rectangle;
+import irmb.flowsim.model.geometry.Shape;
 import irmb.flowsim.presentation.builders.GraphicShapeBuilder;
 import irmb.flowsim.presentation.factories.GraphicShapeBuilderFactory;
 import irmb.flowsim.view.graphics.GraphicShape;
@@ -14,18 +16,17 @@ import java.util.List;
  */
 public class GraphicViewPresenter {
     private GraphicView graphicView;
-    private int pointsAdded;
     private GraphicShapeBuilder shapeBuilder;
     private final GraphicShapeBuilderFactory factory;
 
-    private List<GraphicShape> shapeList = new ArrayList<>();
+    private int pointsAdded;
     private int currentIndex = -1;
 
-
     private Point clickedPoint;
-    private LineMover lineMover;
+    private GraphicShape graphicShape;
 
-    private final GraphicShapeRepository repository = new GraphicShapeRepository();
+    private GraphicShapeRepository repository = new GraphicShapeRepository();
+
 
     public GraphicViewPresenter(GraphicShapeBuilderFactory factory) {
         this.factory = factory;
@@ -49,9 +50,8 @@ public class GraphicViewPresenter {
                 shapeBuilder = null;
         } else {
             clickedPoint = makePoint(x, y);
-            GraphicShape graphicShape = repository.getGraphicShapeAt(clickedPoint);
-            if (graphicShape != null)
-                lineMover = new LineMover((Line) graphicShape.getShape());
+            graphicShape = repository.getGraphicShapeAt(clickedPoint);
+
         }
     }
 
@@ -100,11 +100,27 @@ public class GraphicViewPresenter {
     }
 
     public void handleMouseDrag(int x, int y) {
-        if (lineMover != null) {
+        if (graphicShape != null) {
             int dx = x - clickedPoint.getX();
             int dy = y - clickedPoint.getY();
+            Point newStart, newEnd;
+            try {
+                Line line = (Line) graphicShape.getShape();
 
-            lineMover.moveBy(dx, dy);
+                newStart = new Point(line.getStart().getX() + dx, line.getStart().getY() + dy);
+                newEnd = new Point(line.getEnd().getX() + dx, line.getEnd().getY() + dy);
+
+                line.setStart(newStart);
+                line.setEnd(newEnd);
+            } catch (Exception e) {
+                Rectangle rectangle = (Rectangle) graphicShape.getShape();
+
+                newStart = new Point(rectangle.getFirst().getX() + dx, rectangle.getFirst().getY() + dy);
+                newEnd = new Point(rectangle.getSecond().getX() + dx, rectangle.getSecond().getY() + dy);
+
+                rectangle.setFirst(newStart);
+                rectangle.setSecond(newEnd);
+            }
 
             clickedPoint.setX(x);
             clickedPoint.setY(y);
@@ -133,6 +149,10 @@ public class GraphicViewPresenter {
 
 
     public void handleMouseRelease() {
-        lineMover = null;
+        graphicShape = null;
+    }
+
+    public void setRepository(GraphicShapeRepository repository) {
+        this.repository = repository;
     }
 }

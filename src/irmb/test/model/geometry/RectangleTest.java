@@ -18,8 +18,8 @@ public class RectangleTest {
     @Before
     public void setUp() throws Exception {
         sut = new Rectangle();
-        sut.setFirst(new Point(11, 12));
-        sut.setSecond(new Point(21, 22));
+        sut.setSecond(new Point(11, 12));
+        sut.setFirst(new Point(21, 22));
     }
 
     @Test
@@ -76,5 +76,11 @@ public class RectangleTest {
     @Test
     public void givenPointWithinRadius_shouldReturnTrue() {
         assertTrue(sut.isPointOnBoundary(new Point(8, 12), 3));
+        assertTrue(sut.isPointOnBoundary(new Point(8, 17), 3));
+        assertTrue(sut.isPointOnBoundary(new Point(24, 12), 3));
+        assertTrue(sut.isPointOnBoundary(new Point(11, 9), 3));
+        assertTrue(sut.isPointOnBoundary(new Point(16, 15), 3));
+        assertTrue(sut.isPointOnBoundary(new Point(11, 25), 3));
+        assertTrue(sut.isPointOnBoundary(new Point(16, 19), 3));
     }
 }

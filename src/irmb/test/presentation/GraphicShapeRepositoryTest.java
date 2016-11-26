@@ -28,6 +28,7 @@ public class GraphicShapeRepositoryTest {
     @Before
     public void setUp() throws Exception {
         sut = new GraphicShapeRepository();
+        sut.setToleranceRadius(3);
     }
 
     @Test
@@ -151,7 +152,6 @@ public class GraphicShapeRepositoryTest {
             GraphicRectangleSpy graphicRectangle = (GraphicRectangleSpy) sut.getGraphicShapeAt(new Point(0, 0));
             assertNull(graphicRectangle);
         }
-
     }
 
 }

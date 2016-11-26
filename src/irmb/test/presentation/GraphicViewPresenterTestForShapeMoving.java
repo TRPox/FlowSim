@@ -2,6 +2,7 @@ package irmb.test.presentation;
 
 import de.bechte.junit.runners.context.HierarchicalContextRunner;
 import irmb.flowsim.model.geometry.Point;
+import irmb.flowsim.presentation.GraphicShapeRepository;
 import irmb.flowsim.presentation.GraphicViewPresenter;
 import irmb.flowsim.presentation.factories.GraphicShapeBuilderFactory;
 import irmb.flowsim.presentation.factories.GraphicShapeBuilderFactoryImpl;
@@ -29,7 +30,10 @@ public class GraphicViewPresenterTestForShapeMoving extends GraphicViewPresenter
     public void setUp() {
         GraphicShapeFactory graphicShapeFactory = new GraphicShapeFactoryStub();
         GraphicShapeBuilderFactory graphicShapeBuilderFactory = new GraphicShapeBuilderFactoryImpl(graphicShapeFactory);
+        GraphicShapeRepository repository = new GraphicShapeRepository();
+        repository.setToleranceRadius(0);
         sut = new GraphicViewPresenter(graphicShapeBuilderFactory);
+        sut.setRepository(repository);
     }
 
     public class MoveLineContext {

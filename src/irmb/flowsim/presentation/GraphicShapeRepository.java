@@ -12,6 +12,7 @@ import java.util.List;
 public class GraphicShapeRepository {
 
     private List<GraphicShape> graphicShapeList = new ArrayList<>();
+    private double radius = 0;
 
     public void add(GraphicShape graphicShape) {
         graphicShapeList.add(graphicShape);
@@ -32,10 +33,14 @@ public class GraphicShapeRepository {
 
     public GraphicShape getGraphicShapeAt(Point point) {
         for (GraphicShape graphicShape : graphicShapeList) {
-            if (graphicShape.getShape().isPointOnBoundary(point, 3))
+            if (graphicShape.getShape().isPointOnBoundary(point, radius))
                 return graphicShape;
         }
         return null;
+    }
+
+    public void setToleranceRadius(double radius) {
+        this.radius = radius;
     }
 
 }
