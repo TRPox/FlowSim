@@ -7,10 +7,10 @@ public class Rectangle extends Shape {
 
     private Point first;
     private Point second;
-    private int maxX;
-    private int minX;
-    private int maxY;
-    private int minY;
+    private double maxX;
+    private double minX;
+    private double maxY;
+    private double minY;
 
     public void setFirst(Point first) {
         this.first = first;
@@ -31,11 +31,12 @@ public class Rectangle extends Shape {
     }
 
     @Override
-    public void moveBy(int dx, int dy) {
+    public void moveBy(double dx, double dy) {
         first.setX(first.getX() + dx);
         first.setY(first.getY() + dy);
         second.setX(second.getX() + dx);
         second.setY(second.getY() + dy);
+        notifyObservers();
     }
 
     @Override

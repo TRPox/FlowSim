@@ -174,6 +174,7 @@ public class GraphicShapeRepositoryTest {
         @Test
         public void whenCallingGetGraphicShaptAtWithPointOnShape_shouldReturnGraphicPolyLine() {
             assertEquals(polyLine, sut.getGraphicShapeAt(new Point(16, 17)).getShape());
+            assertEquals(polyLine, sut.getGraphicShapeAt(new Point(33, 30.5)).getShape());
         }
 
     }

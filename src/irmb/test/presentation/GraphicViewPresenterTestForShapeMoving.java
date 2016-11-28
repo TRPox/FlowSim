@@ -7,8 +7,6 @@ import irmb.flowsim.presentation.GraphicViewPresenter;
 import irmb.flowsim.presentation.factories.GraphicShapeBuilderFactory;
 import irmb.flowsim.presentation.factories.GraphicShapeBuilderFactoryImpl;
 import irmb.flowsim.presentation.factories.GraphicShapeFactory;
-import irmb.test.presentation.GraphicViewPresenterTest;
-import irmb.test.presentation.GraphicViewSpyForLine;
 import irmb.test.presentation.factories.GraphicShapeFactoryStub;
 import org.junit.Before;
 import org.junit.Test;
@@ -125,7 +123,7 @@ public class GraphicViewPresenterTestForShapeMoving extends GraphicViewPresenter
             sut.setObjectType("Rectangle");
             sut.handleLeftClick(first.getX(), first.getY());
             sut.handleLeftClick(second.getX(), second.getY());
-            int width = Math.abs(second.getX() - first.getX());
+            int width = (int) Math.abs(second.getX() - first.getX());
 
             sut.handleLeftClick(pointOnShape.getX(), pointOnShape.getY());
 
@@ -154,9 +152,12 @@ public class GraphicViewPresenterTestForShapeMoving extends GraphicViewPresenter
             Point third = new Point(45, 34);
 
             sut.handleLeftClick(first.getX(), first.getY());
+            sut.handleMouseMove(second.getX(), second.getY());
             sut.handleLeftClick(second.getX(), second.getY());
+            sut.handleMouseMove(third.getX(), third.getY());
             sut.handleLeftClick(third.getX(), third.getY());
             sut.handleRightClick(third.getX(), third.getY());
+
 
             Point pointOnShape = new Point(16, 17);
 
@@ -166,7 +167,7 @@ public class GraphicViewPresenterTestForShapeMoving extends GraphicViewPresenter
             List<Point> pointList = graphicViewSpyForPolyLine.getReceivedPolyLinePointList();
             assertExpectedPointEqualsActual(new Point(36, 37), pointList.get(0));
             assertExpectedPointEqualsActual(new Point(46, 47), pointList.get(1));
-            assertExpectedPointEqualsActual(new Point(70, 59), pointList.get(1));
+            assertExpectedPointEqualsActual(new Point(70, 59), pointList.get(2));
         }
     }
 }

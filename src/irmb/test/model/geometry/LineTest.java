@@ -1,9 +1,12 @@
 package irmb.test.model.geometry;
 
+import de.bechte.junit.runners.context.HierarchicalContextRunner;
 import irmb.flowsim.model.geometry.Line;
 import irmb.flowsim.model.geometry.Point;
+import irmb.test.presentation.ObserverSpy;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
 import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertFalse;
@@ -11,6 +14,7 @@ import static org.junit.Assert.assertFalse;
 /**
  * Created by Sven on 22.11.2016.
  */
+@RunWith(HierarchicalContextRunner.class)
 public class LineTest {
 
     private Line sut;
@@ -80,6 +84,23 @@ public class LineTest {
         assertTrue(sut.isPointOnBoundary(makePoint(11, 13), 1));
         assertTrue(sut.isPointOnBoundary(makePoint(12, 16), 3));
         assertTrue(sut.isPointOnBoundary(makePoint(14, 19), 3));
+    }
+
+    public class ObserverAddedContext {
+
+        private ObserverSpy observerSpy;
+
+        @Before
+        public void setUp() {
+            observerSpy = new ObserverSpy();
+            sut.addObserver(observerSpy);
+        }
+
+        @Test
+        public void whenMovingLine_shouldNotifyObserver() {
+            sut.moveBy(5, 5);
+            assertTrue(observerSpy.wasNotified());
+        }
     }
 
     private Point makePoint(int x, int y) {

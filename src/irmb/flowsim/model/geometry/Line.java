@@ -28,11 +28,12 @@ public class Line extends Shape {
     }
 
     @Override
-    public void moveBy(int dx, int dy) {
+    public void moveBy(double dx, double dy) {
         start.setX(start.getX() + dx);
         start.setY(start.getY() + dy);
         end.setX(end.getX() + dx);
         end.setY(end.getY() + dy);
+        notifyObservers();
     }
 
     @Override

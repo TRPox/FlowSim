@@ -1,15 +1,9 @@
 package irmb.flowsim.presentation;
 
-import irmb.flowsim.model.geometry.Line;
 import irmb.flowsim.model.geometry.Point;
-import irmb.flowsim.model.geometry.Rectangle;
-import irmb.flowsim.model.geometry.Shape;
 import irmb.flowsim.presentation.builders.GraphicShapeBuilder;
 import irmb.flowsim.presentation.factories.GraphicShapeBuilderFactory;
 import irmb.flowsim.view.graphics.GraphicShape;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Sven on 19.10.2016.
@@ -41,7 +35,7 @@ public class GraphicViewPresenter {
         this.graphicView = view;
     }
 
-    public void handleLeftClick(int x, int y) {
+    public void handleLeftClick(double x, double y) {
         if (hasShapeBuilder()) {
             addPointToShape(x, y);
             if (twoPointsWereAdded())
@@ -63,12 +57,12 @@ public class GraphicViewPresenter {
         return pointsAdded == 2;
     }
 
-    private void addPointToShape(int x, int y) {
+    private void addPointToShape(double x, double y) {
         shapeBuilder.addPoint(makePoint(x, y));
         pointsAdded++;
     }
 
-    private Point makePoint(int x, int y) {
+    private Point makePoint(double x, double y) {
         return new Point(x, y);
     }
 
@@ -79,7 +73,7 @@ public class GraphicViewPresenter {
         repository.add(shapeBuilder.getShape());
     }
 
-    public void handleRightClick(int x, int y) {
+    public void handleRightClick(double x, double y) {
         if (hasShapeBuilder()) {
             if (pointsAdded <= 2)
                 graphicView.removeShape(shapeBuilder.getShape());
@@ -89,7 +83,7 @@ public class GraphicViewPresenter {
         shapeBuilder = null;
     }
 
-    public void handleMouseMove(int x, int y) {
+    public void handleMouseMove(double x, double y) {
         if (hasShapeBuilder())
             if (onePointWasAdded()) {
                 addPointToShape(x, y);
@@ -99,10 +93,10 @@ public class GraphicViewPresenter {
             }
     }
 
-    public void handleMouseDrag(int x, int y) {
+    public void handleMouseDrag(double x, double y) {
         if (graphicShape != null) {
-            int dx = x - clickedPoint.getX();
-            int dy = y - clickedPoint.getY();
+            double dx = x - clickedPoint.getX();
+            double dy = y - clickedPoint.getY();
 
             graphicShape.getShape().moveBy(dx, dy);
 
@@ -115,7 +109,7 @@ public class GraphicViewPresenter {
         return pointsAdded == 1;
     }
 
-    private void setLastPointTo(int x, int y) {
+    private void setLastPointTo(double x, double y) {
         shapeBuilder.setLastPoint(makePoint(x, y));
     }
 

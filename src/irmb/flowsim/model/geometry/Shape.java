@@ -7,7 +7,7 @@ import irmb.util.Subject;
  */
 public abstract class Shape extends Subject {
 
-    public abstract void moveBy(int dx, int dy);
+    public abstract void moveBy(double dx, double dy);
 
     public abstract boolean isPointOnBoundary(Point point, double radius);
 

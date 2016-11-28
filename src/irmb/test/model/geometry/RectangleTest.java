@@ -1,9 +1,12 @@
 package irmb.test.model.geometry;
 
+import de.bechte.junit.runners.context.HierarchicalContextRunner;
 import irmb.flowsim.model.geometry.Point;
 import irmb.flowsim.model.geometry.Rectangle;
+import irmb.test.presentation.ObserverSpy;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
 import static junit.framework.TestCase.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -11,6 +14,7 @@ import static org.junit.Assert.assertTrue;
 /**
  * Created by sven on 25.11.16.
  */
+@RunWith(HierarchicalContextRunner.class)
 public class RectangleTest {
 
     private Rectangle sut;
@@ -82,5 +86,21 @@ public class RectangleTest {
         assertTrue(sut.isPointOnBoundary(new Point(16, 15), 3));
         assertTrue(sut.isPointOnBoundary(new Point(11, 25), 3));
         assertTrue(sut.isPointOnBoundary(new Point(16, 19), 3));
+    }
+
+    public class ObserverAddedContext {
+        private ObserverSpy observerSpy;
+
+        @Before
+        public void setUp() {
+            observerSpy = new ObserverSpy();
+            sut.addObserver(observerSpy);
+        }
+
+        @Test
+        public void whenMovingLine_shouldNotifyObserver() {
+            sut.moveBy(5, 5);
+            assertTrue(observerSpy.wasNotified());
+        }
     }
 }
