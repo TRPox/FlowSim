@@ -18,7 +18,6 @@ public class GraphicPolyLine extends GraphicShape {
     }
 
 
-
     @Override
     public void paint(Graphics graphics) {
         PolyLine polyLine = (PolyLine) shape;
@@ -26,7 +25,7 @@ public class GraphicPolyLine extends GraphicShape {
         for (int i = 0; i < pointList.size() - 1; i++) {
             Point start = pointList.get(i);
             Point end = pointList.get(i + 1);
-            graphics.drawLine(start.getX(), start.getY(), end.getX(), end.getY());
+            graphics.drawLine((int) start.getX(), (int) start.getY(), (int) end.getX(), (int) end.getY());
         }
     }
 

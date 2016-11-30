@@ -19,4 +19,9 @@ public class GraphicViewPresenterTest {
         sut.handleLeftClick(first.getX(), first.getY());
         sut.handleLeftClick(second.getX(), second.getY());
     }
+
+    protected void buildLineWith(Point first, Point second) {
+        sut.setObjectType("Line");
+        transmitTwoPointsToPresenter(first, second);
+    }
 }

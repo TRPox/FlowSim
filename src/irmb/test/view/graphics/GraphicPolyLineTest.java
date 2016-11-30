@@ -43,8 +43,8 @@ public class GraphicPolyLineTest {
     }
 
     private void assertExpectedPointEqualsActual(Point point, Point addedPoint) {
-        assertEquals(point.getX(), addedPoint.getX());
-        assertEquals(point.getY(), addedPoint.getY());
+        assertEquals(point.getX(), addedPoint.getX(), 0.00001);
+        assertEquals(point.getY(), addedPoint.getY(), 0.00001);
     }
 
     public class GraphicViewAddedContext {

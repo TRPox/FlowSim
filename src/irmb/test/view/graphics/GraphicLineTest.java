@@ -9,6 +9,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import static junit.framework.TestCase.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -52,5 +53,21 @@ public class GraphicLineTest {
             line.setEnd(new Point(1, 1));
             assertTrue(graphicViewSpy.wasNotified());
         }
+
+        public class PointsSetContext {
+            @Before
+            public void setUp() {
+                line.setStart(new Point(11, 12));
+                line.setEnd(new Point(21, 22));
+            }
+
+
+            @Test
+            public void whenMovingLine_shouldNotifyGraphicView() {
+                line.moveBy(5, 5);
+                assertEquals(3, graphicViewSpy.getTimesNotified());
+            }
+        }
+
     }
 }

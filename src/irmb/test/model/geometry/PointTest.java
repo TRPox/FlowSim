@@ -12,6 +12,6 @@ public class PointTest {
     @Test
     public void testToString() {
         String pointString = new Point(1, 2).toString();
-        assertEquals("x: 1, y: 2", pointString);
+        assertEquals("x: 1.0, y: 2.0", pointString);
     }
 }

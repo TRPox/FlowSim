@@ -17,16 +17,15 @@ public class GraphicRectangle extends GraphicShape {
     }
 
 
-
     @Override
     public void paint(Graphics graphics) {
         Rectangle rectangle = (Rectangle) shape;
         Point first = rectangle.getFirst();
         Point second = rectangle.getSecond();
-        int minX = first.getX() < second.getX() ? first.getX() : second.getX();
-        int minY = first.getY() < second.getY() ? first.getY() : second.getY();
-        int width = Math.abs(first.getX() - second.getX());
-        int height = Math.abs(first.getY() - second.getY());
+        int minX = (int) (first.getX() < second.getX() ? first.getX() : second.getX());
+        int minY = (int) (first.getY() < second.getY() ? first.getY() : second.getY());
+        int width = (int) Math.abs(first.getX() - second.getX());
+        int height = (int) Math.abs(first.getY() - second.getY());
         graphics.drawRect(minX, minY, width, height);
     }
 

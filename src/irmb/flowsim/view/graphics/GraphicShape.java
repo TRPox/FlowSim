@@ -14,4 +14,8 @@ public abstract class GraphicShape extends Subject implements Observer {
     protected Shape shape;
     
     public abstract void paint(Graphics graphics);
+
+    public Shape getShape() {
+        return shape;
+    }
 }

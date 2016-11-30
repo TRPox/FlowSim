@@ -32,6 +32,8 @@ public class GraphicViewImplTest {
         frame.add(view);
         frame.setVisible(true);
         firstLine = new Line();
+        firstLine.setStart(new Point(11, 12));
+        firstLine.setEnd(new Point(21, 22));
         firstGraphicLine = new GraphicLineSpy(firstLine);
     }
 
@@ -44,16 +46,6 @@ public class GraphicViewImplTest {
 //        }
         view.receiveShape(firstGraphicLine);
         assertTrue(firstGraphicLine.wasPainted());
-    }
-
-
-    @Test
-    public void whenLineChanges_shouldRepaint() {
-        view.receiveShape(firstGraphicLine);
-        assertTrue(firstGraphicLine.wasPainted());
-        Point point = new Point(1, 1);
-        firstLine.setStart(point);
-        assertEquals(2, firstGraphicLine.getTimesPainted());
     }
 
     public class OneLineAddedContext {
@@ -72,6 +64,19 @@ public class GraphicViewImplTest {
             view.receiveShape(secondGraphicLine);
             assertTrue(firstGraphicLine.wasPainted());
             assertTrue(secondGraphicLine.wasPainted());
+        }
+
+        @Test
+        public void whenLineChanges_shouldRepaint() {
+            Point point = new Point(1, 1);
+            firstLine.setStart(point);
+            assertEquals(2, firstGraphicLine.getTimesPainted());
+        }
+
+        @Test
+        public void whenLineWasMoved_shouldRepaint() {
+            firstLine.moveBy(5, 5);
+            assertEquals(2, firstGraphicLine.getTimesPainted());
         }
 
         public class TwoLinesAddedContext {
