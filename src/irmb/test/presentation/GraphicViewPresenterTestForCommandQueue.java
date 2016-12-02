@@ -35,6 +35,11 @@ public class GraphicViewPresenterTestForCommandQueue extends GraphicViewPresente
         sut.setGraphicView(graphicViewSpyForLine);
     }
 
+    private void performMove(Point oldStart, Point newStart) {
+        sut.handleLeftClick(oldStart.getX(), oldStart.getY());
+        sut.handleMouseDrag(newStart.getX(), newStart.getY());
+    }
+
     public class ShapeBuildingQueueContext {
 
         @Test
@@ -179,72 +184,148 @@ public class GraphicViewPresenterTestForCommandQueue extends GraphicViewPresente
         }
     }
 
-    public class ShapeMovingQueueContext {
+    //region Old Code
+//    public class ShapeMovingQueueContext {
+//
+//        private final Point newStartAfterFirstMove = new Point(first.getX() + 5, first.getY() + 5);
+//        private final Point newEndAfterFirstMove = new Point(second.getX() + 5, second.getY() + 5);
+//        private final Point newStartAfterSecondMove = new Point(first.getX() + 13, first.getY() + 12);
+//        private final Point newEndAfterSecondMove = new Point(second.getX() + 13, second.getY() + 12);
+//
+//        @Before
+//        public void setUp() {
+//            buildLineWith(first, second);
+//            performMove(first, newStartAfterFirstMove);
+//        }
+//
+//        @Test
+//        public void shapeMovingUndoRedoAcceptanceTest() {
+//            Point newStartAfterThirdMove = new Point(first.getX() + 24, first.getY() + 7);
+//            Point newEndAfterThirdMove = new Point(second.getX() + 24, second.getY() + 7);
+//
+//            performMove(first, newStartAfterFirstMove);
+//            performMove(newStartAfterFirstMove, newStartAfterSecondMove);
+//            performMove(newStartAfterSecondMove, newStartAfterThirdMove);
+//
+//            sut.undo();
+//
+//            assertExpectedPointEqualsActual(newStartAfterSecondMove, graphicViewSpyForLine.getFirst());
+//            assertExpectedPointEqualsActual(newEndAfterSecondMove, graphicViewSpyForLine.getSecond());
+//
+//            sut.undo();
+//
+//            assertExpectedPointEqualsActual(newStartAfterFirstMove, graphicViewSpyForLine.getFirst());
+//            assertExpectedPointEqualsActual(newEndAfterFirstMove, graphicViewSpyForLine.getSecond());
+//
+//            sut.undo();
+//
+//            assertExpectedPointEqualsActual(first, graphicViewSpyForLine.getFirst());
+//            assertExpectedPointEqualsActual(second, graphicViewSpyForLine.getSecond());
+//
+//            sut.redo();
+//
+//            assertExpectedPointEqualsActual(newStartAfterFirstMove, graphicViewSpyForLine.getFirst());
+//            assertExpectedPointEqualsActual(newEndAfterFirstMove, graphicViewSpyForLine.getSecond());
+//
+//            sut.undo();
+//
+//            performMove(first, newStartAfterThirdMove);
+//
+//            sut.redo();
+//
+//            assertExpectedPointEqualsActual(newStartAfterThirdMove, graphicViewSpyForLine.getFirst());
+//            assertExpectedPointEqualsActual(newEndAfterThirdMove, graphicViewSpyForLine.getSecond());
+//
+//        }
+//
+//        @Test
+//        public void whenCallingUndo_shouldUndoMove() {
+//            sut.undo();
+//
+//            assertExpectedPointEqualsActual(first, graphicViewSpyForLine.getFirst());
+//            assertExpectedPointEqualsActual(second, graphicViewSpyForLine.getSecond());
+//        }
+//
+//        public class MovedTwiceContext {
+//            @Before
+//            public void setUp() {
+//                performMove(newStartAfterFirstMove, newStartAfterSecondMove);
+//            }
+//
+//            @Test
+//            public void whenCallingUndoTwice_shouldUndoBothMoves() {
+//                sut.undo();
+//                assertExpectedPointEqualsActual(newStartAfterFirstMove, graphicViewSpyForLine.getFirst());
+//                assertExpectedPointEqualsActual(newEndAfterFirstMove, graphicViewSpyForLine.getSecond());
+//
+//                sut.undo();
+//                assertExpectedPointEqualsActual(first, graphicViewSpyForLine.getFirst());
+//                assertExpectedPointEqualsActual(second, graphicViewSpyForLine.getSecond());
+//            }
+//
+//        }
+//
+//
+//    }
+
+    //endregion
+
+    public class CommandQueueContext {
 
         private final Point newStartAfterFirstMove = new Point(first.getX() + 5, first.getY() + 5);
         private final Point newEndAfterFirstMove = new Point(second.getX() + 5, second.getY() + 5);
-
-        @Before
-        public void setUp() {
-            buildLineWith(first, second);
-            performMove(first, newStartAfterFirstMove);
-        }
+        private final Point newStartAfterSecondMove = new Point(first.getX() + 13, first.getY() + 12);
+        private final Point newEndAfterSecondMove = new Point(second.getX() + 13, second.getY() + 12);
+        private final Point newStartAfterThirdMove = new Point(first.getX() + 24, first.getY() + 7);
+        private final Point newEndAfterThirdMove = new Point(second.getX() + 24, second.getY() + 7);
 
         @Test
-        public void shapeMovingUndoRedoAcceptanceTest() {
-            Point newStartAfterSecondMove = new Point(first.getX() + 10, first.getY() + 10);
-            Point newEndAfterSecondMove = new Point(second.getX() + 10, second.getY() + 10);
-            Point newStartAfterThirdMove = new Point(first.getX() + 20, first.getY() + 15);
-            Point newEndAfterThirdMove = new Point(second.getX() + 20, second.getY() + 15);
+        public void commandQueueAcceptanceTest() {
+            buildLineWith(first, second);
+
+            buildLineWith(third, fourth);
+
+            sut.undo();
+            assertExpectedPointEqualsActual(third, graphicViewSpyForLine.getFirst());
+            assertExpectedPointEqualsActual(fourth, graphicViewSpyForLine.getSecond());
+
+            sut.undo();
+            assertExpectedPointEqualsActual(first, graphicViewSpyForLine.getFirst());
+            assertExpectedPointEqualsActual(second, graphicViewSpyForLine.getSecond());
+
+            sut.redo();
+            assertEquals(3, graphicViewSpyForLine.getTimesReceiveLineCalled());
+            assertExpectedPointEqualsActual(first, graphicViewSpyForLine.getFirst());
+            assertExpectedPointEqualsActual(second, graphicViewSpyForLine.getSecond());
 
             performMove(first, newStartAfterFirstMove);
+
+            sut.undo();
+            assertExpectedPointEqualsActual(first, graphicViewSpyForLine.getFirst());
+            assertExpectedPointEqualsActual(second, graphicViewSpyForLine.getSecond());
+
+            sut.redo();
+            assertExpectedPointEqualsActual(newStartAfterFirstMove, graphicViewSpyForLine.getFirst());
+            assertExpectedPointEqualsActual(newEndAfterFirstMove, graphicViewSpyForLine.getSecond());
+
             performMove(newStartAfterFirstMove, newStartAfterSecondMove);
             performMove(newStartAfterSecondMove, newStartAfterThirdMove);
 
             sut.undo();
-
-            assertExpectedPointEqualsActual(newStartAfterSecondMove, graphicViewSpyForLine.getFirst());
-            assertExpectedPointEqualsActual(newEndAfterSecondMove, graphicViewSpyForLine.getSecond());
-
-            sut.undo();
-
             assertExpectedPointEqualsActual(newStartAfterFirstMove, graphicViewSpyForLine.getFirst());
             assertExpectedPointEqualsActual(newEndAfterFirstMove, graphicViewSpyForLine.getSecond());
 
+            buildLineWith(fifth, sixth);
+
             sut.undo();
 
-            assertExpectedPointEqualsActual(first, graphicViewSpyForLine.getFirst());
-            assertExpectedPointEqualsActual(second, graphicViewSpyForLine.getSecond());
+            buildLineWith(third, fourth);
 
             sut.redo();
-
-            assertExpectedPointEqualsActual(newStartAfterFirstMove, graphicViewSpyForLine.getFirst());
-            assertExpectedPointEqualsActual(newEndAfterFirstMove, graphicViewSpyForLine.getSecond());
-
-            sut.undo();
-
-            performMove(first, newStartAfterThirdMove);
-
-            sut.redo();
-
-            assertExpectedPointEqualsActual(newStartAfterThirdMove, graphicViewSpyForLine.getFirst());
-            assertExpectedPointEqualsActual(newEndAfterThirdMove, graphicViewSpyForLine.getSecond());
-
-        }
-
-        @Test
-        public void whenCallingUndo_shouldUndoMove() {
-            sut.undo();
-
-            assertExpectedPointEqualsActual(first, graphicViewSpyForLine.getFirst());
-            assertExpectedPointEqualsActual(second, graphicViewSpyForLine.getSecond());
+            assertEquals(4, graphicViewSpyForLine.getTimesReceiveLineCalled());
         }
 
 
-        private void performMove(Point oldStart, Point newStart) {
-            sut.handleLeftClick(oldStart.getX(), oldStart.getY());
-            sut.handleMouseDrag(newStart.getX(), newStart.getY());
-        }
     }
 
 }
