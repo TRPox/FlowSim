@@ -37,7 +37,9 @@ public class GraphicViewPresenterTestForCommandQueue extends GraphicViewPresente
 
     private void performMove(Point oldStart, Point newStart) {
         sut.handleLeftClick(oldStart.getX(), oldStart.getY());
+        sut.handleMouseDrag(0, 0);
         sut.handleMouseDrag(newStart.getX(), newStart.getY());
+        sut.handleMouseRelease();
     }
 
     public class ShapeBuildingQueueContext {
@@ -279,10 +281,13 @@ public class GraphicViewPresenterTestForCommandQueue extends GraphicViewPresente
         private final Point newStartAfterThirdMove = new Point(first.getX() + 24, first.getY() + 7);
         private final Point newEndAfterThirdMove = new Point(second.getX() + 24, second.getY() + 7);
 
+        @Before
+        public void setUp() {
+            buildLineWith(first, second);
+        }
+
         @Test
         public void commandQueueAcceptanceTest() {
-            buildLineWith(first, second);
-
             buildLineWith(third, fourth);
 
             sut.undo();
@@ -322,10 +327,35 @@ public class GraphicViewPresenterTestForCommandQueue extends GraphicViewPresente
             buildLineWith(third, fourth);
 
             sut.redo();
-            assertEquals(4, graphicViewSpyForLine.getTimesReceiveLineCalled());
+            assertEquals(5, graphicViewSpyForLine.getTimesReceiveLineCalled());
         }
 
 
-    }
+        public class MovedOnceContext {
+            @Before
+            public void setUp() {
+                performMove(first, newStartAfterFirstMove);
+            }
 
+            @Test
+            public void whenCallingUndo_shouldUndoMove() {
+                sut.undo();
+
+                assertExpectedPointEqualsActual(first, graphicViewSpyForLine.getFirst());
+                assertExpectedPointEqualsActual(second, graphicViewSpyForLine.getSecond());
+            }
+
+            @Test
+            public void whenCallingUndoTwice_shouldRemoveLine() {
+                sut.undo();
+                sut.undo();
+
+                assertTrue(graphicViewSpyForLine.wasLineRemoved());
+                assertExpectedPointEqualsActual(first, graphicViewSpyForLine.getFirst());
+                assertExpectedPointEqualsActual(second, graphicViewSpyForLine.getSecond());
+            }
+        }
+    }
 }
+
+

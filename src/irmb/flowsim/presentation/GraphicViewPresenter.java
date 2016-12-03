@@ -21,6 +21,9 @@ public class GraphicViewPresenter {
 
     private GraphicShapeRepository repository = new GraphicShapeRepository();
 
+    private GraphicShape lastMovedShape;
+    private Point origin;
+
 
     public GraphicViewPresenter(GraphicShapeBuilderFactory factory) {
         this.factory = factory;
@@ -44,6 +47,7 @@ public class GraphicViewPresenter {
                 shapeBuilder = null;
         } else {
             clickedPoint = makePoint(x, y);
+            origin = makePoint(x, y);
             graphicShape = repository.getGraphicShapeAt(clickedPoint);
 
         }
@@ -107,6 +111,8 @@ public class GraphicViewPresenter {
 
         clickedPoint.setX(x);
         clickedPoint.setY(y);
+
+        lastMovedShape = graphicShape;
     }
 
     private boolean onePointWasAdded() {
@@ -118,9 +124,16 @@ public class GraphicViewPresenter {
     }
 
     public void undo() {
-        if (currentIndex > -1) {
-            graphicView.removeShape(repository.getGraphicShapeList().get(currentIndex));
-            currentIndex--;
+        if (lastMovedShape == null) {
+            if (currentIndex > -1) {
+                graphicView.removeShape(repository.getGraphicShapeList().get(currentIndex));
+                currentIndex--;
+            }
+        } else {
+            double dx = clickedPoint.getX() - origin.getX();
+            double dy = clickedPoint.getY() - origin.getY();
+            lastMovedShape.getShape().moveBy(-dx, -dy);
+            lastMovedShape = null;
         }
     }
 
