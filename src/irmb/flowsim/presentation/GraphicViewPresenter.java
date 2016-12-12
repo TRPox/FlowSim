@@ -114,8 +114,10 @@ public class GraphicViewPresenter {
     private void moveShape(double x, double y) {
         double dx = x - clickedPoint.getX();
         double dy = y - clickedPoint.getY();
-
-        graphicShape.getShape().moveBy(dx, dy);
+        MoveShapeCommand command = moveShapeCommands.get(moveShapeIndex);
+        command.setDeltaX(dx);
+        command.setDeltaY(dy);
+        command.execute();
 
         clickedPoint.setX(x);
         clickedPoint.setY(y);
@@ -151,8 +153,9 @@ public class GraphicViewPresenter {
         if (moveShapeIndex > -1) {
             double dx = clickedPoint.getX() - origin.getX();
             double dy = clickedPoint.getY() - origin.getY();
-            moveShapeCommands.get(moveShapeIndex).setDeltaX(dx);
-            moveShapeCommands.get(moveShapeIndex).setDeltaY(dy);
+            MoveShapeCommand command = moveShapeCommands.get(moveShapeIndex);
+            command.setDeltaX(dx);
+            command.setDeltaY(dy);
         }
     }
 

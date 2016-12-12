@@ -24,24 +24,13 @@ public class MoveShapeCommandTest {
         line.setStart(new Point(3, 5));
         line.setEnd(new Point(6, 3));
         sut = new MoveShapeCommand(line);
-    }
-
-    @Test
-    public void canSetDelta() {
-        sut.setDeltaX(5.);
-        sut.setDeltaY(5.);
-    }
-
-    @Test
-    public void canCallUndo() {
-        sut.undo();
+        sut.setDeltaX(dx);
+        sut.setDeltaY(dy);
     }
 
     @Test
     public void whenCallingUndoAfterMovingShape_shouldUndoMove() {
-        line.moveBy(dx, dy);
-        sut.setDeltaX(dx);
-        sut.setDeltaY(dy);
+        sut.execute();
         sut.undo();
         assertExpectedPointEqualsActual(new Point(3, 5), line.getStart());
         assertExpectedPointEqualsActual(new Point(6, 3), line.getEnd());
@@ -49,9 +38,18 @@ public class MoveShapeCommandTest {
 
     @Test
     public void whenCallingExecute_shouldMoveShapeByDelta() {
-        sut.setDeltaX(dx);
-        sut.setDeltaY(dy);
+
         sut.execute();
+        assertExpectedPointEqualsActual(new Point(8, 11), line.getStart());
+        assertExpectedPointEqualsActual(new Point(11, 9), line.getEnd());
+    }
+
+    @Test
+    public void whenCallingRedo_shouldMoveShapeAgain() {
+        sut.execute();
+        sut.undo();
+        sut.redo();
+
         assertExpectedPointEqualsActual(new Point(8, 11), line.getStart());
         assertExpectedPointEqualsActual(new Point(11, 9), line.getEnd());
     }

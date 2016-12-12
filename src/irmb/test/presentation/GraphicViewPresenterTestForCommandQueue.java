@@ -369,7 +369,22 @@ public class GraphicViewPresenterTestForCommandQueue extends GraphicViewPresente
                     assertExpectedPointEqualsActual(first, graphicViewSpyForLine.getFirst());
                     assertExpectedPointEqualsActual(second, graphicViewSpyForLine.getSecond());
                 }
+            }
 
+            public class TwoLinesAddedContext {
+                @Before
+                public void setUp() {
+                    buildLineWith(third, fourth);
+                }
+
+                @Test
+                public void whenCallingUndo_shouldRemoveSecondLine() {
+                    sut.undo();
+
+                    assertTrue(graphicViewSpyForLine.wasLineRemoved());
+                    assertExpectedPointEqualsActual(third, graphicViewSpyForLine.getFirst());
+                    assertExpectedPointEqualsActual(fourth, graphicViewSpyForLine.getSecond());
+                }
             }
         }
     }

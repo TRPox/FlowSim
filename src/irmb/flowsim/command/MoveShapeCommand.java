@@ -5,7 +5,7 @@ import irmb.flowsim.model.geometry.Shape;
 /**
  * Created by Sven on 08.12.2016.
  */
-public class MoveShapeCommand {
+public class MoveShapeCommand implements Command {
 
     private final Shape shape;
     private double deltaX;
@@ -30,5 +30,10 @@ public class MoveShapeCommand {
 
     public void undo() {
         shape.moveBy(-deltaX, -deltaY);
+    }
+
+    @Override
+    public void redo() {
+        execute();
     }
 }
