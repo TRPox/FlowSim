@@ -1,9 +1,13 @@
 package irmb.flowsim.presentation;
 
+import irmb.flowsim.command.MoveShapeCommand;
 import irmb.flowsim.model.geometry.Point;
 import irmb.flowsim.presentation.builders.GraphicShapeBuilder;
 import irmb.flowsim.presentation.factories.GraphicShapeBuilderFactory;
 import irmb.flowsim.view.graphics.GraphicShape;
+
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Created by Sven on 19.10.2016.
@@ -23,7 +27,8 @@ public class GraphicViewPresenter {
 
     private GraphicShape lastMovedShape;
     private Point origin;
-
+    private List<MoveShapeCommand> moveShapeCommands = new LinkedList<>();
+    private int moveShapeIndex = -1;
 
     public GraphicViewPresenter(GraphicShapeBuilderFactory factory) {
         this.factory = factory;
@@ -49,7 +54,10 @@ public class GraphicViewPresenter {
             clickedPoint = makePoint(x, y);
             origin = makePoint(x, y);
             graphicShape = repository.getGraphicShapeAt(clickedPoint);
-
+            if (graphicShape != null) {
+                moveShapeCommands.add(new MoveShapeCommand(graphicShape.getShape()));
+                moveShapeIndex++;
+            }
         }
     }
 
@@ -111,8 +119,6 @@ public class GraphicViewPresenter {
 
         clickedPoint.setX(x);
         clickedPoint.setY(y);
-
-        lastMovedShape = graphicShape;
     }
 
     private boolean onePointWasAdded() {
@@ -124,16 +130,14 @@ public class GraphicViewPresenter {
     }
 
     public void undo() {
-        if (lastMovedShape == null) {
+        if (moveShapeIndex < 0) {
             if (currentIndex > -1) {
                 graphicView.removeShape(repository.getGraphicShapeList().get(currentIndex));
                 currentIndex--;
             }
         } else {
-            double dx = clickedPoint.getX() - origin.getX();
-            double dy = clickedPoint.getY() - origin.getY();
-            lastMovedShape.getShape().moveBy(-dx, -dy);
-            lastMovedShape = null;
+            moveShapeCommands.get(moveShapeIndex).undo();
+            moveShapeIndex--;
         }
     }
 
@@ -142,9 +146,14 @@ public class GraphicViewPresenter {
             graphicView.receiveShape(repository.getGraphicShapeList().get(++currentIndex));
     }
 
-
     public void handleMouseRelease() {
         graphicShape = null;
+        if (moveShapeIndex > -1) {
+            double dx = clickedPoint.getX() - origin.getX();
+            double dy = clickedPoint.getY() - origin.getY();
+            moveShapeCommands.get(moveShapeIndex).setDeltaX(dx);
+            moveShapeCommands.get(moveShapeIndex).setDeltaY(dy);
+        }
     }
 
     public void setRepository(GraphicShapeRepository repository) {

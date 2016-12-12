@@ -16,8 +16,13 @@ public class GraphicViewPresenterTest {
     protected final Point fourth = new Point(41, 42);
 
     protected void transmitTwoPointsToPresenter(Point first, Point second) {
-        sut.handleLeftClick(first.getX(), first.getY());
-        sut.handleLeftClick(second.getX(), second.getY());
+        performLeftClick(first.getX(), first.getY());
+        performLeftClick(second.getX(), second.getY());
+    }
+
+    private void performLeftClick(double x, double y) {
+        sut.handleLeftClick(x, y);
+        sut.handleMouseRelease();
     }
 
     protected void buildLineWith(Point first, Point second) {
