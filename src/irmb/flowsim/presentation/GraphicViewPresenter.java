@@ -1,5 +1,6 @@
 package irmb.flowsim.presentation;
 
+import irmb.flowsim.command.BuildShapeCommand;
 import irmb.flowsim.command.MoveShapeCommand;
 import irmb.flowsim.model.geometry.Point;
 import irmb.flowsim.presentation.builders.GraphicShapeBuilder;
@@ -18,17 +19,16 @@ public class GraphicViewPresenter {
     private final GraphicShapeBuilderFactory factory;
 
     private int pointsAdded;
-    private int currentIndex = -1;
 
     private Point clickedPoint;
     private GraphicShape graphicShape;
 
     private GraphicShapeRepository repository = new GraphicShapeRepository();
 
-    private GraphicShape lastMovedShape;
     private Point origin;
-    private List<MoveShapeCommand> moveShapeCommands = new LinkedList<>();
-    private int moveShapeIndex = -1;
+
+    private CommandQueue commandQueue = new CommandQueue();
+    private MoveShapeCommand moveShapeCommand;
 
     public GraphicViewPresenter(GraphicShapeBuilderFactory factory) {
         this.factory = factory;
@@ -50,14 +50,17 @@ public class GraphicViewPresenter {
                 sendShapeToView();
             if (shapeBuilder.isObjectFinished())
                 shapeBuilder = null;
-        } else {
-            clickedPoint = makePoint(x, y);
+        } else
+            createMoveObjectCommand(x, y);
+    }
+
+    private void createMoveObjectCommand(double x, double y) {
+        clickedPoint = makePoint(x, y);
+        graphicShape = repository.getGraphicShapeAt(clickedPoint);
+        if (graphicShape != null) {
             origin = makePoint(x, y);
-            graphicShape = repository.getGraphicShapeAt(clickedPoint);
-            if (graphicShape != null) {
-                moveShapeCommands.add(new MoveShapeCommand(graphicShape.getShape()));
-                moveShapeIndex++;
-            }
+            moveShapeCommand = new MoveShapeCommand(graphicShape.getShape());
+            commandQueue.add(moveShapeCommand);
         }
     }
 
@@ -79,10 +82,9 @@ public class GraphicViewPresenter {
     }
 
     private void sendShapeToView() {
-        graphicView.receiveShape(shapeBuilder.getShape());
-        for (int i = ++currentIndex; i < repository.getGraphicShapeList().size(); i++)
-            repository.remove(i);
-        repository.add(shapeBuilder.getShape());
+        BuildShapeCommand buildShapeCommand = new BuildShapeCommand(shapeBuilder.getShape(), graphicView, repository);
+        buildShapeCommand.execute();
+        commandQueue.add(buildShapeCommand);
     }
 
     public void handleRightClick(double x, double y) {
@@ -114,10 +116,10 @@ public class GraphicViewPresenter {
     private void moveShape(double x, double y) {
         double dx = x - clickedPoint.getX();
         double dy = y - clickedPoint.getY();
-        MoveShapeCommand command = moveShapeCommands.get(moveShapeIndex);
-        command.setDeltaX(dx);
-        command.setDeltaY(dy);
-        command.execute();
+
+        moveShapeCommand.setDeltaX(dx);
+        moveShapeCommand.setDeltaY(dy);
+        moveShapeCommand.execute();
 
         clickedPoint.setX(x);
         clickedPoint.setY(y);
@@ -132,30 +134,20 @@ public class GraphicViewPresenter {
     }
 
     public void undo() {
-        if (moveShapeIndex < 0) {
-            if (currentIndex > -1) {
-                graphicView.removeShape(repository.getGraphicShapeList().get(currentIndex));
-                currentIndex--;
-            }
-        } else {
-            moveShapeCommands.get(moveShapeIndex).undo();
-            moveShapeIndex--;
-        }
+        commandQueue.undo();
     }
 
     public void redo() {
-        if (currentIndex + 1 < repository.getGraphicShapeList().size())
-            graphicView.receiveShape(repository.getGraphicShapeList().get(++currentIndex));
+        commandQueue.redo();
     }
 
     public void handleMouseRelease() {
         graphicShape = null;
-        if (moveShapeIndex > -1) {
+        if (moveShapeCommand != null) {
             double dx = clickedPoint.getX() - origin.getX();
             double dy = clickedPoint.getY() - origin.getY();
-            MoveShapeCommand command = moveShapeCommands.get(moveShapeIndex);
-            command.setDeltaX(dx);
-            command.setDeltaY(dy);
+            moveShapeCommand.setDeltaX(dx);
+            moveShapeCommand.setDeltaY(dy);
         }
     }
 
